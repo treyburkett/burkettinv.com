@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Connecting QuickBooks…</title>
+<style>
+  :root { --navy:#0d1b2a; --gold:#c4a45a; --cream:#f8f5f0; --text-mid:#4a4a4a; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+         background:var(--navy); color:var(--cream); font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+  .card { max-width:540px; padding:48px 40px; text-align:center; }
+  h1 { font-size:1.5rem; font-weight:600; margin:0 0 12px; color:var(--gold); }
+  p  { line-height:1.55; color:#e8e2d6; margin:10px 0; }
+  .code { word-break:break-all; background:#1a2e47; border:1px solid var(--gold); border-radius:8px;
+          padding:14px 16px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.8rem;
+          color:var(--cream); margin:18px 0; user-select:all; }
+  button { background:var(--gold); color:var(--navy); border:0; border-radius:6px; padding:11px 22px;
+           font-size:.95rem; font-weight:600; cursor:pointer; }
+  .muted { font-size:.85rem; color:#9aa7b5; }
+</style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h1>Connecting QuickBooks…</h1>
+    <p id="status">Handing your authorization back to the Burkett back-office tool.</p>
+  </div>
+<script>
+  // Burkett Investments — QuickBooks OAuth callback relay.
+  // This page is not linked anywhere. Intuit redirects here after you approve the
+  // connection; we forward the (single-use, short-lived) authorization response to
+  // the local connector running on this machine. No secrets are stored or sent here.
+  (function () {
+    var search = window.location.search || "";
+    var params = new URLSearchParams(search);
+    var card = document.getElementById("card");
+
+    if (!params.get("code")) {
+      card.innerHTML = "<h1>Nothing to connect</h1>" +
+        "<p>This page only does something during a QuickBooks connection. " +
+        "You can close it.</p>";
+      return;
+    }
+
+    // Primary path: forward to the local connector listening on port 8765.
+    var localUrl = "http://localhost:8765/callback" + search;
+
+    // Fallback shown if the local hand-off doesn't take over within ~2.5s
+    // (e.g. the connector isn't running on this device).
+    var fallbackTimer = setTimeout(function () {
+      card.innerHTML =
+        "<h1>Almost there</h1>" +
+        "<p>If the tool didn't pick this up automatically, copy the line below " +
+        "and paste it back to your Burkett assistant:</p>" +
+        "<div class='code'>" + search.replace(/^\?/, "") + "</div>" +
+        "<button onclick=\"navigator.clipboard.writeText(location.search.replace(/^\\?/,'')).then(function(){this.textContent='Copied';}.bind(this))\">Copy</button>" +
+        "<p class='muted'>This code is single-use and expires within minutes.</p>";
+    }, 2500);
+
+    // Navigate the browser to the local listener. A top-level navigation to
+    // http://localhost is permitted by browsers (localhost is a trusted origin).
+    window.location.replace(localUrl);
+    // If the navigation succeeds, this page is gone before the timer fires.
+    window.addEventListener("pagehide", function () { clearTimeout(fallbackTimer); });
+  })();
+</script>
+</body>
+</html>
