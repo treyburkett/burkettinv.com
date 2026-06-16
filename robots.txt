@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://burkettinv.com/sitemap.xml
