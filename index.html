@@ -88,6 +88,37 @@
 
   .nav-links a:hover { color: var(--gold-light); }
 
+  /* Login = gold-OUTLINE button (distinct from filled .nav-cta Contact) */
+  .nav-login {
+    border: 1px solid var(--gold);
+    color: var(--gold-light) !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 2px;
+    transition: background 0.25s, color 0.25s;
+  }
+  .nav-login:hover { background: var(--gold); color: var(--navy) !important; }
+
+  /* Hamburger toggle — hidden on desktop, shown in the mobile media query */
+  .nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    color: var(--gold-light);
+    cursor: pointer;
+    padding: 0;
+  }
+  .nav-toggle svg { width: 24px; height: 24px; display: block; }
+  .nav-toggle .icon-close { display: none; }
+  .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
+  .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+  /* Fixed-nav anchor offset so headings aren't hidden on jump */
+  section[id] { scroll-margin-top: 5rem; }
+
   /* HERO */
   .hero {
     min-height: 100vh;
@@ -519,7 +550,42 @@
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
+    .nav-toggle { display: inline-flex; }
+    /* Default hidden; full-width navy panel drops under the fixed nav bar when open */
     .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 60px; left: 0; right: 0;
+      background: rgba(13, 27, 42, 0.98);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201, 162, 60, 0.25);
+      padding: 1.25rem 1.5rem 1.75rem;
+      gap: 0.25rem;
+      z-index: 99;
+    }
+    .nav-links.open li { width: 100%; }
+    .nav-links.open a {
+      display: block;
+      padding: 0.85rem 0.25rem;
+      font-size: 0.9rem;
+      min-height: 44px;
+    }
+    /* Separate the CTAs (Contact + Login) from the section links */
+    .nav-links.open li:has(.nav-cta) {
+      margin-top: 0.75rem;
+      border-top: 1px solid rgba(201, 162, 60, 0.25);
+      padding-top: 0.5rem;
+    }
+    .nav-links.open .nav-cta,
+    .nav-links.open .nav-login {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
     section { padding: 4rem 1.5rem; }
     #team { padding: 4rem 1.5rem; }
     #contact { padding: 4rem 1.5rem; }
@@ -557,7 +623,7 @@
   .persp-card p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.6; font-weight: 300; margin-bottom: 0.6rem; }
   .persp-card a { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.06em; text-decoration: none; text-transform: uppercase; }
   footer.footer-rich { display: block; background: var(--navy); padding: 4rem 4rem 2rem; }
-  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid var(--navy-mid); padding-bottom: 2rem; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid var(--navy-mid); padding-bottom: 2rem; }
   .footer-col h4 { color: var(--gold); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 500; }
   .footer-col a { display: block; color: #c4c8d0; text-decoration: none; font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 300; }
   .footer-col a:hover { color: var(--gold-light); }
@@ -571,13 +637,18 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo"><svg class="logo-mark" viewBox="0 0 120 120" aria-hidden="true"><rect x="20" y="20" width="80" height="80" fill="none" stroke="currentColor" stroke-width="4.5"/><text x="38.3" y="84.8" font-family="'Playfair Display',serif" font-weight="700" font-size="70" fill="currentColor">B</text></svg>Burkett Investments</a>
-  <ul class="nav-links">
+  <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+    <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#approach">Approach</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#perspectives">Perspectives</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
+    <li><a href="https://app.burkettinv.com" class="nav-login">Login</a></li>
   </ul>
 </nav>
 
@@ -798,6 +869,9 @@
     <div class="footer-col"><h4>Explore</h4>
       <a href="#about">About</a><a href="#services">Services</a><a href="#approach">Approach</a><a href="#team">Team</a><a href="#perspectives">Perspectives</a><a href="#contact">Contact</a>
     </div>
+    <div class="footer-col"><h4>Owners</h4>
+      <a href="https://app.burkettinv.com">Owner Login</a>
+    </div>
     <div class="footer-col"><h4>Get In Touch</h4>
       <a href="mailto:contact@burkettinv.com">contact@burkettinv.com</a>
       <a href="#contact">Start a conversation</a>
@@ -837,6 +911,26 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     msg.style.display = 'block'; btn.textContent = 'Send Message'; btn.disabled = false;
   }
 });
+
+// Mobile hamburger nav
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var menu = document.getElementById('nav-links');
+  if (!toggle || !menu) return;
+  function setOpen(open) {
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    setOpen(menu.classList.contains('open') === false);
+  });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('click', function (e) {
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+})();
 </script>
 
 </body>
