@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Panel — Curated advisory panels, by Burkett</title>
+<meta name="description" content="The Panel convenes a vetted panel of senior operators to pressure-test your business in person — advice and access, explicitly not investment. A Burkett Investments company.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#0b0b0c; --bg2:#141416; --bg3:#1b1b1e;
+    --line:rgba(255,255,255,0.10); --line2:rgba(255,255,255,0.16);
+    --text:#f3f1ec; --muted:rgba(243,241,236,0.58); --faint:rgba(243,241,236,0.38);
+    --gold:#c9a23c; --gold-l:#e0c97e;
+    --nav-h:74px;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .serif{font-family:'Playfair Display',serif}
+  .eyebrow{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  a{color:inherit;text-decoration:none}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 3.5rem;background:rgba(11,11,12,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .brand{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;letter-spacing:.04em}
+  .brand .dot{color:var(--gold)}
+  .nav-links{display:flex;gap:2.2rem;list-style:none}
+  .nav-links a{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{display:flex;align-items:center;gap:1.5rem}
+  .nav-cta .login{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:'Inter';font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;padding:.85rem 1.5rem;border:1px solid var(--gold);cursor:pointer;transition:all .2s;white-space:nowrap}
+  .btn.solid{background:var(--gold);color:#15130c}
+  .btn.solid:hover{background:var(--gold-l);border-color:var(--gold-l)}
+  .btn.ghost{background:transparent;color:var(--text);border-color:var(--line2)}
+  .btn.ghost:hover{border-color:var(--gold);color:var(--gold-l)}
+
+  /* HERO */
+  .hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:calc(var(--nav-h) + 3rem) 3.5rem 4rem}
+  .hero-copy{max-width:600px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.6rem,4.6vw,4.4rem);line-height:1.04;letter-spacing:-.01em;margin:1.6rem 0 1.6rem}
+  .hero h1 em{font-style:italic;color:var(--gold-l)}
+  .hero p.sub{font-size:1.06rem;color:var(--muted);max-width:48ch;line-height:1.75;margin-bottom:.6rem}
+  .hero p.notinv{font-size:.82rem;color:var(--faint);letter-spacing:.04em;margin-bottom:2.2rem}
+  .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+
+  /* ADVISOR GRID */
+  .roster{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:.85rem}
+  .tile{position:relative;aspect-ratio:3/3.7;border:1px solid var(--line);background:linear-gradient(180deg,#202024 0%,#101012 100%);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:1rem}
+  .tile::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 0%,rgba(201,162,60,.10),transparent 60%)}
+  .tile .silh{position:absolute;top:14%;left:50%;transform:translateX(-50%);width:54%;aspect-ratio:1;border-radius:50%;background:linear-gradient(160deg,#3a3a40,#1d1d20);border:1px solid var(--line2)}
+  .tile .silh::after{content:"";position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);width:64%;height:60%;background:#26262b;border-radius:50% 50% 0 0}
+  .tile .role{position:relative;font-size:.78rem;font-weight:500;color:var(--text);line-height:1.3}
+  .tile .cred{position:relative;font-size:.68rem;color:var(--muted);margin-top:.15rem}
+  .tile .vlock{position:absolute;top:.7rem;right:.7rem;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line2);border-radius:2px;padding:.15rem .4rem}
+  .roster-cap{grid-column:1/-1;font-size:.74rem;color:var(--faint);letter-spacing:.03em;margin-top:.3rem;text-align:center}
+
+  /* SECTION SHELL */
+  section.block{padding:6rem 3.5rem;border-top:1px solid var(--line)}
+  .sec-head{max-width:760px;margin:0 auto 3.5rem;text-align:center}
+  .sec-head h2{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2rem,3.4vw,3rem);line-height:1.1;margin:1rem 0 1rem}
+  .sec-head p{color:var(--muted);font-size:1.02rem;max-width:54ch;margin:0 auto}
+  .rule{width:42px;height:1px;background:var(--gold);margin:0 auto}
+
+  /* EXPERTISE SELECTOR */
+  .chips{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;max-width:720px;margin:0 auto}
+  .chip{font-size:.85rem;letter-spacing:.02em;color:var(--text);background:var(--bg2);border:1px solid var(--line2);border-radius:999px;padding:.7rem 1.3rem;cursor:pointer;transition:all .18s}
+  .chip:hover{border-color:var(--gold)}
+  .chip.on{background:var(--gold);color:#15130c;border-color:var(--gold);font-weight:500}
+  .chip-cta{text-align:center;margin-top:2.4rem}
+
+  /* HOW */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;max-width:1100px;margin:0 auto}
+  .step .n{font-family:'Playfair Display',serif;font-size:2.6rem;color:var(--gold);line-height:1}
+  .step h3{font-size:1.15rem;font-weight:500;margin:1rem 0 .6rem;letter-spacing:.01em}
+  .step p{color:var(--muted);font-size:.95rem;line-height:1.7}
+  .step{border-top:1px solid var(--line);padding-top:1.4rem}
+
+  /* TIERS */
+  .tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:1200px;margin:0 auto}
+  .tier{background:var(--bg2);border:1px solid var(--line);padding:2rem 1.6rem;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+  .tier:hover{border-color:var(--gold);transform:translateY(-3px)}
+  .tier.feat{border-color:var(--gold)}
+  .tier .badge{align-self:flex-start;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:#15130c;background:var(--gold);padding:.2rem .55rem;margin-bottom:1rem;font-weight:600}
+  .tier h3{font-family:'Playfair Display',serif;font-weight:500;font-size:1.45rem;margin-bottom:.3rem}
+  .tier .who{font-size:.82rem;color:var(--muted);min-height:2.6rem;margin-bottom:1.2rem;line-height:1.55}
+  .tier .price{font-size:1.05rem;color:var(--gold-l);font-weight:500;letter-spacing:.01em}
+  .tier .price span{font-size:.72rem;color:var(--faint);font-weight:300}
+  .tier ul{list-style:none;margin:1.3rem 0 1.6rem;flex:1}
+  .tier li{font-size:.85rem;color:var(--muted);padding:.45rem 0;border-bottom:1px solid var(--line);display:flex;gap:.5rem}
+  .tier li::before{content:"—";color:var(--gold)}
+  .illus{text-align:center;font-size:.72rem;color:var(--faint);margin-top:1.8rem;letter-spacing:.03em}
+
+  /* POSITIONING STRIP */
+  .strip{padding:5rem 3.5rem;border-top:1px solid var(--line);text-align:center}
+  .strip h2{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.2;max-width:18ch;margin:0 auto 1.4rem}
+  .strip h2 em{font-style:italic;color:var(--gold-l)}
+  .strip p{color:var(--muted);max-width:60ch;margin:0 auto;font-size:1rem}
+  .strip .pills{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+  .pill{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line2);border-radius:999px;padding:.5rem 1.1rem}
+
+  /* CONFERENCE CALLOUT */
+  .conf{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1100px;margin:0 auto}
+  .conf .confcards{display:flex;flex-direction:column;gap:.8rem}
+  .confcard{border:1px solid var(--line);background:var(--bg2);padding:1.1rem 1.3rem;display:flex;justify-content:space-between;align-items:center}
+  .confcard .cn{font-size:.95rem;font-weight:400}
+  .confcard .cm{font-size:.75rem;color:var(--faint);letter-spacing:.05em}
+  .conf h2{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.15;margin:1rem 0 1rem}
+  .conf p{color:var(--muted);font-size:1rem;max-width:42ch}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:3rem 3.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+  footer .brand{font-size:1.2rem}
+  footer .fnote{font-size:.78rem;color:var(--faint);letter-spacing:.04em}
+  footer .flinks{display:flex;gap:1.6rem}
+  footer .flinks a{font-size:.78rem;color:var(--muted);letter-spacing:.06em}
+
+  @media(max-width:960px){
+    nav{padding:0 1.4rem}
+    .nav-links{display:none}
+    .hero{grid-template-columns:1fr;padding:calc(var(--nav-h) + 2rem) 1.4rem 3rem;gap:2.5rem}
+    section.block,.strip{padding:4rem 1.4rem}
+    .steps,.tiers,.conf{grid-template-columns:1fr;gap:1.5rem}
+    .roster{max-width:420px}
+    footer{padding:2.5rem 1.4rem;flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">The&nbsp;Panel<span class="dot">.</span></div>
+  <ul class="nav-links">
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#tiers">Panels</a></li>
+    <li><a href="#conf">Conferences</a></li>
+    <li><a href="#advisors">For advisors</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="https://burkettinv.com" class="login">← Burkett Investments</a>
+    <a href="https://burkettinv.com/#contact" class="btn solid">Request a panel</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">Advisory panels · by application</span>
+    <h1 class="serif">Sit before a panel of people who've <em>already done it.</em></h1>
+    <p class="sub">The Panel convenes a curated table of vetted operators and executives to pressure-test your business — in person, around the conferences you already attend. You leave with a compiled report within 30 days.</p>
+    <p class="notinv">Advice, guidance, and access — explicitly not an investment platform.</p>
+    <div class="hero-ctas">
+      <a href="https://burkettinv.com/#contact" class="btn solid">Request a panel</a>
+      <a href="#advisors" class="btn ghost">Become an advisor</a>
+    </div>
+  </div>
+  <div class="roster" aria-label="A sample of vetted advisors">
+    <div class="tile"><div class="silh"></div><span class="vlock">Verified</span><div class="role">Former COO</div><div class="cred">F500 retailer · 20 yrs</div></div>
+    <div class="tile"><div class="silh"></div><span class="vlock">Verified</span><div class="role">VP, Growth</div><div class="cred">DTC brand · scaled to $400M</div></div>
+    <div class="tile"><div class="silh"></div><span class="vlock">Verified</span><div class="role">CFO</div><div class="cred">PE-backed SaaS</div></div>
+    <div class="tile"><div class="silh"></div><span class="vlock">Verified</span><div class="role">Director, Brand</div><div class="cred">Global agency</div></div>
+    <div class="tile"><div class="silh"></div><span class="vlock">Verified</span><div class="role">GM, Multifamily</div><div class="cred">4,000+ units</div></div>
+    <div class="tile"><div class="silh"></div><span class="vlock">Verified</span><div class="role">Head of Ops</div><div class="cred">National logistics</div></div>
+    <div class="roster-cap">Names revealed to approved members. Every advisor vetted before the room.</div>
+  </div>
+</header>
+
+<!-- EXPERTISE SELECTOR -->
+<section class="block" id="start">
+  <div class="sec-head">
+    <div class="rule"></div>
+    <h2 class="serif">What do you need in the room?</h2>
+    <p>Tell us the expertise — we curate and propose a matched panel within your budget. You approve the lineup before you pay.</p>
+  </div>
+  <div class="chips" id="chips">
+    <button class="chip on">Real Estate</button>
+    <button class="chip">Finance &amp; CFO</button>
+    <button class="chip">Operations</button>
+    <button class="chip">Marketing &amp; GTM</button>
+    <button class="chip">Product</button>
+    <button class="chip">Sales</button>
+    <button class="chip">People &amp; Talent</button>
+    <button class="chip">Legal</button>
+    <button class="chip">Industry expert</button>
+  </div>
+  <div class="chip-cta"><a href="https://burkettinv.com/#contact" class="btn solid">Request my panel</a></div>
+</section>
+
+<!-- HOW -->
+<section class="block" id="how">
+  <div class="sec-head">
+    <div class="rule"></div>
+    <span class="eyebrow">How it works</span>
+    <h2 class="serif">Three steps to the table.</h2>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="n serif">01</div><h3>Tell us what you need</h3><p>Share your company, the questions you're wrestling with, the expertise you want, and your budget. Apply once and get vetted.</p></div>
+    <div class="step"><div class="n serif">02</div><h3>We curate &amp; propose</h3><p>We assemble a matched panel of vetted advisors — calibrated to your level and budget — and propose the lineup. You approve before you pay.</p></div>
+    <div class="step"><div class="n serif">03</div><h3>Convene &amp; receive your report</h3><p>Sit before your panel in person at the conference. Within 30 days, a compiled, synthesized feedback report lands in your portal.</p></div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section class="block" id="tiers">
+  <div class="sec-head">
+    <div class="rule"></div>
+    <span class="eyebrow">Choose your table</span>
+    <h2 class="serif">Dial the panel to your budget.</h2>
+    <p>More advisors, higher prestige — you choose the level. Every panel is curated, vetted, and in person.</p>
+  </div>
+  <div class="tiers">
+    <div class="tier">
+      <h3 class="serif">Single Advisor</h3>
+      <div class="who">One focused expert, one-on-one.</div>
+      <div class="price">from $1,200</div>
+      <ul><li>1 vetted advisor</li><li>45-minute session</li><li>Written summary</li></ul>
+      <a href="https://burkettinv.com/#contact" class="btn ghost">Select</a>
+    </div>
+    <div class="tier feat">
+      <div class="badge">Most chosen</div>
+      <h3 class="serif">Standard Panel</h3>
+      <div class="who">A balanced table of complementary perspectives.</div>
+      <div class="price">from $3,800</div>
+      <ul><li>3 vetted advisors</li><li>60-minute session</li><li>Compiled 30-day report</li></ul>
+      <a href="https://burkettinv.com/#contact" class="btn solid">Select</a>
+    </div>
+    <div class="tier">
+      <h3 class="serif">Premium Panel</h3>
+      <div class="who">A deeper bench, higher prestige.</div>
+      <div class="price">from $6,800</div>
+      <ul><li>5 vetted advisors</li><li>90-minute session</li><li>Compiled report + raw notes</li></ul>
+      <a href="https://burkettinv.com/#contact" class="btn ghost">Select</a>
+    </div>
+    <div class="tier">
+      <h3 class="serif">Custom</h3>
+      <div class="who">Name your budget — we build to fit.</div>
+      <div class="price">Let's talk</div>
+      <ul><li>1–7 advisors</li><li>Marquee specialists</li><li>Tailored format</li></ul>
+      <a href="https://burkettinv.com/#contact" class="btn ghost">Inquire</a>
+    </div>
+  </div>
+  <p class="illus">Illustrative pricing — final price set when your panel is proposed.</p>
+</section>
+
+<!-- POSITIONING STRIP -->
+<section class="strip">
+  <div class="rule" style="margin-bottom:1.6rem"></div>
+  <h2 class="serif">Advice and access. <em>Not</em> investment.</h2>
+  <p>The Panel is built for guidance, candor, and connection — never capital. No pitches for funding, no equity, no matchmaking to investors. What's said in the room stays in the room: mutual NDAs, and no third-party recording.</p>
+  <div class="pills">
+    <span class="pill">Both sides vetted</span>
+    <span class="pill">Confidential by default</span>
+    <span class="pill">Compiled in 30 days</span>
+    <span class="pill">In person, by design</span>
+  </div>
+</section>
+
+<!-- CONFERENCE CALLOUT -->
+<section class="block" id="conf">
+  <div class="conf">
+    <div>
+      <span class="eyebrow">Built around the room you're already in</span>
+      <h2 class="serif">We convene where your industry already gathers.</h2>
+      <p>Panels are timed to major industry conferences — so the right advisors are already there, and so are you. Less travel, more signal.</p>
+      <a href="https://burkettinv.com/#contact" class="btn ghost" style="margin-top:1.6rem">See upcoming conferences</a>
+    </div>
+    <div class="confcards">
+      <div class="confcard"><span class="cn">Nashville Fintech Summit</span><span class="cm">SEP · Nashville, TN</span></div>
+      <div class="confcard"><span class="cn">National Multifamily Conference</span><span class="cm">OCT · Dallas, TX</span></div>
+      <div class="confcard"><span class="cn">DTC &amp; Commerce Forum</span><span class="cm">NOV · Austin, TX</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVISOR CTA -->
+<section class="strip" id="advisors">
+  <span class="eyebrow">For advisors</span>
+  <h2 class="serif" style="margin-top:1rem">Get paid for the wisdom you already have.</h2>
+  <p>Sit on a panel at a conference you're already attending. Earn for your time, expand your network, and lend your experience to the next generation of operators — with zero business-development effort.</p>
+  <div class="pills" style="margin-top:2.4rem">
+    <a href="https://burkettinv.com/#contact" class="btn solid">Become an advisor</a>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">The&nbsp;Panel<span class="dot">.</span></div>
+  <div class="flinks">
+    <a href="#how">How it works</a>
+    <a href="#tiers">Panels</a>
+    <a href="#advisors">For advisors</a>
+    <a href="https://burkettinv.com/#contact">Contact</a>
+  </div>
+  <div class="fnote">A Burkett Investments company · Advice &amp; networking, not investment</div>
+</footer>
+
+<script>
+  document.getElementById('chips').addEventListener('click',function(e){
+    var c=e.target.closest('.chip'); if(!c)return; c.classList.toggle('on');
+  });
+</script>
+</body>
+</html>
