@@ -44,7 +44,20 @@
   .cta:hover{background:var(--gold-l)}
   .ctanote{font-size:.8rem;color:var(--faint);margin-top:1rem}
   footer{padding:1.6rem 3.5rem;border-top:1px solid var(--line);text-align:center;font-size:.72rem;letter-spacing:.06em;color:var(--faint)}
-  @media(max-width:640px){nav{padding:1.1rem 1.4rem}.points{gap:1.6rem}}
+  .wrap2{max-width:960px;margin:0 auto;padding:0 1.5rem}
+  .eyebrow{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:1rem}
+  .howsec{padding:5rem 0;border-top:1px solid var(--line)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:2.5rem}
+  .step{text-align:center}
+  .stepnum{font-size:1.1rem;color:var(--gold-l);margin-bottom:.6rem}
+  .step h3{font-size:1.2rem;font-weight:500;margin-bottom:.6rem}
+  .step p{font-size:.9rem;color:var(--muted);line-height:1.7}
+  .advisorsec{padding:5rem 0 6rem;border-top:1px solid var(--line);text-align:center}
+  .advisorsec h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:500;margin-bottom:1rem}
+  .advlede{font-size:1rem;color:var(--muted);max-width:52ch;margin:0 auto 2rem;line-height:1.8}
+  .cta.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold-l)}
+  .cta.ghost:hover{background:rgba(201,162,60,.1)}
+  @media(max-width:640px){nav{padding:1.1rem 1.4rem}.points{gap:1.6rem}.steps{grid-template-columns:1fr;gap:2.2rem}}
 </style>
 </head>
 <body>
@@ -69,6 +82,39 @@
     <p class="ctanote">Operators and prospective advisors alike &mdash; tell us you&rsquo;d like to know when it opens.</p>
   </div>
 </main>
+
+<section class="howsec">
+  <div class="wrap2">
+    <p class="eyebrow">How It Works</p>
+    <div class="steps">
+      <div class="step">
+        <div class="stepnum serif">01</div>
+        <h3 class="serif">You request a panel</h3>
+        <p>Tell us what you&rsquo;re facing and what you need advice on. We scope it with you directly.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum serif">02</div>
+        <h3 class="serif">We curate the table</h3>
+        <p>We hand-match a small panel of vetted operators whose experience actually fits your situation &mdash; no algorithm, no directory browsing.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum serif">03</div>
+        <h3 class="serif">You sit, in person</h3>
+        <p>A candid, structured session around a conference your industry already attends &mdash; followed by a compiled report of what was said.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="advisorsec">
+  <div class="wrap2">
+    <p class="eyebrow">For Advisors</p>
+    <h2 class="serif">Sit on a panel. Not a board.</h2>
+    <p class="advlede">We&rsquo;re building the bench: sitting COOs, VPs, and operators &mdash; people with real, current experience, not just a big title &mdash; willing to give a few hours of candid advice around events they&rsquo;re already attending.</p>
+    <a href="https://burkettinv.com/#contact" class="cta ghost">I&rsquo;d like to be considered &rarr;</a>
+  </div>
+</section>
+
 <footer>A Burkett Investments company &middot; The Panel &middot; In development, 2026</footer>
 </body>
 </html>
