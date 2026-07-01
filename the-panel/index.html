@@ -3,118 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Panel — Coming soon, by Burkett Investments</title>
-<meta name="description" content="The Panel is a new service Burkett Investments is building: curated, in-person advisory panels for founders and operators. Advice and access, explicitly not investment. In development.">
-<meta property="og:title" content="The Panel — by Burkett Investments">
-<meta property="og:description" content="A curated marketplace for in-person advisory panels. In development.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://burkettinv.com/the-panel/">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>The Panel has moved — Burkett Investments</title>
+<meta http-equiv="refresh" content="0;url=https://themultifamilypanel.com/">
+<link rel="canonical" href="https://themultifamilypanel.com/">
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{--navy:#0b0b0c;--ink:#0c1320;--gold:#c9a23c;--gold-l:#e0c97e;--cream:#f3f1ec;--muted:rgba(243,241,236,.6);--faint:rgba(243,241,236,.4);--line:rgba(255,255,255,.1)}
-  html{scroll-behavior:smooth}
-  body{background:var(--navy);color:var(--cream);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
-  .serif{font-family:'Playfair Display',serif}
-  a{color:inherit;text-decoration:none}
-  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:1.3rem 3.5rem;background:rgba(11,11,12,.7);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .brand{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;letter-spacing:.04em}
-  .brand .dot{color:var(--gold)}
-  .back{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .2s}
-  .back:hover{color:var(--gold-l)}
-  main{flex:1;display:flex;align-items:center;justify-content:center;padding:8rem 1.5rem 4rem}
-  .wrap{max-width:760px;text-align:center}
-  .badge{display:inline-block;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,162,60,.4);border-radius:999px;padding:.5rem 1.2rem;margin-bottom:2.2rem}
-  h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.8rem,7vw,5rem);line-height:1;letter-spacing:.01em;margin-bottom:.4rem}
-  h1 .dot{color:var(--gold)}
-  .byline{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
-  .byline b{color:var(--gold);font-weight:500}
-  .tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.3rem,3.2vw,1.9rem);color:var(--gold-l);line-height:1.3;max-width:22ch;margin:0 auto 1.8rem}
-  .lede{font-size:1.05rem;color:var(--muted);max-width:54ch;margin:0 auto 1rem;line-height:1.8}
-  .notinv{font-size:.82rem;color:var(--faint);letter-spacing:.03em;margin-bottom:2.6rem}
-  .points{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin:0 auto 3rem;max-width:640px}
-  .pt{flex:1;min-width:150px}
-  .pt .t{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--cream);margin-bottom:.3rem}
-  .pt .d{font-size:.8rem;color:var(--muted);line-height:1.55}
-  .ptrule{width:28px;height:1px;background:var(--gold);margin:0 auto .7rem}
-  .cta{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;padding:.95rem 1.8rem;background:var(--gold);color:#15130c;transition:background .2s}
-  .cta:hover{background:var(--gold-l)}
-  .ctanote{font-size:.8rem;color:var(--faint);margin-top:1rem}
-  footer{padding:1.6rem 3.5rem;border-top:1px solid var(--line);text-align:center;font-size:.72rem;letter-spacing:.06em;color:var(--faint)}
-  .wrap2{max-width:960px;margin:0 auto;padding:0 1.5rem}
-  .eyebrow{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:1rem}
-  .howsec{padding:5rem 0;border-top:1px solid var(--line)}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:2.5rem}
-  .step{text-align:center}
-  .stepnum{font-size:1.1rem;color:var(--gold-l);margin-bottom:.6rem}
-  .step h3{font-size:1.2rem;font-weight:500;margin-bottom:.6rem}
-  .step p{font-size:.9rem;color:var(--muted);line-height:1.7}
-  .advisorsec{padding:5rem 0 6rem;border-top:1px solid var(--line);text-align:center}
-  .advisorsec h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:500;margin-bottom:1rem}
-  .advlede{font-size:1rem;color:var(--muted);max-width:52ch;margin:0 auto 2rem;line-height:1.8}
-  .cta.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold-l)}
-  .cta.ghost:hover{background:rgba(201,162,60,.1)}
-  @media(max-width:640px){nav{padding:1.1rem 1.4rem}.points{gap:1.6rem}.steps{grid-template-columns:1fr;gap:2.2rem}}
+  body{font-family:system-ui,sans-serif;background:#0b0b0c;color:#f3f1ec;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:2rem}
+  a{color:#e0c97e}
 </style>
 </head>
 <body>
-<nav>
-  <div class="brand">The&nbsp;Panel<span class="dot">.</span></div>
-  <a href="https://burkettinv.com" class="back">&larr; Burkett Investments</a>
-</nav>
-<main>
-  <div class="wrap">
-    <span class="badge">In development &middot; A Burkett Investments service</span>
-    <h1 class="serif">The&nbsp;Panel<span class="dot">.</span></h1>
-    <div class="byline">by <b>Burkett</b></div>
-    <p class="tagline serif">Sit before a panel of people who&rsquo;ve already done it.</p>
-    <p class="lede">We&rsquo;re building a curated marketplace where founders and operators convene a vetted panel of seasoned advisors to pressure-test their business &mdash; candid, in-person guidance around the industry conferences they already attend, with a compiled report to follow.</p>
-    <p class="notinv">Advice, guidance, and access &mdash; explicitly not an investment platform.</p>
-    <div class="points">
-      <div class="pt"><div class="ptrule"></div><div class="t serif">Curated panels</div><div class="d">A matched table of vetted operators, calibrated to your needs.</div></div>
-      <div class="pt"><div class="ptrule"></div><div class="t serif">In person</div><div class="d">Convened around the conferences your industry already attends.</div></div>
-      <div class="pt"><div class="ptrule"></div><div class="t serif">Advice, not capital</div><div class="d">Guidance and networking &mdash; never funding or equity.</div></div>
-    </div>
-    <a href="https://burkettinv.com/#contact" class="cta">Register your interest &rarr;</a>
-    <p class="ctanote">Operators and prospective advisors alike &mdash; tell us you&rsquo;d like to know when it opens.</p>
-  </div>
-</main>
-
-<section class="howsec">
-  <div class="wrap2">
-    <p class="eyebrow">How It Works</p>
-    <div class="steps">
-      <div class="step">
-        <div class="stepnum serif">01</div>
-        <h3 class="serif">You request a panel</h3>
-        <p>Tell us what you&rsquo;re facing and what you need advice on. We scope it with you directly.</p>
-      </div>
-      <div class="step">
-        <div class="stepnum serif">02</div>
-        <h3 class="serif">We curate the table</h3>
-        <p>We hand-match a small panel of vetted operators whose experience actually fits your situation &mdash; no algorithm, no directory browsing.</p>
-      </div>
-      <div class="step">
-        <div class="stepnum serif">03</div>
-        <h3 class="serif">You sit, in person</h3>
-        <p>A candid, structured session around a conference your industry already attends &mdash; followed by a compiled report of what was said.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="advisorsec">
-  <div class="wrap2">
-    <p class="eyebrow">For Advisors</p>
-    <h2 class="serif">Sit on a panel. Not a board.</h2>
-    <p class="advlede">We&rsquo;re building the bench: sitting COOs, VPs, and operators &mdash; people with real, current experience, not just a big title &mdash; willing to give a few hours of candid advice around events they&rsquo;re already attending.</p>
-    <a href="https://burkettinv.com/#contact" class="cta ghost">I&rsquo;d like to be considered &rarr;</a>
-  </div>
-</section>
-
-<footer>A Burkett Investments company &middot; The Panel &middot; In development, 2026</footer>
+  <p>The Panel now lives at <a href="https://themultifamilypanel.com/">themultifamilypanel.com</a>.</p>
 </body>
 </html>
