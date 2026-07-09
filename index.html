@@ -149,19 +149,23 @@
   }
 
   .nav-wordmark {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 500;
-    color: var(--bone);
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    line-height: 1;
+    display: flex;
+    align-items: center;
     flex-shrink: 0;
-    transition: color var(--motion-fast) var(--ease-out);
+    text-decoration: none;
+    line-height: 0;
+    opacity: 1;
+    transition: opacity var(--motion-fast) var(--ease-out);
+  }
+
+  .nav-wordmark img {
+    height: 36px;
+    width: auto;
+    display: block;
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .nav-wordmark:hover { color: var(--gold-light); }
+    .nav-wordmark:hover { opacity: 0.88; }
   }
 
   .nav-links {
@@ -1036,7 +1040,9 @@
 
 <header class="site-header">
   <nav class="site-nav" aria-label="Main navigation">
-    <a href="#home" class="nav-wordmark">Burkett Investments</a>
+    <a href="#home" class="nav-wordmark" aria-label="Burkett Investments">
+      <img src="assets/burkett-lockup-dark.svg?v=20260709i" alt="Burkett Investments, LLC" width="220" height="66">
+    </a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
       <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
