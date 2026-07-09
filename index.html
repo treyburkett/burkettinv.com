@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Burkett Investments, LLC — Nashville-based real estate consulting and investment management with a national footprint. Institutional-grade advisory, acquisition strategy, and asset stewardship.">
-<meta name="theme-color" content="#0c1320">
+<meta name="theme-color" content="#05080f">
 <link rel="canonical" href="https://burkettinv.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Burkett Investments, LLC — Real Estate Consulting for Serious Capital">
@@ -47,19 +47,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/burkett-tokens.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --navy: #0c1320;
-    --navy-mid: #1a2436;
-    --gold: #c9a23c;
-    --gold-light: #d9be6a;
-    --cream: #f4f1ea;
-    --cream-dark: #e6e2d8;
-    --text-dark: #1a1a1a;
-    --text-mid: #4a4a4a;
-    --text-light: #7a7a7a;
     --nav-height: 4.5rem;
   }
 
@@ -67,7 +59,7 @@
 
   body {
     font-family: 'Jost', sans-serif;
-    background: var(--cream);
+    background: var(--paper);
     color: var(--text-dark);
     font-weight: 300;
     line-height: 1.7;
@@ -131,88 +123,77 @@
     transform: translateY(0);
   }
 
-  /* FLOATING PILL NAV */
-  .nav-shell {
+  /* INK NAV + GOLD HAIRLINE */
+  .site-header {
     position: fixed;
-    top: 1.25rem;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 200;
-    display: flex;
-    justify-content: center;
-    padding: 0 1.25rem;
-    pointer-events: none;
+    background: var(--ink);
+    border-bottom: 1px solid var(--gold);
   }
 
-  nav.pill-nav {
-    pointer-events: auto;
+  nav.site-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    width: min(1100px, 100%);
-    padding: 0.65rem 0.85rem 0.65rem 1.25rem;
-    background: rgba(12, 19, 32, 0.72);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(201, 162, 60, 0.22);
-    border-radius: 999px;
-    box-shadow: 0 12px 40px rgba(12, 19, 32, 0.28);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: var(--nav-height);
+    position: relative;
   }
 
-  .nav-logo {
-    display: inline-flex;
-    align-items: center;
+  .nav-wordmark {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--bone);
     text-decoration: none;
+    letter-spacing: 0.02em;
+    line-height: 1;
     flex-shrink: 0;
+    transition: color var(--motion-fast) var(--ease);
   }
 
-  .nav-logo-img {
-    height: 2rem;
-    width: auto;
-    display: block;
-  }
+  .nav-wordmark:hover { color: var(--gold-light); }
 
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 1.75rem;
+    gap: 1.5rem;
     list-style: none;
   }
 
-  .nav-links a {
+  .nav-links a:not(.bk-btn) {
+    font-family: var(--font-sans);
     text-decoration: none;
     font-size: 0.72rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: rgba(244, 241, 234, 0.72);
-    transition: color 0.2s;
+    transition: color var(--motion-fast) var(--ease);
     white-space: nowrap;
   }
 
-  .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a:not(.bk-btn):hover { color: var(--gold-light); }
 
-  .nav-cta {
-    background: var(--gold);
-    color: var(--navy) !important;
-    padding: 0.5rem 1.1rem;
-    border-radius: 999px;
-    font-weight: 500;
+  .site-nav .bk-btn {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
   }
 
-  .nav-cta:hover { background: var(--gold-light); }
-
-  .nav-login {
-    border: 1px solid rgba(201, 162, 60, 0.55);
-    color: var(--gold-light) !important;
-    padding: 0.48rem 1rem;
-    border-radius: 999px;
-    transition: background 0.25s, color 0.25s;
+  .site-nav .bk-btn-ghost {
+    color: var(--gold-light);
+    border-color: var(--gold);
   }
 
-  .nav-login:hover {
-    background: var(--gold);
-    color: var(--navy) !important;
+  .site-nav .bk-btn-ghost:hover {
+    color: var(--bone);
+    background: var(--gold-wash);
   }
 
   .nav-toggle {
@@ -222,8 +203,8 @@
     width: 40px;
     height: 40px;
     background: transparent;
-    border: 1px solid rgba(201, 162, 60, 0.35);
-    border-radius: 50%;
+    border: 1px solid var(--gold);
+    border-radius: 0;
     color: var(--gold-light);
     cursor: pointer;
     padding: 0;
@@ -289,37 +270,20 @@
     align-items: center;
   }
 
-  .btn-primary {
-    display: inline-block;
+  .hero-actions .bk-btn {
     padding: 0.85rem 2rem;
-    background: var(--gold);
-    color: var(--navy);
-    text-decoration: none;
     font-size: 0.75rem;
     letter-spacing: 0.18em;
-    text-transform: uppercase;
-    font-weight: 500;
-    border-radius: 2px;
-    transition: background 0.25s;
   }
 
-  .btn-primary:hover { background: var(--gold-light); }
-
-  .btn-ghost {
-    display: inline-block;
-    padding: 0.82rem 1.75rem;
-    border: 1px solid rgba(201, 162, 60, 0.45);
+  .hero-actions .bk-btn-ghost {
     color: var(--gold-light);
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    transition: background 0.25s, color 0.25s;
+    border-color: var(--gold);
   }
 
-  .btn-ghost:hover {
-    background: rgba(201, 162, 60, 0.12);
-    color: var(--cream);
+  .hero-actions .bk-btn-ghost:hover {
+    color: var(--bone);
+    background: var(--gold-wash);
   }
 
   .hero-visual {
@@ -859,22 +823,12 @@
     min-height: 130px;
   }
 
-  .btn {
-    display: inline-block;
+  .contact-form .bk-btn {
+    align-self: flex-start;
     padding: 0.9rem 2.25rem;
-    background: var(--navy);
-    color: var(--gold-light);
-    border: none;
-    font-family: 'Jost', sans-serif;
     font-size: 0.75rem;
     letter-spacing: 0.18em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.25s;
-    align-self: flex-start;
   }
-
-  .btn:hover { background: var(--navy-mid); }
 
   #form-msg {
     font-size: 0.85rem;
@@ -966,42 +920,35 @@
   }
 
   @media (max-width: 768px) {
-    .nav-shell { top: 0.75rem; padding: 0 0.75rem; }
-    nav.pill-nav {
-      border-radius: 20px;
-      padding: 0.6rem 0.75rem 0.6rem 1rem;
-    }
+    nav.site-nav { padding: 0 1.25rem; }
     .nav-toggle { display: inline-flex; }
     .nav-links {
       display: none;
       position: absolute;
-      top: calc(100% + 0.65rem);
+      top: 100%;
       left: 0;
       right: 0;
       flex-direction: column;
       align-items: stretch;
       gap: 0;
-      background: rgba(12, 19, 32, 0.96);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(201, 162, 60, 0.22);
-      border-radius: 16px;
-      padding: 0.75rem;
-      box-shadow: 0 16px 40px rgba(12, 19, 32, 0.35);
+      background: var(--ink);
+      border-bottom: 1px solid var(--gold);
+      padding: 0.75rem 1.25rem 1rem;
+      box-shadow: 0 12px 32px rgba(5, 8, 15, 0.35);
     }
     .nav-links.open { display: flex; }
     .nav-links li { width: 100%; }
-    .nav-links a {
+    .nav-links a:not(.bk-btn) {
       display: block;
       padding: 0.8rem 0.65rem;
       font-size: 0.78rem;
     }
-    .nav-links .nav-cta,
-    .nav-links .nav-login {
-      text-align: center;
+    .nav-links .bk-btn {
+      display: flex;
+      width: 100%;
       margin-top: 0.35rem;
+      text-align: center;
     }
-    nav.pill-nav { position: relative; }
     .cred-grid { grid-template-columns: 1fr 1fr; }
     .cred-cell:nth-child(2) { border-right: none; }
     .cred-cell { border-bottom: 1px solid rgba(201, 162, 60, 0.14); }
@@ -1022,11 +969,9 @@
 </head>
 <body>
 
-<div class="nav-shell">
-  <nav class="pill-nav" aria-label="Main navigation">
-    <a href="#home" class="nav-logo">
-      <img src="assets/logo-reverse.png" alt="Burkett Investments, LLC" class="nav-logo-img">
-    </a>
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="#home" class="nav-wordmark">Burkett Investments</a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
       <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
@@ -1037,11 +982,11 @@
       <li><a href="#approach">Approach</a></li>
       <li><a href="#team">Team</a></li>
       <li><a href="https://themultifamilypanel.com" target="_blank" rel="noopener">The Panel</a></li>
-      <li><a href="#contact" class="nav-cta">Contact</a></li>
-      <li><a href="https://app.burkettinv.com" class="nav-login">Login</a></li>
+      <li><a href="#contact" class="bk-btn bk-btn-primary">Contact</a></li>
+      <li><a href="https://app.burkettinv.com" class="bk-btn bk-btn-ghost">Login</a></li>
     </ul>
   </nav>
-</div>
+</header>
 
 <section class="hero" id="home">
   <div class="hero-copy reveal">
@@ -1049,8 +994,8 @@
     <h1>Real estate consulting for serious capital.</h1>
     <p class="hero-sub">Institutional-grade advisory, acquisition strategy, and asset stewardship for owners and investors who expect rigor, not rhetoric.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Start a Conversation</a>
-      <a href="#services" class="btn-ghost">Our Services</a>
+      <a href="#contact" class="bk-btn bk-btn-primary">Start a Conversation</a>
+      <a href="#services" class="bk-btn bk-btn-ghost">Our Services</a>
     </div>
   </div>
   <div class="hero-visual reveal">
@@ -1291,7 +1236,7 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
         </div>
-        <button type="submit" class="btn" id="submit-btn">Send Message</button>
+        <button type="submit" class="bk-btn bk-btn-primary" id="submit-btn">Send Message</button>
         <p id="form-msg"></p>
       </form>
     </div>
