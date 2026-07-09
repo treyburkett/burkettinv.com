@@ -339,31 +339,6 @@
     pointer-events: none;
   }
 
-  .hero-frame {
-    position: absolute;
-    bottom: 3rem;
-    left: -2rem;
-    z-index: 2;
-    background: rgba(244, 241, 234, 0.96);
-    padding: 1.25rem 1.5rem;
-    max-width: 260px;
-    border-left: 3px solid var(--gold);
-  }
-
-  .hero-frame-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--text-light);
-    margin-bottom: 0.35rem;
-  }
-
-  .hero-frame-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
-    color: var(--navy);
-    line-height: 1.25;
-  }
 
   /* CREDIBILITY STRIP */
   .credibility {
@@ -956,7 +931,6 @@
     .hero { grid-template-columns: 1fr; }
     .hero-visual { min-height: 340px; order: -1; }
     .hero-copy { padding: calc(var(--nav-height) + 2rem) 2rem 3rem; }
-    .hero-frame { left: 1.5rem; bottom: 1.5rem; }
     .hero h1 { max-width: none; }
     .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
     .diff-panel { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem; }
@@ -1071,10 +1045,6 @@
   </div>
   <div class="hero-visual reveal">
     <img src="https://images.unsplash.com/photo-1768760906477-70190a413c6d?w=1200&q=80&auto=format&fit=crop" alt="Modern multifamily apartment building with balconies" width="1200" height="900" loading="eager">
-    <div class="hero-frame">
-      <p class="hero-frame-label">Founder-led</p>
-      <p class="hero-frame-text">Two principals. One standard of care.</p>
-    </div>
   </div>
 </section>
 
