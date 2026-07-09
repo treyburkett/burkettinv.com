@@ -1,11 +1,11 @@
 /**
- * Burkett Investments — design tokens + component primitives
+ * Burkett Investments - design tokens + component primitives
  * SSOT: 4. Marketing & Branding/Brand System/burkett-tokens.css
  * Sync into apps via _System/toolkit/sync_brand_tokens.sh
  */
 
 :root {
-  /* Surfaces — dark default stack */
+  /* Surfaces - dark default stack */
   --ink: #05080f;
   --navy: #0c1320;
   --navy-2: #151d2e;
@@ -19,7 +19,7 @@
   --line-light: #d8d4cb;
   --ink-600: #4a5568;
 
-  /* Secondary brand — gold (~15–25% chromatic chrome) */
+  /* Secondary brand - gold (~15-25% chromatic chrome) */
   --gold: #c9a23c;
   --gold-deep: #8f7329;
   --gold-soft: #f0e6c8;
@@ -44,15 +44,16 @@
   --border: var(--line);
   --muted: var(--mute);
 
-  /* Type */
+  /* Type - shell uses system UI; display reserved for Brand docs only */
   --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Jost", "Helvetica Neue", sans-serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-ui: system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
 
-  /* Geometry — sharp only */
+  /* Geometry - sharp chrome; slight radius on inputs only when needed */
   --radius: 0;
   --radius-lg: 0;
-  --radius-sm: 0;
+  --radius-sm: 6px;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -74,19 +75,88 @@
   --text-2xl: clamp(1.85rem, 3.5vw, 2.75rem);
   --text-3xl: clamp(2.25rem, 5vw, 3.5rem);
 
-  /* Motion */
+  /* Motion: Emil Kowalski craft (ease-out default; UI under ~300ms) */
+  --motion-press: 120ms;
   --motion-fast: 150ms;
-  --motion-med: 280ms;
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-med: 220ms;
+  --motion-slow: 280ms;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease: var(--ease-out);
 
-  /* Layout */
-  --sidebar-w: 272px;
-  --topbar-h: 3.5rem;
+  /* Layout - Cursor-density shell */
+  --sidebar-w: 260px;
+  --topbar-h: 2.75rem;
   --content-max: 1120px;
   --narrow-max: 760px;
+
+  /* Cool shell neutrals (Cursor-pretty; paper stays for Brand docs) */
+  --chrome-cool: #f3f3f3;
+  --hairline-cool: #e5e5e5;
+
+  /* Semantic theme - light default (Cursor-pretty tool chrome) */
+  --bg: var(--white);
+  --bg-elevated: var(--white);
+  --fg: #1e1e1e;
+  --fg-muted: #6b6b6b;
+  --chrome: var(--chrome-cool);
+  --chrome-fg: #1e1e1e;
+  --chrome-muted: #6b6b6b;
+  --hairline: var(--hairline-cool);
+  --nav-hover: rgba(0, 0, 0, 0.05);
+  --nav-active: rgba(0, 0, 0, 0.08);
+  --accent-bar: #1e1e1e;
+  --input-bg: var(--chrome-cool);
+  --code-bg: var(--chrome-cool);
 }
 
-/* —— Utilities —— */
+html[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  color-scheme: light;
+  --bg: var(--white);
+  --bg-elevated: var(--white);
+  --fg: #1e1e1e;
+  --fg-muted: #6b6b6b;
+  --chrome: var(--chrome-cool);
+  --chrome-fg: #1e1e1e;
+  --chrome-muted: #6b6b6b;
+  --hairline: var(--hairline-cool);
+  --nav-hover: rgba(0, 0, 0, 0.05);
+  --nav-active: rgba(0, 0, 0, 0.08);
+  --accent-bar: #1e1e1e;
+  --input-bg: var(--chrome-cool);
+  --code-bg: var(--chrome-cool);
+  --text-dark: var(--ink);
+  --text-mid: var(--ink-600);
+  --text-light: var(--mute);
+  --surface-elevated: var(--white);
+  --border: var(--hairline-cool);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1e1e1e;
+  --bg-elevated: #252526;
+  --fg: #cccccc;
+  --fg-muted: #8c8c8c;
+  --chrome: #181818;
+  --chrome-fg: #cccccc;
+  --chrome-muted: #8c8c8c;
+  --hairline: #2b2b2b;
+  --nav-hover: rgba(255, 255, 255, 0.06);
+  --nav-active: rgba(255, 255, 255, 0.1);
+  --accent-bar: #cccccc;
+  --input-bg: #1e1e1e;
+  --code-bg: #1e1e1e;
+  --text-dark: #e8e8e8;
+  --text-mid: #9aa3b2;
+  --text-light: #9aa3b2;
+  --surface-elevated: #2d2d2d;
+  --border: #3c3c3c;
+}
+
+/* -- Utilities -- */
 .bk-sharp { border-radius: 0 !important; }
 
 .bk-label {
@@ -118,7 +188,7 @@
 
 .bk-h1.on-dark { color: var(--bone); }
 
-/* —— Buttons —— */
+/* -- Buttons -- */
 .bk-btn {
   display: inline-flex;
   align-items: center;
@@ -134,7 +204,12 @@
   cursor: pointer;
   padding: 0.75rem 1.35rem;
   text-decoration: none;
-  transition: background var(--motion-fast) var(--ease), color var(--motion-fast) var(--ease), border-color var(--motion-fast) var(--ease);
+  transform: translateZ(0);
+  transition:
+    background var(--motion-fast) var(--ease-out),
+    color var(--motion-fast) var(--ease-out),
+    border-color var(--motion-fast) var(--ease-out),
+    transform var(--motion-press) var(--ease-out);
 }
 
 .bk-btn:disabled,
@@ -144,13 +219,21 @@
   pointer-events: none;
 }
 
+.bk-btn:active:not(:disabled):not(.is-disabled) {
+  transform: scale(0.97);
+}
+
+.bk-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
 .bk-btn-primary {
   background: var(--gold);
   color: var(--ink);
   border-color: var(--gold);
 }
 
-.bk-btn-primary:hover,
 .bk-btn-primary:focus-visible {
   background: var(--gold-deep);
   border-color: var(--gold-deep);
@@ -163,21 +246,29 @@
   border-color: var(--gold);
 }
 
-.bk-btn-ghost:hover {
-  background: var(--gold-wash);
-}
-
 .bk-btn-ink {
   background: var(--ink);
   color: var(--bone);
   border-color: var(--ink);
 }
 
-.bk-btn-ink:hover {
-  background: var(--navy);
+@media (hover: hover) and (pointer: fine) {
+  .bk-btn-primary:hover {
+    background: var(--gold-deep);
+    border-color: var(--gold-deep);
+    color: var(--white);
+  }
+
+  .bk-btn-ghost:hover {
+    background: var(--gold-wash);
+  }
+
+  .bk-btn-ink:hover {
+    background: var(--navy);
+  }
 }
 
-/* —— Forms —— */
+/* -- Forms -- */
 .bk-input,
 .bk-select,
 .bk-textarea {
@@ -190,7 +281,7 @@
   border-radius: 0;
   padding: 0.65rem 0.85rem;
   width: 100%;
-  transition: border-color var(--motion-fast) var(--ease);
+  transition: border-color var(--motion-fast) var(--ease-out);
 }
 
 .bk-input:focus,
@@ -198,6 +289,13 @@
 .bk-textarea:focus {
   outline: none;
   border-color: var(--gold);
+}
+
+.bk-input:focus-visible,
+.bk-select:focus-visible,
+.bk-textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
 }
 
 .bk-field {
@@ -230,7 +328,7 @@
   border-radius: 0;
 }
 
-/* —— Tables —— */
+/* -- Tables -- */
 .bk-table-wrap {
   border: 1px solid var(--line);
   background: var(--navy);
@@ -287,7 +385,7 @@
   border-bottom-color: var(--line-light);
 }
 
-/* —— Status —— */
+/* -- Status -- */
 .bk-badge {
   display: inline-block;
   font-family: var(--font-sans);
@@ -310,7 +408,7 @@
 .bk-status-review { color: var(--review); }
 .bk-status-err { color: var(--err); }
 
-/* —— Tiles / KPI —— */
+/* -- Tiles / KPI -- */
 .bk-tile {
   display: flex;
   flex-direction: column;
@@ -320,10 +418,12 @@
   padding: var(--space-5);
   text-decoration: none;
   color: inherit;
-  transition: border-color var(--motion-fast) var(--ease);
+  transition: border-color var(--motion-fast) var(--ease-out);
 }
 
-.bk-tile:hover { border-color: var(--gold); }
+@media (hover: hover) and (pointer: fine) {
+  .bk-tile:hover { border-color: var(--gold); }
+}
 
 .bk-tile-ink {
   background: var(--ink);
@@ -359,7 +459,7 @@
   line-height: 1.1;
 }
 
-/* —— Callout / chrome —— */
+/* -- Callout / chrome -- */
 .bk-callout {
   background: var(--white);
   border-left: 3px solid var(--gold);
@@ -385,11 +485,14 @@
   vertical-align: middle;
 }
 
-/* Reveal motion */
-.bk-reveal {
+/* Reveal motion: short travel, strong ease-out; marketing may use .reveal */
+.bk-reveal,
+.reveal {
   opacity: 0;
   transform: translateY(12px);
-  transition: opacity var(--motion-med) var(--ease), transform var(--motion-med) var(--ease);
+  transition:
+    opacity var(--motion-med) var(--ease-out),
+    transform var(--motion-med) var(--ease-out);
 }
 
 .bk-reveal.is-visible,
@@ -406,5 +509,15 @@
     transform: none;
     transition: none;
   }
-  .bk-btn { transition: none; }
+
+  .bk-btn {
+    transition:
+      background var(--motion-fast) var(--ease-out),
+      color var(--motion-fast) var(--ease-out),
+      border-color var(--motion-fast) var(--ease-out);
+  }
+
+  .bk-btn:active:not(:disabled):not(.is-disabled) {
+    transform: none;
+  }
 }

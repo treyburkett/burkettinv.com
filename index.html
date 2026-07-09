@@ -112,15 +112,17 @@
     margin-bottom: 2rem;
   }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.75s ease, transform 0.75s ease;
-  }
+  /* Reveal uses tokens from burkett-tokens.css (.reveal); keep page overrides light */
+  .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+  .reveal-stagger > .reveal:nth-child(2) { transition-delay: 40ms; }
+  .reveal-stagger > .reveal:nth-child(3) { transition-delay: 80ms; }
+  .reveal-stagger > .reveal:nth-child(4) { transition-delay: 120ms; }
+  .reveal-stagger > .reveal:nth-child(5) { transition-delay: 160ms; }
+  .reveal-stagger > .reveal:nth-child(6) { transition-delay: 200ms; }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal-stagger > .reveal { transition-delay: 0ms !important; }
   }
 
   /* INK NAV + GOLD HAIRLINE */
@@ -155,10 +157,12 @@
     letter-spacing: 0.02em;
     line-height: 1;
     flex-shrink: 0;
-    transition: color var(--motion-fast) var(--ease);
+    transition: color var(--motion-fast) var(--ease-out);
   }
 
-  .nav-wordmark:hover { color: var(--gold-light); }
+  @media (hover: hover) and (pointer: fine) {
+    .nav-wordmark:hover { color: var(--gold-light); }
+  }
 
   .nav-links {
     display: flex;
@@ -174,11 +178,13 @@
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: rgba(244, 241, 234, 0.72);
-    transition: color var(--motion-fast) var(--ease);
+    transition: color var(--motion-fast) var(--ease-out);
     white-space: nowrap;
   }
 
-  .nav-links a:not(.bk-btn):hover { color: var(--gold-light); }
+  @media (hover: hover) and (pointer: fine) {
+    .nav-links a:not(.bk-btn):hover { color: var(--gold-light); }
+  }
 
   .site-nav .bk-btn {
     padding: 0.55rem 1.1rem;
@@ -191,9 +197,11 @@
     border-color: var(--gold);
   }
 
-  .site-nav .bk-btn-ghost:hover {
-    color: var(--bone);
-    background: var(--gold-wash);
+  @media (hover: hover) and (pointer: fine) {
+    .site-nav .bk-btn-ghost:hover {
+      color: var(--bone);
+      background: var(--gold-wash);
+    }
   }
 
   .nav-toggle {
@@ -209,6 +217,20 @@
     cursor: pointer;
     padding: 0;
     flex-shrink: 0;
+    transform: translateZ(0);
+    transition:
+      background var(--motion-fast) var(--ease-out),
+      color var(--motion-fast) var(--ease-out),
+      transform var(--motion-press) var(--ease-out);
+  }
+
+  .nav-toggle:active {
+    transform: scale(0.97);
+  }
+
+  .nav-toggle:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
   }
 
   .nav-toggle svg { width: 20px; height: 20px; display: block; }
@@ -281,10 +303,13 @@
     border-color: var(--gold);
   }
 
-  .hero-actions .bk-btn-ghost:hover {
-    color: var(--bone);
-    background: var(--gold-wash);
+  @media (hover: hover) and (pointer: fine) {
+    .hero-actions .bk-btn-ghost:hover {
+      color: var(--bone);
+      background: var(--gold-wash);
+    }
   }
+
 
   .hero-visual {
     position: relative;
@@ -557,7 +582,9 @@
     text-decoration: none;
   }
 
-  .bento-cta a:hover { opacity: 0.75; }
+  @media (hover: hover) and (pointer: fine) {
+    .bento-cta a:hover { opacity: 0.75; }
+  }
 
   /* PROCESS TIMELINE */
   #approach {
@@ -707,15 +734,22 @@
     text-transform: uppercase;
     color: var(--gold);
     cursor: pointer;
-    transition: color 0.2s;
+    transition: color var(--motion-fast) var(--ease-out);
   }
 
-  .bio-toggle:hover { color: var(--gold-light); }
+  @media (hover: hover) and (pointer: fine) {
+    .bio-toggle:hover { color: var(--gold-light); }
+  }
+
+  .bio-toggle:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
 
   .bio-toggle svg {
     width: 14px;
     height: 14px;
-    transition: transform 0.25s;
+    transition: transform var(--motion-med) var(--ease-out);
   }
 
   .bio-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
@@ -773,10 +807,12 @@
     font-size: 0.9rem;
     color: var(--text-mid);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: color var(--motion-fast) var(--ease-out);
   }
 
-  .contact-detail:hover { color: var(--navy); }
+  @media (hover: hover) and (pointer: fine) {
+    .contact-detail:hover { color: var(--navy); }
+  }
 
   .contact-form {
     display: flex;
@@ -812,11 +848,17 @@
     font-size: 0.9rem;
     color: var(--text-dark);
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color var(--motion-fast) var(--ease-out);
   }
 
   .form-group input:focus,
   .form-group textarea:focus { border-color: var(--gold); }
+
+  .form-group input:focus-visible,
+  .form-group textarea:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 1px;
+  }
 
   .form-group textarea {
     resize: vertical;
@@ -882,10 +924,12 @@
     text-decoration: none;
     font-size: 0.88rem;
     margin-bottom: 0.5rem;
-    transition: color 0.2s;
+    transition: color var(--motion-fast) var(--ease-out);
   }
 
-  .footer-col a:hover { color: var(--gold-light); }
+  @media (hover: hover) and (pointer: fine) {
+    .footer-col a:hover { color: var(--gold-light); }
+  }
 
   .footer-meta {
     display: block;
@@ -923,7 +967,7 @@
     nav.site-nav { padding: 0 1.25rem; }
     .nav-toggle { display: inline-flex; }
     .nav-links {
-      display: none;
+      display: flex;
       position: absolute;
       top: 100%;
       left: 0;
@@ -935,8 +979,29 @@
       border-bottom: 1px solid var(--gold);
       padding: 0.75rem 1.25rem 1rem;
       box-shadow: 0 12px 32px rgba(5, 8, 15, 0.35);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-6px);
+      transform-origin: top center;
+      transition:
+        opacity var(--motion-med) var(--ease-out),
+        transform var(--motion-med) var(--ease-out),
+        visibility var(--motion-med) var(--ease-out);
     }
-    .nav-links.open { display: flex; }
+    .nav-links.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .nav-links {
+        transition: none;
+        transform: none;
+      }
+    }
     .nav-links li { width: 100%; }
     .nav-links a:not(.bk-btn) {
       display: block;
@@ -1074,33 +1139,33 @@
       <h2 class="section-title">Five disciplines,<br>one standard.</h2>
       <div class="divider"></div>
     </div>
-    <div class="bento reveal">
-      <article class="bento-card span-7 tall">
+    <div class="bento reveal-stagger">
+      <article class="bento-card span-7 tall reveal">
         <span class="bento-num">01</span>
         <h3>Investment Management</h3>
         <p>Strategy, underwriting, and portfolio oversight grounded in disciplined analysis and clear accountability to your capital.</p>
       </article>
-      <article class="bento-card span-5">
+      <article class="bento-card span-5 reveal">
         <span class="bento-num">02</span>
         <h3>Acquisition Advisory</h3>
         <p>Sourcing, diligence, and deal structuring from first look through close.</p>
       </article>
-      <article class="bento-card span-4">
+      <article class="bento-card span-4 reveal">
         <span class="bento-num">03</span>
         <h3>Asset Management</h3>
         <p>Business plans that protect and grow NOI over the hold period.</p>
       </article>
-      <article class="bento-card span-4">
+      <article class="bento-card span-4 reveal">
         <span class="bento-num">04</span>
         <h3>Property Management</h3>
         <p>Hands-on operations and resident experience that supports asset performance.</p>
       </article>
-      <article class="bento-card span-4">
+      <article class="bento-card span-4 reveal">
         <span class="bento-num">05</span>
         <h3>Market Analysis</h3>
         <p>Data-driven views on markets, submarkets, and timing for capital deployment.</p>
       </article>
-      <article class="bento-card span-4 bento-cta">
+      <article class="bento-card span-4 bento-cta reveal">
         <h3>Ready to talk?</h3>
         <p>Tell us about your goals and constraints. We will respond with clarity, not a pitch deck.</p>
         <a href="#contact">See how we work <span aria-hidden="true">&rarr;</span></a>
@@ -1116,7 +1181,7 @@
       <h2 class="section-title">A disciplined approach.</h2>
       <div class="divider"></div>
     </div>
-    <div class="timeline">
+    <div class="timeline reveal-stagger">
       <div class="timeline-step reveal">
         <div class="step-n">01</div>
         <h3>Understand</h3>
@@ -1148,7 +1213,7 @@
       <h2 class="section-title light">The faces behind<br>Burkett Investments</h2>
       <div class="divider"></div>
     </div>
-    <div class="team-grid">
+    <div class="team-grid reveal-stagger">
       <article class="team-card reveal">
         <div class="team-header">
           <img src="assets/team/kyle-burkett.png" alt="Kyle Burkett" class="team-photo" width="108" height="108">
