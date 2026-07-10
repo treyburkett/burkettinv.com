@@ -1247,7 +1247,9 @@
       <li><a href="#team">Team</a></li>
       <li><a href="https://themultifamilypanel.com" target="_blank" rel="noopener">Panel</a></li>
       <li><a href="#contact" class="bk-btn bk-btn-primary">Contact</a></li>
+      <!-- TAKE-DOWN 2026-07-10: Login hidden (not deleted). Restore: uncomment.
       <li><a href="https://app.burkettinv.com" class="bk-btn bk-btn-ghost">Login</a></li>
+      -->
       <li><button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Theme">
         <svg class="cyber-switch" viewBox="0 0 28 14" aria-hidden="true">
           <rect class="track" x="0.6" y="0.6" width="26.8" height="12.8"/>
@@ -1585,10 +1587,12 @@
         <a href="https://themultifamilypanel.com" target="_blank" rel="noopener">The Panel</a>
         <a href="#contact">Contact</a>
       </div>
+      <!-- TAKE-DOWN 2026-07-10: Owner Login hidden (not deleted). Restore: uncomment.
       <div class="footer-col">
         <h4>Owners</h4>
         <a href="https://app.burkettinv.com">Owner Login</a>
       </div>
+      -->
       <div class="footer-col">
         <h4>Get In Touch</h4>
         <a href="mailto:contact@burkettinv.com">contact@burkettinv.com</a>
@@ -1697,7 +1701,8 @@
     }
     if (btn) {
       btn.addEventListener('click', function () {
-        var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        var from = root.getAttribute('data-theme');
+        var next = from === 'light' ? 'dark' : 'light';
         apply(next);
       });
     }
