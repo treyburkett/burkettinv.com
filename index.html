@@ -7,18 +7,18 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="description" content="Burkett Investments, LLC — Nashville-based real estate consulting and investment management with a national footprint. Institutional-grade advisory, acquisition strategy, and asset stewardship.">
-<meta name="theme-color" content="#05080f">
+<meta name="description" content="Burkett Investments, LLC - Nashville-based real estate consulting and investment management with a national footprint. Institutional-grade advisory, acquisition strategy, and asset stewardship.">
+<meta name="theme-color" content="#0a0a0a">
 <link rel="canonical" href="https://burkettinv.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Burkett Investments, LLC — Real Estate Consulting for Serious Capital">
+<meta property="og:title" content="Burkett Investments, LLC - Real Estate Consulting for Serious Capital">
 <meta property="og:description" content="Institutional-grade real estate consulting and investment management. Founder-led, disciplined, results-oriented.">
 <meta property="og:url" content="https://burkettinv.com/">
 <meta property="og:image" content="https://burkettinv.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Burkett Investments, LLC — Real Estate Consulting for Serious Capital">
+<meta name="twitter:title" content="Burkett Investments, LLC - Real Estate Consulting for Serious Capital">
 <meta name="twitter:description" content="Institutional-grade real estate consulting and investment management. Founder-led, disciplined, results-oriented.">
 <meta name="twitter:image" content="https://burkettinv.com/assets/og-image.png">
 <script type="application/ld+json">
@@ -29,7 +29,7 @@
   "url": "https://burkettinv.com",
   "logo": "https://burkettinv.com/favicon-512.png",
   "image": "https://burkettinv.com/assets/og-image.png",
-  "description": "Burkett Investments, LLC — Nashville-based real estate consulting and investment management with a national footprint. Institutional-grade advisory, acquisition strategy, and asset stewardship.",
+  "description": "Burkett Investments, LLC - Nashville-based real estate consulting and investment management with a national footprint. Institutional-grade advisory, acquisition strategy, and asset stewardship.",
   "email": "contact@burkettinv.com",
   "address": {
     "@type": "PostalAddress",
@@ -44,106 +44,100 @@
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/burkett-tokens.css">
+<link rel="stylesheet" href="assets/burkett-tokens.css?v=20260710a">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0; }
 
   :root {
-    --nav-height: 4.5rem;
+    --nav-height: 3.5rem;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Jost', sans-serif;
-    background: var(--paper);
-    color: var(--text-dark);
-    font-weight: 300;
-    line-height: 1.7;
+    font-family: var(--font-ui);
+    background: var(--ink);
+    color: var(--bone);
+    font-weight: 400;
+    line-height: 1.6;
     position: relative;
+    overflow-x: hidden;
   }
 
+  /* Metal grain - subtle, not warm paper */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 9998;
-    opacity: 0.045;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-repeat: repeat;
-    background-size: 180px 180px;
+    background-size: 160px 160px;
   }
 
-  section[id] { scroll-margin-top: calc(var(--nav-height) + 1.5rem); }
+  section[id] { scroll-margin-top: calc(var(--nav-height) + 1.25rem); }
 
   .container {
-    max-width: 1200px;
+    max-width: 1120px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
   }
 
   .section-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.3em;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 0.75rem;
   }
 
   .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.1rem, 4vw, 3.2rem);
-    font-weight: 400;
-    color: var(--navy);
-    line-height: 1.15;
-    margin-bottom: 1.25rem;
+    font-family: var(--font-ui);
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--bone);
+    line-height: 1.1;
+    margin-bottom: 1rem;
   }
-
-  .section-title.light { color: var(--cream); }
 
   .divider {
-    width: 48px;
+    width: 40px;
     height: 1px;
     background: var(--gold);
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
   }
 
-  /* Reveal uses tokens from burkett-tokens.css (.reveal); keep page overrides light */
   .reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
-  .reveal-stagger > .reveal:nth-child(2) { transition-delay: 40ms; }
-  .reveal-stagger > .reveal:nth-child(3) { transition-delay: 80ms; }
-  .reveal-stagger > .reveal:nth-child(4) { transition-delay: 120ms; }
-  .reveal-stagger > .reveal:nth-child(5) { transition-delay: 160ms; }
-  .reveal-stagger > .reveal:nth-child(6) { transition-delay: 200ms; }
+  .reveal-stagger > .reveal:nth-child(2) { transition-delay: var(--duration-stagger); }
+  .reveal-stagger > .reveal:nth-child(3) { transition-delay: calc(var(--duration-stagger) * 2); }
+  .reveal-stagger > .reveal:nth-child(4) { transition-delay: calc(var(--duration-stagger) * 3); }
+  .reveal-stagger > .reveal:nth-child(5) { transition-delay: calc(var(--duration-stagger) * 4); }
+  .reveal-stagger > .reveal:nth-child(6) { transition-delay: calc(var(--duration-stagger) * 5); }
 
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .reveal-stagger > .reveal { transition-delay: 0ms !important; }
-  }
-
-  /* INK NAV + GOLD HAIRLINE */
+  /* NAV */
   .site-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 200;
-    background: var(--ink);
-    border-bottom: 1px solid var(--gold);
+    background: rgba(10, 10, 10, 0.92);
+    border-bottom: 1px solid var(--hairline);
+    backdrop-filter: blur(8px);
   }
 
   nav.site-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
-    max-width: 1200px;
+    gap: 1.5rem;
+    max-width: 1120px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     height: var(--nav-height);
     position: relative;
   }
@@ -155,81 +149,65 @@
     text-decoration: none;
     line-height: 0;
     opacity: 1;
-    transition: opacity var(--motion-fast) var(--ease-out);
+    transition: opacity var(--duration-quick) var(--ease-smooth-out);
   }
 
   .nav-wordmark img {
-    height: 36px;
+    height: 28px;
     width: auto;
     display: block;
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .nav-wordmark:hover { opacity: 0.88; }
+    .nav-wordmark:hover { opacity: 0.85; }
   }
 
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
     list-style: none;
   }
 
   .nav-links a:not(.bk-btn) {
-    font-family: var(--font-sans);
+    font-family: var(--font-ui);
     text-decoration: none;
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(244, 241, 234, 0.72);
-    transition: color var(--motion-fast) var(--ease-out);
+    color: rgba(245, 245, 245, 0.62);
+    transition: color var(--duration-quick) var(--ease-smooth-out);
     white-space: nowrap;
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .nav-links a:not(.bk-btn):hover { color: var(--gold-light); }
+    .nav-links a:not(.bk-btn):hover { color: var(--gold); }
   }
 
   .site-nav .bk-btn {
-    padding: 0.55rem 1.1rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-  }
-
-  .site-nav .bk-btn-ghost {
-    color: var(--gold-light);
-    border-color: var(--gold);
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .site-nav .bk-btn-ghost:hover {
-      color: var(--bone);
-      background: var(--gold-wash);
-    }
+    min-height: 36px;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
   }
 
   .nav-toggle {
     display: none;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     background: transparent;
-    border: 1px solid var(--gold);
-    border-radius: 0;
-    color: var(--gold-light);
+    border: 1px solid var(--line);
+    color: var(--bone);
     cursor: pointer;
     padding: 0;
     flex-shrink: 0;
-    transform: translateZ(0);
     transition:
-      background var(--motion-fast) var(--ease-out),
-      color var(--motion-fast) var(--ease-out),
-      transform var(--motion-press) var(--ease-out);
-  }
-
-  .nav-toggle:active {
-    transform: scale(0.97);
+      background var(--duration-quick) var(--ease-smooth-out),
+      border-color var(--duration-quick) var(--ease-smooth-out),
+      color var(--duration-quick) var(--ease-smooth-out);
   }
 
   .nav-toggle:focus-visible {
@@ -237,198 +215,261 @@
     outline-offset: 2px;
   }
 
-  .nav-toggle svg { width: 20px; height: 20px; display: block; }
+  .nav-toggle[aria-expanded="true"] {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .nav-toggle svg { width: 18px; height: 18px; display: block; }
   .nav-toggle .icon-close { display: none; }
   .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
   .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
 
-  /* HERO */
+  /* Mobile nav dropdown motion scoped below 768px only */
+  @media (max-width: 768px) {
+    .nav-links.t-dropdown {
+      transform-origin: top right;
+      transform: scale(var(--dropdown-pre-scale));
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition:
+        transform var(--dropdown-open-dur) var(--dropdown-ease),
+        opacity var(--dropdown-open-dur) var(--dropdown-ease),
+        visibility var(--dropdown-open-dur) var(--dropdown-ease);
+      will-change: transform, opacity;
+    }
+
+    .nav-links.t-dropdown.is-open {
+      transform: scale(1);
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+
+    .nav-links.t-dropdown.is-closing {
+      transform: scale(var(--dropdown-closing-scale));
+      opacity: 0;
+      pointer-events: none;
+      visibility: visible;
+      transition:
+        transform var(--dropdown-close-dur) var(--dropdown-ease),
+        opacity var(--dropdown-close-dur) var(--dropdown-ease),
+        visibility var(--dropdown-close-dur) var(--dropdown-ease);
+    }
+  }
+
+  /* HERO - full-bleed dark plane, brand-first */
   .hero {
     min-height: 100dvh;
-    background: var(--navy);
+    background: var(--ink);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     align-items: stretch;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid var(--line);
   }
 
   .hero-copy {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: calc(var(--nav-height) + 4rem) 3.5rem 4rem 4rem;
+    padding: calc(var(--nav-height) + 4rem) 2.5rem 4rem 2.5rem;
     position: relative;
     z-index: 1;
+    max-width: 40rem;
+  }
+
+  .hero-brand {
+    margin-bottom: 2rem;
+  }
+
+  .hero-brand img {
+    height: 40px;
+    width: auto;
+    display: block;
   }
 
   .hero-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.28em;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.6rem, 4.8vw, 4.4rem);
-    font-weight: 300;
-    color: var(--cream);
-    line-height: 1.08;
-    letter-spacing: 0.02em;
-    margin-bottom: 1.5rem;
-    max-width: 12ch;
+    font-family: var(--font-ui);
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-weight: 600;
+    color: var(--bone);
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+    max-width: 14ch;
   }
 
   .hero-sub {
-    font-size: 1.02rem;
-    color: rgba(244, 241, 234, 0.62);
+    font-size: 1rem;
+    color: var(--grey-light);
     max-width: 38ch;
-    margin-bottom: 2.5rem;
-    line-height: 1.75;
+    margin-bottom: 2rem;
+    line-height: 1.65;
   }
 
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.75rem;
     align-items: center;
   }
 
-  .hero-actions .bk-btn {
-    padding: 0.85rem 2rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-  }
-
-  .hero-actions .bk-btn-ghost {
-    color: var(--gold-light);
-    border-color: var(--gold);
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .hero-actions .bk-btn-ghost:hover {
-      color: var(--bone);
-      background: var(--gold-wash);
-    }
-  }
-
-
-  .hero-visual {
+  .hero-plane {
     position: relative;
-    min-height: 420px;
+    background: var(--steel);
+    border-left: 1px solid var(--line);
+    min-height: 100%;
   }
 
-  .hero-visual img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .hero-visual::before {
+  .hero-plane::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, var(--navy) 0%, transparent 28%),
-                linear-gradient(180deg, transparent 55%, rgba(12, 19, 32, 0.55) 100%);
-    z-index: 1;
+    background:
+      linear-gradient(135deg, transparent 48%, rgba(201, 162, 60, 0.12) 49%, rgba(201, 162, 60, 0.12) 50%, transparent 51%),
+      linear-gradient(180deg, var(--steel) 0%, var(--ink) 100%);
     pointer-events: none;
   }
 
+  .hero-plane::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12%;
+    bottom: 12%;
+    width: 1px;
+    background: var(--gold);
+    opacity: 0.55;
+  }
 
-  /* CREDIBILITY STRIP */
+  /* Texts reveal (transitions.dev) */
+  .t-stagger-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(var(--stagger-distance));
+    filter: blur(var(--stagger-blur));
+    transition:
+      opacity var(--stagger-dur) var(--stagger-ease),
+      transform var(--stagger-dur) var(--stagger-ease),
+      filter var(--stagger-dur) var(--stagger-ease);
+    will-change: transform, opacity, filter;
+  }
+  .t-stagger-line--2 { transition-delay: var(--stagger-stagger); }
+  .t-stagger-line--3 { transition-delay: calc(var(--stagger-stagger) * 2); }
+  .t-stagger-line--4 { transition-delay: calc(var(--stagger-stagger) * 3); }
+
+  .t-stagger.is-shown .t-stagger-line {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  .t-stagger.is-hiding .t-stagger-line {
+    opacity: 0;
+    transform: translateY(0);
+    filter: blur(0);
+    transition:
+      opacity 200ms ease,
+      transform 0s linear,
+      filter 0s linear;
+    transition-delay: 0s;
+  }
+
+  /* CREDIBILITY */
   .credibility {
-    background: var(--navy);
-    border-top: 1px solid rgba(201, 162, 60, 0.18);
-    border-bottom: 1px solid rgba(201, 162, 60, 0.18);
+    background: var(--steel);
+    border-bottom: 1px solid var(--line);
   }
 
   .cred-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    max-width: 1200px;
+    max-width: 1120px;
     margin: 0 auto;
   }
 
   .cred-cell {
-    padding: 2rem 1.75rem;
-    border-right: 1px solid rgba(201, 162, 60, 0.14);
-    text-align: center;
+    padding: 1.75rem 1.25rem;
+    border-right: 1px solid var(--line);
+    text-align: left;
   }
 
   .cred-cell:last-child { border-right: none; }
 
   .cred-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3vw, 2.6rem);
-    font-weight: 400;
+    font-family: var(--font-ui);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
     color: var(--gold);
     line-height: 1;
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.4rem;
   }
 
   .cred-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(244, 241, 234, 0.48);
+    color: var(--mute);
   }
 
   /* ABOUT */
   #about {
-    padding: 6.5rem 0;
-    background: var(--cream);
+    padding: 6rem 0;
+    background: var(--ink);
+    border-bottom: 1px solid var(--line);
   }
 
   .about-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
     gap: clamp(1.75rem, 3.5vw, 2.75rem);
-    align-items: center;
-  }
-
-  .about-copy .section-title {
-    margin-bottom: 0;
-  }
-
-  .about-copy .divider {
-    margin-bottom: 1.5rem;
+    align-items: start;
   }
 
   .about-text p {
-    color: var(--text-mid);
-    font-size: 1.05rem;
-    margin-bottom: 1.1rem;
+    color: var(--grey-light);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    max-width: 58ch;
   }
 
-  .about-text p:last-child {
-    margin-bottom: 0;
-  }
+  .about-text p:last-child { margin-bottom: 0; }
 
   .about-aside {
-    background: white;
-    border: 1px solid var(--cream-dark);
-    padding: 2rem 1.85rem;
-    height: fit-content;
+    background: var(--steel);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--gold);
+    padding: 1.75rem 1.5rem;
   }
 
   .about-aside h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.65rem;
-    font-weight: 400;
-    color: var(--navy);
+    font-family: var(--font-ui);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--bone);
     margin-bottom: 1rem;
-    line-height: 1.25;
+    line-height: 1.3;
   }
 
   .about-aside p {
-    color: var(--text-mid);
-    font-size: 0.95rem;
-    margin-bottom: 0.85rem;
+    color: var(--mute);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
   }
 
   .about-aside p:last-child { margin-bottom: 0; }
@@ -436,46 +477,32 @@
   /* DIFFERENTIATOR */
   .differentiator {
     padding: 5rem 0;
-    background: var(--navy-mid);
+    background: var(--steel);
+    border-bottom: 1px solid var(--line);
   }
 
   .diff-panel {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 2.5rem;
-    align-items: start;
-    padding: 3rem;
-    border: 1px solid rgba(201, 162, 60, 0.28);
-    background: linear-gradient(135deg, rgba(201, 162, 60, 0.06) 0%, transparent 55%);
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0;
+    border: none;
+    background: transparent;
   }
-
-  .diff-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    border: 1px solid rgba(201, 162, 60, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    flex-shrink: 0;
-  }
-
-  .diff-icon svg { width: 28px; height: 28px; }
-
-  .diff-content .section-label { margin-bottom: 0.5rem; }
 
   .diff-content h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    font-weight: 400;
-    color: var(--cream);
+    font-family: var(--font-ui);
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--bone);
     margin-bottom: 1rem;
-    line-height: 1.2;
+    line-height: 1.15;
+    max-width: 28ch;
   }
 
   .diff-content p {
-    color: rgba(244, 241, 234, 0.68);
+    color: var(--grey-light);
     font-size: 1rem;
     max-width: 62ch;
     margin-bottom: 0.85rem;
@@ -483,41 +510,30 @@
 
   .diff-content p:last-child { margin-bottom: 0; }
 
-  /* SERVICES BENTO */
+  /* SERVICES */
   #services {
-    padding: 6.5rem 0;
-    background: var(--cream-dark);
+    padding: 6rem 0;
+    background: var(--ink);
+    border-bottom: 1px solid var(--line);
   }
 
   .bento {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: minmax(160px, auto);
+    grid-auto-rows: minmax(140px, auto);
     gap: 1px;
-    background: rgba(201, 162, 60, 0.22);
-    border: 1px solid rgba(201, 162, 60, 0.22);
-    margin-top: 2.5rem;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-top: 2rem;
   }
 
   .bento-card {
-    background: var(--navy);
-    padding: 2rem;
+    background: var(--steel);
+    padding: 1.75rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
-    overflow: hidden;
-  }
-
-  .bento-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle at top right, rgba(201, 162, 60, 0.1), transparent 70%);
-    pointer-events: none;
   }
 
   .bento-card.span-7 { grid-column: span 7; }
@@ -525,29 +541,30 @@
   .bento-card.span-4 { grid-column: span 4; }
   .bento-card.span-8 { grid-column: span 8; }
   .bento-card.span-6 { grid-column: span 6; }
-  .bento-card.tall { min-height: 220px; }
+  .bento-card.tall { min-height: 200px; }
 
   .bento-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
-    letter-spacing: 0.12em;
-    color: rgba(201, 162, 60, 0.55);
-    margin-bottom: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--mute);
+    margin-bottom: 0.65rem;
   }
 
   .bento-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.35rem, 2vw, 1.75rem);
-    font-weight: 500;
-    color: var(--gold);
-    margin-bottom: 0.55rem;
+    font-family: var(--font-ui);
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--bone);
+    margin-bottom: 0.5rem;
     line-height: 1.2;
   }
 
   .bento-card p {
-    color: rgba(244, 241, 234, 0.62);
-    font-size: 0.92rem;
-    line-height: 1.65;
+    color: var(--mute);
+    font-size: 0.9rem;
+    line-height: 1.55;
     max-width: 42ch;
   }
 
@@ -557,20 +574,20 @@
     align-items: flex-start;
   }
 
-  .bento-cta h3 { color: var(--navy); margin-bottom: 0.35rem; }
-
-  .bento-cta p { color: rgba(12, 19, 32, 0.72); }
+  .bento-cta h3 { color: var(--ink); }
+  .bento-cta p { color: rgba(10, 10, 10, 0.72); }
+  .bento-cta .bento-num { color: rgba(10, 10, 10, 0.45); }
 
   .bento-cta a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     margin-top: 1rem;
-    color: var(--navy);
-    font-size: 0.75rem;
-    letter-spacing: 0.16em;
+    color: var(--ink);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-weight: 500;
     text-decoration: none;
   }
 
@@ -578,16 +595,17 @@
     .bento-cta a:hover { opacity: 0.75; }
   }
 
-  /* PROCESS TIMELINE */
+  /* APPROACH */
   #approach {
-    padding: 6.5rem 0;
-    background: var(--cream);
+    padding: 6rem 0;
+    background: var(--steel);
+    border-bottom: 1px solid var(--line);
   }
 
   .timeline {
     position: relative;
-    margin-top: 2.5rem;
-    padding-left: 2.5rem;
+    margin-top: 2rem;
+    padding-left: 1.75rem;
     max-width: 720px;
   }
 
@@ -595,15 +613,15 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 0.5rem;
-    bottom: 0.5rem;
+    top: 0.35rem;
+    bottom: 0.35rem;
     width: 1px;
-    background: linear-gradient(to bottom, var(--gold), rgba(201, 162, 60, 0.2));
+    background: var(--line);
   }
 
   .timeline-step {
     position: relative;
-    padding: 0 0 3rem 2rem;
+    padding: 0 0 2.25rem 1.5rem;
   }
 
   .timeline-step:last-child { padding-bottom: 0; }
@@ -611,236 +629,290 @@
   .timeline-step::before {
     content: '';
     position: absolute;
-    left: -2.5rem;
-    top: 0.45rem;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: var(--cream);
-    border: 2px solid var(--gold);
-    transform: translateX(-5px);
+    left: -1.75rem;
+    top: 0.4rem;
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    transform: translateX(-3px);
   }
 
   .step-n {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     color: var(--gold);
     letter-spacing: 0.08em;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.3rem;
   }
 
   .timeline-step h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.55rem;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 0.5rem;
+    font-family: var(--font-ui);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--bone);
+    margin-bottom: 0.4rem;
   }
 
   .timeline-step p {
-    color: var(--text-mid);
+    color: var(--mute);
     font-size: 0.95rem;
-    line-height: 1.7;
+    line-height: 1.6;
     max-width: 52ch;
   }
 
   /* TEAM */
   #team {
-    padding: 6.5rem 0;
-    background: var(--navy);
+    padding: 6rem 0;
+    background: var(--ink);
+    border-bottom: 1px solid var(--line);
   }
 
   .team-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 2.5rem;
-  }
-
-  .team-card {
-    padding: 2.25rem;
-    border: 1px solid rgba(201, 162, 60, 0.2);
-    background: rgba(255, 255, 255, 0.03);
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .team-header {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-  }
-
-  .team-photo {
-    width: 108px;
-    height: 108px;
-    object-fit: cover;
-    object-position: top center;
-    flex-shrink: 0;
-    border: 2px solid rgba(201, 162, 60, 0.35);
-    border-radius: 28%;
-  }
-
-  .team-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.55rem;
-    font-weight: 400;
-    color: var(--cream);
-    margin-bottom: 0.2rem;
-  }
-
-  .team-title {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  .team-bio-wrap { position: relative; }
-
-  .team-bio {
-    font-size: 0.9rem;
-    color: rgba(244, 241, 234, 0.62);
-    line-height: 1.75;
-  }
-
-  .team-bio.collapsed {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .bio-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    margin-top: 0.85rem;
-    background: none;
-    border: none;
-    padding: 0;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gold);
-    cursor: pointer;
-    transition: color var(--motion-fast) var(--ease-out);
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .bio-toggle:hover { color: var(--gold-light); }
-  }
-
-  .bio-toggle:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 3px;
-  }
-
-  .bio-toggle svg {
-    width: 14px;
-    height: 14px;
-    transition: transform var(--motion-med) var(--ease-out);
-  }
-
-  .bio-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
-
-  /* CONTACT */
-  #contact {
-    padding: 6.5rem 0;
-    background: var(--cream-dark);
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
     margin-top: 2rem;
   }
 
-  .contact-desc {
-    font-size: 1.05rem;
-    color: var(--text-mid);
-    margin-bottom: 2rem;
-  }
-
-  .contact-people {
+  .team-card {
+    padding: 1.75rem;
+    background: var(--steel);
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
   }
 
+  .team-header {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  .team-photo {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    object-position: top center;
+    flex-shrink: 0;
+    border: 1px solid var(--line);
+  }
+
+  .team-name {
+    font-family: var(--font-ui);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--bone);
+    margin-bottom: 0.2rem;
+  }
+
+  .team-title {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* Accordion bios */
+  .t-acc { width: 100%; }
+
+  .t-acc-head {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+    background: none;
+    border: none;
+    padding: 0;
+    min-height: 44px;
+    font-family: var(--font-ui);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    cursor: pointer;
+  }
+
+  .t-acc-head:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  .t-acc-chevron {
+    display: inline-flex;
+    transform: scaleY(1);
+    transform-origin: center;
+    transition: transform var(--acc-chevron) var(--acc-ease);
+  }
+
+  .t-acc-chevron svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .t-acc-chevron path { vector-effect: non-scaling-stroke; }
+
+  .t-acc[data-open="true"] .t-acc-chevron {
+    transform: scaleY(-1);
+  }
+
+  .t-acc-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--acc-collapse) var(--acc-ease);
+  }
+
+  .t-acc[data-open="true"] .t-acc-panel {
+    grid-template-rows: 1fr;
+    transition: grid-template-rows var(--acc-expand) var(--acc-ease);
+  }
+
+  .t-acc-panel-inner {
+    overflow: hidden;
+    opacity: 0;
+    filter: blur(2px);
+    transition:
+      opacity var(--acc-collapse) var(--acc-ease),
+      filter var(--acc-collapse) var(--acc-ease);
+  }
+
+  .t-acc[data-open="true"] .t-acc-panel-inner {
+    opacity: 1;
+    filter: blur(0);
+    transition:
+      opacity var(--acc-expand) var(--acc-ease),
+      filter var(--acc-expand) var(--acc-ease);
+  }
+
+  .team-bio-preview,
+  .t-acc-panel-inner .team-bio {
+    font-size: 0.9rem;
+    color: var(--mute);
+    line-height: 1.65;
+  }
+
+  .team-bio-preview {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .t-acc[data-open="true"] .team-bio-preview { display: none; }
+
+  /* CONTACT */
+  #contact {
+    padding: 6rem 0;
+    background: var(--steel);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 1.75rem;
+  }
+
+  .contact-desc {
+    font-size: 1rem;
+    color: var(--grey-light);
+    margin-bottom: 1.75rem;
+    max-width: 42ch;
+  }
+
+  .contact-people {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
   .contact-person {
-    padding: 1.35rem 1.5rem;
-    background: white;
-    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.35rem;
+    background: var(--ink);
+    border-left: 2px solid var(--gold);
   }
 
   .contact-person-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--navy);
+    font-family: var(--font-ui);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--bone);
     margin-bottom: 0.15rem;
   }
 
   .contact-person-role {
-    font-size: 0.68rem;
-    letter-spacing: 0.15em;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.55rem;
   }
 
   .contact-detail {
     display: flex;
     align-items: center;
-    gap: 0.55rem;
+    gap: 0.5rem;
     font-size: 0.9rem;
-    color: var(--text-mid);
+    color: var(--mute);
     text-decoration: none;
-    transition: color var(--motion-fast) var(--ease-out);
+    transition: color var(--duration-quick) var(--ease-smooth-out);
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .contact-detail:hover { color: var(--navy); }
+    .contact-detail:hover { color: var(--gold); }
   }
 
   .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.85rem;
   }
 
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 0.85rem;
   }
 
   .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.35rem;
   }
 
   .form-group label {
-    font-size: 0.68rem;
-    letter-spacing: 0.15em;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--text-light);
+    color: var(--mute);
   }
 
   .form-group input,
   .form-group textarea {
-    padding: 0.75rem 1rem;
-    background: white;
-    border: 1px solid var(--cream-dark);
-    font-family: 'Jost', sans-serif;
-    font-size: 0.9rem;
-    color: var(--text-dark);
+    padding: 0.75rem 0.9rem;
+    min-height: 44px;
+    background: var(--ink);
+    border: 1px solid var(--line);
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    color: var(--bone);
     outline: none;
-    transition: border-color var(--motion-fast) var(--ease-out);
+    transition: border-color var(--duration-quick) var(--ease-smooth-out);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(138, 138, 138, 0.7);
   }
 
   .form-group input:focus,
@@ -859,9 +931,6 @@
 
   .contact-form .bk-btn {
     align-self: flex-start;
-    padding: 0.9rem 2.25rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
   }
 
   #form-msg {
@@ -871,82 +940,96 @@
     margin-top: 0.25rem;
   }
 
+  .contact-locale {
+    margin-top: 1.75rem;
+    color: var(--mute);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+  }
+
   /* FOOTER */
   footer {
-    background: var(--navy);
-    padding: 4rem 0 2.5rem;
-    border-top: 1px solid rgba(201, 162, 60, 0.15);
+    background: var(--ink);
+    padding: 3.5rem 0 2rem;
   }
 
   .footer-top {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 2rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
   }
 
   .footer-logo-img {
-    height: 2.5rem;
+    height: 2rem;
     width: auto;
     display: block;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.75rem;
   }
 
   .footer-tag {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    color: var(--gold-light);
-    font-size: 1.2rem;
-    max-width: 22ch;
+    font-family: var(--font-ui);
+    font-style: normal;
+    color: var(--mute);
+    font-size: 0.9rem;
+    max-width: 28ch;
+    line-height: 1.5;
   }
 
   .footer-col h4 {
     color: var(--gold);
-    font-size: 0.68rem;
-    letter-spacing: 0.16em;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    margin-bottom: 1rem;
-    font-weight: 500;
+    margin-bottom: 0.85rem;
   }
 
   .footer-col a {
     display: block;
-    color: rgba(244, 241, 234, 0.58);
+    color: var(--mute);
     text-decoration: none;
     font-size: 0.88rem;
-    margin-bottom: 0.5rem;
-    transition: color var(--motion-fast) var(--ease-out);
+    margin-bottom: 0.45rem;
+    transition: color var(--duration-quick) var(--ease-smooth-out);
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .footer-col a:hover { color: var(--gold-light); }
+    .footer-col a:hover { color: var(--gold); }
   }
 
   .footer-meta {
     display: block;
-    color: rgba(244, 241, 234, 0.38);
-    font-size: 0.82rem;
+    color: rgba(138, 138, 138, 0.75);
+    font-size: 0.8rem;
     margin-top: 0.35rem;
   }
 
   .footer-bottom {
-    margin-top: 1.75rem;
-    font-size: 0.72rem;
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
     letter-spacing: 0.04em;
-    color: rgba(244, 241, 234, 0.35);
+    color: rgba(138, 138, 138, 0.65);
     text-align: center;
   }
-
 
   /* RESPONSIVE */
   @media (max-width: 1024px) {
     .hero { grid-template-columns: 1fr; }
-    .hero-visual { min-height: 340px; order: -1; }
-    .hero-copy { padding: calc(var(--nav-height) + 2rem) 2rem 3rem; }
+    .hero-plane {
+      min-height: 220px;
+      border-left: none;
+      border-top: 1px solid var(--line);
+      order: -1;
+    }
+    .hero-plane::after { display: none; }
+    .hero-copy {
+      padding: 2.5rem 1.5rem 3rem;
+      max-width: none;
+    }
     .hero h1 { max-width: none; }
-    .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-    .diff-panel { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem; }
+    .about-layout { grid-template-columns: 1fr; gap: 2rem; }
     .bento-card.span-7,
     .bento-card.span-5,
     .bento-card.span-4,
@@ -955,7 +1038,7 @@
   }
 
   @media (max-width: 768px) {
-    nav.site-nav { padding: 0 1.25rem; }
+    nav.site-nav { padding: 0 1rem; }
     .nav-toggle { display: inline-flex; }
     .nav-links {
       display: flex;
@@ -967,59 +1050,55 @@
       align-items: stretch;
       gap: 0;
       background: var(--ink);
-      border-bottom: 1px solid var(--gold);
-      padding: 0.75rem 1.25rem 1rem;
-      box-shadow: 0 12px 32px rgba(5, 8, 15, 0.35);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transform: translateY(-6px);
-      transform-origin: top center;
-      transition:
-        opacity var(--motion-med) var(--ease-out),
-        transform var(--motion-med) var(--ease-out),
-        visibility var(--motion-med) var(--ease-out);
-    }
-    .nav-links.open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      transform: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .nav-links {
-        transition: none;
-        transform: none;
-      }
+      border-bottom: 1px solid var(--hairline);
+      padding: 0.5rem 1rem 1rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
     }
     .nav-links li { width: 100%; }
     .nav-links a:not(.bk-btn) {
       display: block;
-      padding: 0.8rem 0.65rem;
-      font-size: 0.78rem;
+      padding: 0.85rem 0.5rem;
+      font-size: 0.75rem;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
     }
     .nav-links .bk-btn {
       display: flex;
       width: 100%;
       margin-top: 0.35rem;
-      text-align: center;
+      min-height: 44px;
     }
     .cred-grid { grid-template-columns: 1fr 1fr; }
     .cred-cell:nth-child(2) { border-right: none; }
-    .cred-cell { border-bottom: 1px solid rgba(201, 162, 60, 0.14); }
+    .cred-cell { border-bottom: 1px solid var(--line); }
     .cred-cell:nth-child(3),
     .cred-cell:nth-child(4) { border-bottom: none; }
     .team-grid,
     .contact-grid,
     .footer-top { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
-    .container { padding: 0 1.25rem; }
+    .container { padding: 0 1rem; }
     #about, #services, #approach, #team, #contact { padding: 4rem 0; }
-    .hero-copy { padding: calc(var(--nav-height) + 1.5rem) 1.25rem 2.5rem; }
-    .timeline { padding-left: 1.75rem; }
-    .timeline-step { padding-left: 1.25rem; }
-    .timeline-step::before { left: -1.75rem; }
+    .hero-copy { padding: 2rem 1rem 2.5rem; }
+    .hero-brand img { height: 32px; }
+  }
+
+  @media (min-width: 1400px) {
+    .container,
+    nav.site-nav,
+    .cred-grid { max-width: 1280px; }
+    .hero-copy { padding-left: clamp(2.5rem, 8vw, 6rem); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal-stagger > .reveal { transition-delay: 0ms !important; }
+    .t-stagger-line { transition: none !important; opacity: 1; transform: none; filter: none; }
+    .t-dropdown { transition: none !important; }
+    .t-acc-panel,
+    .t-acc-panel-inner,
+    .t-acc-chevron { transition: none !important; }
   }
 </style>
 </head>
@@ -1031,10 +1110,10 @@
       <img src="assets/logo-reverse.png?v=20260709i" alt="Burkett Investments, LLC" width="220" height="66">
     </a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
-      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
     </button>
-    <ul class="nav-links" id="nav-links">
+    <ul class="nav-links t-dropdown" id="nav-links" data-origin="top-right">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#approach">Approach</a></li>
@@ -1047,18 +1126,21 @@
 </header>
 
 <section class="hero" id="home">
-  <div class="hero-copy reveal">
-    <p class="hero-eyebrow">Nashville, Tennessee</p>
-    <h1>Real estate consulting for serious capital.</h1>
-    <p class="hero-sub">Institutional-grade advisory, acquisition strategy, and asset stewardship for owners and investors who expect rigor, not rhetoric.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="bk-btn bk-btn-primary">Start a Conversation</a>
-      <a href="#services" class="bk-btn bk-btn-ghost">Our Services</a>
+  <div class="hero-copy">
+    <div class="hero-brand">
+      <img src="assets/logo-reverse.png?v=20260709i" alt="Burkett Investments, LLC" width="220" height="66">
+    </div>
+    <div class="t-stagger" id="heroStagger">
+      <p class="hero-eyebrow t-stagger-line t-stagger-line--1">Nashville, Tennessee</p>
+      <h1 class="t-stagger-line t-stagger-line--2">Real estate consulting for serious capital.</h1>
+      <p class="hero-sub t-stagger-line t-stagger-line--3">Institutional-grade advisory, acquisition strategy, and asset stewardship for owners and investors who expect rigor, not rhetoric.</p>
+      <div class="hero-actions t-stagger-line t-stagger-line--4">
+        <a href="#contact" class="bk-btn bk-btn-primary">Start a Conversation</a>
+        <a href="#services" class="bk-btn bk-btn-ghost">Our Services</a>
+      </div>
     </div>
   </div>
-  <div class="hero-visual reveal">
-    <img src="https://images.unsplash.com/photo-1768760906477-70190a413c6d?w=1200&q=80&auto=format&fit=crop" alt="Modern multifamily apartment building with balconies" width="1200" height="900" loading="eager">
-  </div>
+  <div class="hero-plane" aria-hidden="true"></div>
 </section>
 
 <div class="credibility reveal">
@@ -1108,9 +1190,6 @@
 <section class="differentiator">
   <div class="container">
     <div class="diff-panel reveal">
-      <div class="diff-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
       <div class="diff-content">
         <p class="section-label">What Sets Us Apart</p>
         <h2>Principal access from first look through stewardship</h2>
@@ -1155,6 +1234,7 @@
         <p>Data-driven views on markets, submarkets, and timing for capital deployment.</p>
       </article>
       <article class="bento-card span-4 bento-cta reveal">
+        <span class="bento-num">06</span>
         <h3>Ready to talk?</h3>
         <p>Tell us about your goals and constraints. We will respond with clarity, not a pitch deck.</p>
         <a href="#contact">See how we work <span aria-hidden="true">&rarr;</span></a>
@@ -1199,34 +1279,54 @@
   <div class="container">
     <div class="reveal">
       <p class="section-label">Our Leadership</p>
-      <h2 class="section-title light">The faces behind<br>Burkett Investments</h2>
+      <h2 class="section-title">The faces behind<br>Burkett Investments</h2>
       <div class="divider"></div>
     </div>
     <div class="team-grid reveal-stagger">
       <article class="team-card reveal">
         <div class="team-header">
-          <img src="assets/team/kyle-burkett.png" alt="Kyle Burkett" class="team-photo" width="108" height="108">
+          <img src="assets/team/kyle-burkett.png" alt="Kyle Burkett" class="team-photo" width="88" height="88">
           <div>
             <h3 class="team-name">Kyle Burkett</h3>
             <p class="team-title">Co-Founder</p>
           </div>
         </div>
-        <div class="team-bio-wrap">
-          <p class="team-bio collapsed" id="bio-kyle">With over 20 years of experience in the real estate industry, Kyle brings a wealth of expertise spanning multifamily, senior housing, self-storage, retail, and short-term rental investments across the country. He holds an MBA from Alliance Manchester Business School and the CAPS designation, and has served as a senior leader at Nicol Investment Company, Greystar, and Pegasus Residential. A board member of The Gulch Nashville, Kyle is deeply connected to the national real estate community. He also advises property owners and managers on specialized insurance and risk management products that generate meaningful revenue back to their operations, a unique value-add that sets Burkett Investments apart.</p>
-          <button type="button" class="bio-toggle" aria-expanded="false" aria-controls="bio-kyle" data-bio-toggle>Read full bio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="t-acc" data-open="false">
+          <p class="team-bio-preview">With over 20 years of experience in the real estate industry, Kyle brings a wealth of expertise spanning multifamily, senior housing, self-storage, retail, and short-term rental investments across the country.</p>
+          <div class="t-acc-panel">
+            <div class="t-acc-panel-inner">
+              <p class="team-bio" id="bio-kyle">With over 20 years of experience in the real estate industry, Kyle brings a wealth of expertise spanning multifamily, senior housing, self-storage, retail, and short-term rental investments across the country. He holds an MBA from Alliance Manchester Business School and the CAPS designation, and has served as a senior leader at Nicol Investment Company, Greystar, and Pegasus Residential. A board member of The Gulch Nashville, Kyle is deeply connected to the national real estate community. He also advises property owners and managers on specialized insurance and risk management products that generate meaningful revenue back to their operations, a unique value-add that sets Burkett Investments apart.</p>
+            </div>
+          </div>
+          <button type="button" class="t-acc-head" aria-expanded="false" aria-controls="bio-kyle">
+            <span class="t-acc-label">Read full bio</span>
+            <span class="t-acc-chevron" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6.5L8 10.5L12 6.5"/></svg>
+            </span>
+          </button>
         </div>
       </article>
       <article class="team-card reveal">
         <div class="team-header">
-          <img src="assets/team/trey-burkett.png" alt="Trey Burkett" class="team-photo" width="108" height="108">
+          <img src="assets/team/trey-burkett.png" alt="Trey Burkett" class="team-photo" width="88" height="88">
           <div>
             <h3 class="team-name">Trey Burkett</h3>
             <p class="team-title">Co-Founder</p>
           </div>
         </div>
-        <div class="team-bio-wrap">
-          <p class="team-bio collapsed" id="bio-trey">Trey is a Project Management Professional (PMP) and University of Minnesota graduate with a background in finance, operations, and strategic project management. He brings a disciplined, analytical approach to real estate investing, combining rigorous process management with a sharp eye for market opportunity. Beyond deal strategy, Trey oversees the firm's back office operations and technology infrastructure, ensuring Burkett Investments runs efficiently, securely, and at scale.</p>
-          <button type="button" class="bio-toggle" aria-expanded="false" aria-controls="bio-trey" data-bio-toggle>Read full bio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="t-acc" data-open="false">
+          <p class="team-bio-preview">Trey is a Project Management Professional (PMP) and University of Minnesota graduate with a background in finance, operations, and strategic project management.</p>
+          <div class="t-acc-panel">
+            <div class="t-acc-panel-inner">
+              <p class="team-bio" id="bio-trey">Trey is a Project Management Professional (PMP) and University of Minnesota graduate with a background in finance, operations, and strategic project management. He brings a disciplined, analytical approach to real estate investing, combining rigorous process management with a sharp eye for market opportunity. Beyond deal strategy, Trey oversees the firm's back office operations and technology infrastructure, ensuring Burkett Investments runs efficiently, securely, and at scale.</p>
+            </div>
+          </div>
+          <button type="button" class="t-acc-head" aria-expanded="false" aria-controls="bio-trey">
+            <span class="t-acc-label">Read full bio</span>
+            <span class="t-acc-chevron" aria-hidden="true">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6.5L8 10.5L12 6.5"/></svg>
+            </span>
+          </button>
         </div>
       </article>
     </div>
@@ -1261,7 +1361,7 @@
             </a>
           </div>
         </div>
-        <p class="footer-meta" style="margin-top: 2rem;">Based in Nashville, Tennessee</p>
+        <p class="contact-locale">Based in Nashville, Tennessee</p>
       </div>
       <form class="contact-form reveal" id="contact-form">
         <input type="hidden" name="access_key" value="fe49751a-5683-46b5-b485-ea80860c029d">
@@ -1328,7 +1428,6 @@
   </div>
 </footer>
 
-
 <script>
 (function () {
   var reveals = document.querySelectorAll('.reveal');
@@ -1346,32 +1445,67 @@
     reveals.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  document.querySelectorAll('[data-bio-toggle]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var bio = document.getElementById(btn.getAttribute('aria-controls'));
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-      bio.classList.toggle('collapsed', expanded);
-      btn.childNodes[0].textContent = expanded ? 'Read full bio ' : 'Show less ';
+  /* Hero texts-reveal */
+  var hero = document.getElementById('heroStagger');
+  if (hero) {
+    requestAnimationFrame(function () {
+      hero.classList.remove('is-hiding');
+      hero.classList.remove('is-shown');
+      void hero.offsetHeight;
+      hero.classList.add('is-shown');
+    });
+  }
+
+  /* Team accordion */
+  document.querySelectorAll('.t-acc').forEach(function (acc) {
+    var head = acc.querySelector('.t-acc-head');
+    if (!head) return;
+    head.addEventListener('click', function () {
+      var open = acc.getAttribute('data-open') === 'true';
+      var next = !open;
+      acc.setAttribute('data-open', String(next));
+      head.setAttribute('aria-expanded', String(next));
+      var label = head.querySelector('.t-acc-label');
+      if (label) label.textContent = next ? 'Show less' : 'Read full bio';
     });
   });
 
+  /* Mobile nav dropdown */
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.getElementById('nav-links');
+  var closeMs = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dropdown-close-dur')) || 150;
+  var closeTimer = null;
+
   if (toggle && menu) {
+    function openMenu() {
+      if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+      menu.classList.remove('is-closing');
+      menu.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      if (!menu.classList.contains('is-open') && !menu.classList.contains('is-closing')) return;
+      menu.classList.remove('is-open');
+      menu.classList.add('is-closing');
+      toggle.setAttribute('aria-expanded', 'false');
+      closeTimer = setTimeout(function () {
+        menu.classList.remove('is-closing');
+        closeTimer = null;
+      }, closeMs);
+    }
     function setOpen(open) {
-      menu.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) openMenu();
+      else closeMenu();
     }
     toggle.addEventListener('click', function (e) {
       e.stopPropagation();
-      setOpen(!menu.classList.contains('open'));
+      setOpen(!menu.classList.contains('is-open'));
     });
     menu.addEventListener('click', function (e) {
       if (e.target.closest('a')) setOpen(false);
     });
     document.addEventListener('click', function (e) {
-      if (menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+      if (menu.classList.contains('is-open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
         setOpen(false);
       }
     });
@@ -1402,14 +1536,14 @@
         form.reset();
         btn.textContent = 'Message Sent';
       } else {
-        msg.style.color = '#c0392b';
+        msg.style.color = 'var(--err)';
         msg.textContent = 'Sorry, something went wrong. Please email us directly.';
         msg.style.display = 'block';
         btn.textContent = 'Send Message';
         btn.disabled = false;
       }
     } catch (err) {
-      msg.style.color = '#c0392b';
+      msg.style.color = 'var(--err)';
       msg.textContent = 'Network error. Please email us directly at Kyle@burkettinv.com.';
       msg.style.display = 'block';
       btn.textContent = 'Send Message';
