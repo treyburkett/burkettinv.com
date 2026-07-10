@@ -53,7 +53,7 @@
   }
 })();
 </script>
-<link rel="stylesheet" href="assets/burkett-tokens.css?v=20260710c">
+<link rel="stylesheet" href="assets/burkett-tokens.css?v=20260710d">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0; }
 
@@ -128,61 +128,94 @@
   .reveal-stagger > .reveal:nth-child(6) { transition-delay: calc(var(--duration-stagger) * 5); }
 
 
-  /* Theme toggle */
+  /* Theme control - Tesla utility text, not a boxed icon */
   .theme-toggle {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: 1px solid var(--line);
-    color: var(--fg);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    min-height: 44px;
+    font-family: var(--font-ui);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
     cursor: pointer;
     flex-shrink: 0;
-    transition:
-      border-color var(--duration-quick) var(--ease-smooth-out),
-      color var(--duration-quick) var(--ease-smooth-out),
-      background var(--duration-quick) var(--ease-smooth-out);
+    transition: color var(--duration-quick) var(--ease-smooth-out);
   }
+  .theme-toggle:hover { color: var(--gold); }
   .theme-toggle:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 2px;
+    outline: 1px solid var(--gold);
+    outline-offset: 4px;
   }
-  .theme-toggle svg { width: 18px; height: 18px; display: block; }
-  .theme-toggle .icon-sun { display: none; }
-  html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
-  html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
-  html:not([data-theme="light"]) .theme-toggle .icon-moon { display: block; }
+  .theme-toggle .theme-label-light { display: none; }
+  html[data-theme="light"] .theme-toggle .theme-label-dark { display: none; }
+  html[data-theme="light"] .theme-toggle .theme-label-light { display: inline; }
 
-  html[data-theme="light"] .site-header {
-    background: color-mix(in srgb, var(--bg) 94%, transparent);
-  }
-  html[data-theme="light"] .nav-links a:not(.bk-btn) {
-    color: rgba(0, 0, 0, 0.62);
-  }
+
+  /* Light mode: page canvas only (nav stays black) */
+  html[data-theme="light"] body { background: #fff; color: #000; }
+  html[data-theme="light"] .section-title { color: #000; }
+  html[data-theme="light"] #about,
+  html[data-theme="light"] #approach,
+  html[data-theme="light"] #contact { background: #fff; }
+  html[data-theme="light"] .differentiator,
+  html[data-theme="light"] #services,
+  html[data-theme="light"] #team,
+  html[data-theme="light"] .credibility { background: #f4f4f4; }
+  html[data-theme="light"] .about-aside,
   html[data-theme="light"] .bento-card,
   html[data-theme="light"] .team-card,
-  html[data-theme="light"] .contact-person,
-  html[data-theme="light"] .about-aside {
-    background: var(--bg-elevated);
+  html[data-theme="light"] .contact-person {
+    background: #fff;
+    border-color: #e5e5e5;
   }
+  html[data-theme="light"] .bento { background: #e5e5e5; border-color: #e5e5e5; }
+  html[data-theme="light"] .team-grid { background: #e5e5e5; border-color: #e5e5e5; }
+  html[data-theme="light"] .contact-people { background: #e5e5e5; border-color: #e5e5e5; }
+  html[data-theme="light"] .team-name,
+  html[data-theme="light"] .diff-content h2,
+  html[data-theme="light"] .timeline-step h3,
+  html[data-theme="light"] .bento-card h3,
+  html[data-theme="light"] .contact-person-name,
+  html[data-theme="light"] .about-aside h3 { color: #000; }
+  html[data-theme="light"] .about-text p,
+  html[data-theme="light"] .diff-content p,
+  html[data-theme="light"] .timeline-step p,
+  html[data-theme="light"] .bento-card p,
+  html[data-theme="light"] .team-bio-preview,
+  html[data-theme="light"] .t-acc-panel-inner .team-bio,
+  html[data-theme="light"] .contact-desc,
+  html[data-theme="light"] .contact-detail,
+  html[data-theme="light"] .about-aside p { color: #5c5c5c; }
+  html[data-theme="light"] .cred-label { color: #5c5c5c; }
+  html[data-theme="light"] .cred-num { color: var(--gold-deep); }
   html[data-theme="light"] .form-group input,
   html[data-theme="light"] .form-group textarea {
-    background: var(--bg);
-    color: var(--fg);
+    background: #fff;
+    color: #000;
+    border-color: #e5e5e5;
   }
+  html[data-theme="light"] footer { background: #000; }
+  html[data-theme="light"] .bento-cta { background: var(--gold); }
+  html[data-theme="light"] .bento-cta h3,
+  html[data-theme="light"] .bento-cta a { color: #000; }
+  html[data-theme="light"] .bento-cta p { color: rgba(0,0,0,0.72); }
 
-  /* NAV */
+  /* NAV - always dark chrome like Tesla */
+
   .site-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 200;
-    background: color-mix(in srgb, var(--bg) 92%, transparent);
-    border-bottom: 1px solid var(--hairline);
-    backdrop-filter: blur(8px);
+    background: #000000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   nav.site-nav {
@@ -231,7 +264,7 @@
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(245, 245, 245, 0.62);
+    color: rgba(255, 255, 255, 0.62);
     transition: color var(--duration-quick) var(--ease-smooth-out);
     white-space: nowrap;
   }
@@ -314,36 +347,60 @@
     }
   }
 
-  /* HERO - full-bleed dark plane, brand-first */
+  /* HERO - Tesla full-bleed */
   .hero {
-    min-height: 100dvh;
-    background: var(--bg);
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    align-items: stretch;
     position: relative;
+    min-height: 100dvh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
     overflow: hidden;
+    background: #000;
     border-bottom: 1px solid var(--line);
   }
 
+  .hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.78) 100%),
+      linear-gradient(90deg, rgba(0,0,0,0.55) 0%, transparent 55%);
+    pointer-events: none;
+  }
+
+  html[data-theme="light"] .hero-media::after {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.72) 100%),
+      linear-gradient(90deg, rgba(0,0,0,0.45) 0%, transparent 55%);
+  }
+
   .hero-copy {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: calc(var(--nav-height) + 4rem) 2.5rem 4rem 2.5rem;
     position: relative;
     z-index: 1;
-    max-width: 40rem;
+    width: min(40rem, 100%);
+    padding: 0 1.5rem calc(4.5rem + env(safe-area-inset-bottom, 0px));
+    max-width: 1120px;
+    margin: 0 auto 0 0;
+    color: #fff;
   }
 
-  .hero-brand {
-    margin-bottom: 2rem;
-  }
-
-  .hero-brand img {
-    height: 40px;
-    width: auto;
-    display: block;
+  .hero-copy-inner {
+    max-width: 36rem;
+    padding-top: calc(var(--nav-height) + 2rem);
   }
 
   .hero-eyebrow {
@@ -352,25 +409,25 @@
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .hero h1 {
     font-family: var(--font-ui);
-    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-size: clamp(2.4rem, 6vw, 4rem);
     font-weight: 600;
-    color: var(--fg);
+    color: #ffffff;
     line-height: 0.98;
     letter-spacing: -0.03em;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     max-width: 14ch;
   }
 
   .hero-sub {
     font-size: 1rem;
-    color: var(--grey-light);
+    color: rgba(255, 255, 255, 0.72);
     max-width: 38ch;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     line-height: 1.65;
   }
 
@@ -380,118 +437,14 @@
     gap: 0.75rem;
     align-items: center;
   }
-
-  .hero-plane {
-    position: relative;
-    background: var(--steel);
-    border-left: 1px solid var(--line);
-    min-height: 100%;
-    overflow: hidden;
+  .hero-actions .bk-btn-ghost {
+    color: #fff;
+    border-color: rgba(255,255,255,0.55);
   }
-
-  .hero-plane img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .hero-plane::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background:
-      linear-gradient(90deg, var(--bg) 0%, transparent 42%),
-      linear-gradient(180deg, transparent 40%, color-mix(in srgb, var(--bg) 72%, transparent) 100%);
-    pointer-events: none;
-  }
-
-  .hero-plane::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 12%;
-    bottom: 12%;
-    width: 1px;
-    z-index: 2;
-    background: var(--gold);
-    opacity: 0.55;
-  }
-
-  html[data-theme="light"] .hero-plane::before {
-    background:
-      linear-gradient(90deg, var(--bg) 0%, transparent 42%),
-      linear-gradient(180deg, transparent 40%, color-mix(in srgb, var(--bg) 78%, transparent) 100%);
-  }
-
-  /* Visual band */
-  .visual-band {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 1px;
-    background: var(--line);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .visual-band figure {
-    margin: 0;
-    position: relative;
-    min-height: 280px;
-    background: var(--steel);
-    overflow: hidden;
-  }
-  .visual-band img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    position: absolute;
-    inset: 0;
-  }
-  .visual-band figcaption {
-    position: absolute;
-    left: 1rem;
-    bottom: 1rem;
-    z-index: 1;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-  .visual-band figure::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 45%, color-mix(in srgb, var(--bg) 70%, transparent) 100%);
-    pointer-events: none;
-  }
-
-  .bento-card.has-media {
-    justify-content: flex-end;
-    min-height: 240px;
-  }
-  .bento-card.has-media .bento-media {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-  .bento-card.has-media .bento-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    opacity: 0.35;
-  }
-  html[data-theme="light"] .bento-card.has-media .bento-media img { opacity: 0.22; }
-  .bento-card.has-media .bento-num,
-  .bento-card.has-media h3,
-  .bento-card.has-media p {
-    position: relative;
-    z-index: 1;
+  .hero-actions .bk-btn-ghost:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
   }
 
   /* Texts reveal (transitions.dev) */
@@ -529,7 +482,7 @@
 
   /* CREDIBILITY */
   .credibility {
-    background: var(--steel);
+    background: var(--bg);
     border-bottom: 1px solid var(--line);
   }
 
@@ -581,7 +534,7 @@
   }
 
   .about-text p {
-    color: var(--grey-light);
+    color: var(--fg-muted);
     font-size: 1rem;
     margin-bottom: 1rem;
     max-width: 58ch;
@@ -642,7 +595,7 @@
   }
 
   .diff-content p {
-    color: var(--grey-light);
+    color: var(--fg-muted);
     font-size: 1rem;
     max-width: 62ch;
     margin-bottom: 0.85rem;
@@ -961,7 +914,7 @@
 
   .contact-desc {
     font-size: 1rem;
-    color: var(--grey-light);
+    color: var(--fg-muted);
     margin-bottom: 1.75rem;
     max-width: 42ch;
   }
@@ -1157,20 +1110,12 @@
   /* RESPONSIVE */
   @media (max-width: 1024px) {
     .hero { grid-template-columns: 1fr; }
-    .hero-plane {
-      min-height: 220px;
-      border-left: none;
-      border-top: 1px solid var(--line);
-      order: -1;
-    }
-    .hero-plane::after { display: none; }
     .hero-copy {
       padding: 2.5rem 1.5rem 3rem;
       max-width: none;
     }
     .hero h1 { max-width: none; }
     .about-layout { grid-template-columns: 1fr; gap: 2rem; }
-    .visual-band { grid-template-columns: 1fr; }
     .bento-card.span-7,
     .bento-card.span-5,
     .bento-card.span-4,
@@ -1210,6 +1155,12 @@
       margin-top: 0.35rem;
       min-height: 44px;
     }
+    .nav-links .theme-toggle {
+      width: 100%;
+      justify-content: flex-start;
+      padding: 0.85rem 0.5rem;
+      color: rgba(255,255,255,0.62);
+    }
     .cred-grid { grid-template-columns: 1fr 1fr; }
     .cred-cell:nth-child(2) { border-right: none; }
     .cred-cell { border-bottom: 1px solid var(--line); }
@@ -1221,15 +1172,17 @@
     .form-row { grid-template-columns: 1fr; }
     .container { padding: 0 1rem; }
     #about, #services, #approach, #team, #contact { padding: 4rem 0; }
-    .hero-copy { padding: 2rem 1rem 2.5rem; }
-    .hero-brand img { height: 32px; }
+    .hero-copy { padding-left: 1rem; padding-right: 1rem; padding-bottom: 3rem; }
   }
 
   @media (min-width: 1400px) {
     .container,
     nav.site-nav,
     .cred-grid { max-width: 1280px; }
-    .hero-copy { padding-left: clamp(2.5rem, 8vw, 6rem); }
+    .hero-copy {
+      margin-left: max(0px, calc((100vw - 1280px) / 2));
+      padding-left: 1.5rem;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1250,10 +1203,6 @@
     <a href="#home" class="nav-wordmark" aria-label="Burkett Investments">
       <img src="assets/logo-reverse.png?v=20260709i" alt="Burkett Investments, LLC" width="220" height="66">
     </a>
-    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
       <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
@@ -1266,27 +1215,25 @@
       <li><a href="https://themultifamilypanel.com" target="_blank" rel="noopener">The Panel</a></li>
       <li><a href="#contact" class="bk-btn bk-btn-primary">Contact</a></li>
       <li><a href="https://app.burkettinv.com" class="bk-btn bk-btn-ghost">Login</a></li>
+      <li><button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme"><span class="theme-label-dark">Light</span><span class="theme-label-light">Dark</span></button></li>
     </ul>
   </nav>
 </header>
 
 <section class="hero" id="home">
+  <div class="hero-media" aria-hidden="true">
+    <img src="assets/generated/apartment-hero.jpg?v=20260710d" alt="" width="1536" height="1024" loading="eager" decoding="async">
+  </div>
   <div class="hero-copy">
-    <div class="hero-brand">
-      <img src="assets/logo-reverse.png?v=20260709i" alt="Burkett Investments, LLC" width="220" height="66">
-    </div>
-    <div class="t-stagger" id="heroStagger">
+    <div class="hero-copy-inner t-stagger" id="heroStagger">
       <p class="hero-eyebrow t-stagger-line t-stagger-line--1">National footprint</p>
       <h1 class="t-stagger-line t-stagger-line--2">Institutional real estate. Built for operators who lead.</h1>
-      <p class="hero-sub t-stagger-line t-stagger-line--3">Advisory, acquisition, and stewardship systems for owners and investors who measure outcomes, not decks.</p>
+      <p class="hero-sub t-stagger-line t-stagger-line--3">Advisory, acquisition, and stewardship for owners and investors who measure outcomes, not decks.</p>
       <div class="hero-actions t-stagger-line t-stagger-line--4">
         <a href="#contact" class="bk-btn bk-btn-primary">Start a Conversation</a>
         <a href="#services" class="bk-btn bk-btn-ghost">Our Services</a>
       </div>
     </div>
-  </div>
-  <div class="hero-plane" aria-hidden="true">
-    <img src="assets/generated/hero-multifamily.jpg?v=20260710c" alt="" width="1536" height="1024" loading="eager" decoding="async">
   </div>
 </section>
 
@@ -1311,16 +1258,6 @@
   </div>
 </div>
 
-<section class="visual-band" aria-label="Portfolio visuals">
-  <figure>
-    <img src="assets/generated/courtyard-detail.jpg?v=20260710c" alt="Multifamily courtyard elevation" width="1536" height="1024" loading="lazy" decoding="async">
-    <figcaption>Multifamily</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/generated/proptech-dashboard.jpg?v=20260710c" alt="Prop-tech operations interface" width="1536" height="1024" loading="lazy" decoding="async">
-    <figcaption>Prop-tech</figcaption>
-  </figure>
-</section>
 
 <section id="about">
   <div class="container">
@@ -1366,20 +1303,17 @@
       <div class="divider"></div>
     </div>
     <div class="bento reveal-stagger">
-      <article class="bento-card span-7 tall reveal has-media">
-        <div class="bento-media" aria-hidden="true"><img src="assets/generated/market-data.jpg?v=20260710c" alt="" loading="lazy" decoding="async"></div>
+      <article class="bento-card span-7 tall reveal">
         <span class="bento-num">01</span>
         <h3>Investment Management</h3>
         <p>Strategy, underwriting, and portfolio oversight grounded in disciplined analysis and clear accountability to your capital.</p>
       </article>
-      <article class="bento-card span-5 reveal has-media">
-        <div class="bento-media" aria-hidden="true"><img src="assets/generated/acquisition-diligence.jpg?v=20260710c" alt="" loading="lazy" decoding="async"></div>
+      <article class="bento-card span-5 reveal">
         <span class="bento-num">02</span>
         <h3>Acquisition Advisory</h3>
         <p>Sourcing, diligence, and deal structuring from first look through close.</p>
       </article>
-      <article class="bento-card span-4 reveal has-media">
-        <div class="bento-media" aria-hidden="true"><img src="assets/generated/asset-systems.jpg?v=20260710c" alt="" loading="lazy" decoding="async"></div>
+      <article class="bento-card span-4 reveal">
         <span class="bento-num">03</span>
         <h3>Asset Management</h3>
         <p>Business plans that protect and grow NOI over the hold period.</p>
@@ -1389,8 +1323,7 @@
         <h3>Property Management</h3>
         <p>Hands-on operations and resident experience that supports asset performance.</p>
       </article>
-      <article class="bento-card span-4 reveal has-media">
-        <div class="bento-media" aria-hidden="true"><img src="assets/generated/national-footprint.jpg?v=20260710c" alt="" loading="lazy" decoding="async"></div>
+      <article class="bento-card span-4 reveal">
         <span class="bento-num">05</span>
         <h3>Market Analysis</h3>
         <p>Data-driven views on markets, submarkets, and timing for capital deployment.</p>

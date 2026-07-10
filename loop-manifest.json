@@ -23,7 +23,7 @@
       "notes": "gold sampled; word pass next"
     },
     "1": {
-      "status": "passed",
+      "status": "revised-passed",
       "cycles": [
         {
           "cycle": 1,
@@ -40,7 +40,7 @@
       ]
     },
     "2": {
-      "status": "passed",
+      "status": "revised-passed",
       "cycles": [
         {
           "cycle": 1,
@@ -85,5 +85,12 @@
     "commit": "a11db77",
     "status": "live",
     "note": "converged; hard-refresh burkettinv.com"
+  },
+  "revision": {
+    "note": "Fewer photos (1 ordinary apartment hero), Tesla full-bleed hero, text theme toggle in nav utilities, nav always black, light mode page canvas only",
+    "images": [
+      "apartment-hero.jpg"
+    ],
+    "theme_control": "Light/Dark text button in nav-links"
   }
 }

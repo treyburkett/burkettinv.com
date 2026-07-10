@@ -157,7 +157,7 @@
   --chrome: var(--ink);
   --chrome-fg: var(--bone);
   --chrome-muted: var(--mute);
-  --hairline: rgba(234, 212, 162, 0.35);
+  --hairline: rgba(255, 255, 255, 0.12);
   --nav-hover: rgba(255, 255, 255, 0.06);
   --nav-active: var(--gold);
   --accent-bar: var(--gold);
@@ -174,7 +174,7 @@ html[data-theme="light"] {
   --chrome: #000000;
   --chrome-fg: #ffffff;
   --chrome-muted: #8a8a8a;
-  --hairline: rgba(234, 212, 162, 0.45);
+  --hairline: rgba(0, 0, 0, 0.12);
   --nav-hover: rgba(0, 0, 0, 0.06);
   --nav-active: var(--gold);
   --accent-bar: var(--gold);
@@ -210,7 +210,7 @@ html[data-theme="dark"],
   --chrome: #000000;
   --chrome-fg: #ffffff;
   --chrome-muted: #8a8a8a;
-  --hairline: rgba(234, 212, 162, 0.35);
+  --hairline: rgba(255, 255, 255, 0.12);
   --nav-hover: rgba(255, 255, 255, 0.06);
   --nav-active: var(--gold);
   --accent-bar: var(--gold);
