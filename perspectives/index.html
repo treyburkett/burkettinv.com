@@ -12,9 +12,20 @@
 <meta property="og:image" content="https://burkettinv.com/favicon-512.png">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="/favicon.ico">
-<link rel="stylesheet" href="../assets/burkett-tokens.css?v=20260710g">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('bk-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    else document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/burkett-tokens.css?v=20260710z">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0; }
 
   html { scroll-behavior: smooth; }
 
@@ -123,6 +134,65 @@
   .nav-toggle .icon-close { display: none; }
   .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
   .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+  /* Cyber theme switch */
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: color var(--duration-quick) var(--ease-smooth-out);
+  }
+  .theme-toggle:hover { color: var(--gold); }
+  .theme-toggle:focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
+  .theme-toggle .cyber-switch { width: 28px; height: 14px; display: block; }
+  .theme-toggle .cyber-switch .track { fill: none; stroke: currentColor; stroke-width: 1.25; }
+  .theme-toggle .cyber-switch .knob {
+    fill: currentColor;
+    transition: transform var(--duration-quick) var(--ease-smooth-out);
+  }
+  html:not([data-theme="light"]) .theme-toggle .cyber-switch .knob { transform: translateX(0); }
+  html[data-theme="light"] .theme-toggle .cyber-switch .knob { transform: translateX(14px); }
+  html[data-theme="light"] .theme-toggle { color: rgba(255, 255, 255, 0.85); }
+
+  /* Mobile nav dropdown motion */
+  @media (max-width: 768px) {
+    .nav-links.t-dropdown {
+      transform-origin: top right;
+      transform: scale(var(--dropdown-pre-scale));
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition:
+        transform var(--dropdown-open-dur) var(--dropdown-ease),
+        opacity var(--dropdown-open-dur) var(--dropdown-ease),
+        visibility var(--dropdown-open-dur) var(--dropdown-ease);
+    }
+    .nav-links.t-dropdown.is-open {
+      transform: scale(1);
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+    .nav-links.t-dropdown.is-closing {
+      transform: scale(var(--dropdown-closing-scale));
+      opacity: 0;
+      pointer-events: none;
+      visibility: visible;
+      transition:
+        transform var(--dropdown-close-dur) var(--dropdown-ease),
+        opacity var(--dropdown-close-dur) var(--dropdown-ease),
+        visibility var(--dropdown-close-dur) var(--dropdown-ease);
+    }
+  }
 
   /* Page header */
   .page-head {
@@ -303,6 +373,11 @@
       justify-content: center;
     }
 
+    .nav-links .theme-toggle {
+      margin-top: 0.25rem;
+      padding-left: 0;
+    }
+
     .page-head { padding: 6.5rem 1.25rem 3rem; }
     .article-list { padding: 2.5rem 1.25rem 4rem; }
     .site-footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
@@ -327,6 +402,12 @@
       <li><a href="/#team">Team</a></li>
       <li><a href="/perspectives/" aria-current="page">Perspectives</a></li>
       <li><a href="/#contact" class="bk-btn bk-btn-primary">Contact</a></li>
+      <li><button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Theme">
+        <svg class="cyber-switch" viewBox="0 0 28 14" aria-hidden="true">
+          <rect class="track" x="0.6" y="0.6" width="26.8" height="12.8"/>
+          <rect class="knob" x="2" y="2" width="10" height="10"/>
+        </svg>
+      </button></li>
     </ul>
   </nav>
 </header>
@@ -364,21 +445,49 @@
 </footer>
 
 <script>
-  const toggle = document.getElementById('navToggle');
-  const links = document.getElementById('nav-links');
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      links.classList.toggle('is-open', !open);
+  /* Mobile nav */
+  (function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var menu = document.getElementById('nav-links');
+    if (!toggle || !menu) return;
+    function setOpen(open) {
+      toggle.setAttribute('aria-expanded', String(open));
+      menu.classList.toggle('is-open', open);
+    }
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!menu.classList.contains('is-open'));
     });
-    document.addEventListener('click', (e) => {
-      if (!toggle.contains(e.target) && !links.contains(e.target)) {
-        toggle.setAttribute('aria-expanded', 'false');
-        links.classList.remove('is-open');
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('click', function (e) {
+      if (menu.classList.contains('is-open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        setOpen(false);
       }
     });
-  }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
+
+  /* Theme toggle */
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+    function apply(theme) {
+      root.setAttribute('data-theme', theme);
+      try { localStorage.setItem('bk-theme', theme); } catch (e) {}
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'light' ? '#ffffff' : '#000000');
+    }
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        apply(next);
+      });
+    }
+  })();
 </script>
 </body>
 </html>
