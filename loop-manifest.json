@@ -80,5 +80,10 @@
       "no unsplash",
       "no overclaim"
     ]
+  },
+  "ship": {
+    "commit": "a11db77",
+    "status": "live",
+    "note": "converged; hard-refresh burkettinv.com"
   }
 }
