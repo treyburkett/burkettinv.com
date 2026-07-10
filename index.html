@@ -53,7 +53,7 @@
   }
 })();
 </script>
-<link rel="stylesheet" href="assets/burkett-tokens.css?v=20260710g">
+<link rel="stylesheet" href="assets/burkett-tokens.css?v=20260710h">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0; }
 
@@ -212,7 +212,7 @@
   html[data-theme="light"] .contact-detail,
   html[data-theme="light"] .about-aside p { color: #5c5c5c; }
   html[data-theme="light"] .cred-label { color: #5c5c5c; }
-  html[data-theme="light"] .cred-num { color: var(--gold-deep); }
+  html[data-theme="light"] .cred-num { color: #000; }
   html[data-theme="light"] .form-group input,
   html[data-theme="light"] .form-group textarea {
     background: #fff;
@@ -467,49 +467,6 @@
   }
 
 
-  /* Sparse asset strip - two plates only */
-  .asset-strip {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .asset-strip figure {
-    margin: 0;
-    position: relative;
-    min-height: clamp(220px, 32vw, 420px);
-    background: #000;
-    overflow: hidden;
-  }
-  .asset-strip img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .asset-strip figcaption {
-    position: absolute;
-    left: 1rem;
-    bottom: 1rem;
-    z-index: 1;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #fff;
-  }
-  .asset-strip figure::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.55) 100%);
-    pointer-events: none;
-  }
-  @media (max-width: 768px) {
-    .asset-strip { grid-template-columns: 1fr; }
-  }
-
   /* Texts reveal (transitions.dev) */
   .t-stagger-line {
     display: block;
@@ -569,9 +526,8 @@
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     font-weight: 600;
     letter-spacing: -0.02em;
-    color: var(--gold);
+    color: var(--bone);
     line-height: 1;
-    margin-bottom: 0.4rem;
   }
 
   .cred-label {
@@ -580,7 +536,75 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--mute);
+    margin-bottom: 0.4rem;
   }
+
+  /* DIMENSIONS */
+  .dimensions {
+    padding: 6rem 0;
+    background: var(--steel);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .dims-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: start;
+  }
+
+  .spec-grid {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .spec-row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--line);
+    gap: 1rem;
+    align-items: baseline;
+  }
+
+  .spec-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+
+  .spec-value {
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--bone);
+    letter-spacing: -0.01em;
+  }
+
+  .dims-image {
+    position: sticky;
+    top: calc(var(--nav-height) + 2rem);
+  }
+
+  .dims-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--line);
+  }
+
+  @media (max-width: 768px) {
+    .dims-layout { grid-template-columns: 1fr; }
+    .dims-image { position: static; }
+  }
+
+  html[data-theme="light"] .dimensions { background: #f4f4f4; }
+  html[data-theme="light"] .spec-row { border-color: #e5e5e5; }
+  html[data-theme="light"] .spec-grid { border-color: #e5e5e5; }
+  html[data-theme="light"] .spec-value { color: #000; }
+  html[data-theme="light"] .dims-image img { border-color: #e5e5e5; }
 
   /* ABOUT */
   #about {
@@ -685,7 +709,7 @@
 
   .bento-card {
     background: var(--steel);
-    padding: 1.75rem;
+    padding: 1.25rem 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -697,7 +721,7 @@
   .bento-card.span-4 { grid-column: span 4; }
   .bento-card.span-8 { grid-column: span 8; }
   .bento-card.span-6 { grid-column: span 6; }
-  .bento-card.tall { min-height: 200px; }
+  .bento-card.tall { min-height: 160px; }
 
   .bento-num {
     font-family: var(--font-mono);
@@ -1264,7 +1288,7 @@
 <header class="site-header">
   <nav class="site-nav" aria-label="Main navigation">
     <a href="#home" class="nav-wordmark" aria-label="Burkett Investments">
-      <img src="assets/logo-reverse.png?v=20260709i" alt="Burkett Investments, LLC" width="220" height="66">
+      <img src="assets/logo-reverse.png?v=20260710h" alt="Burkett Investments, LLC" width="220" height="66">
     </a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
       <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -1290,7 +1314,7 @@
 
 <section class="hero" id="home">
   <div class="hero-media" aria-hidden="true">
-    <img src="assets/generated/apartment-hero.jpg?v=20260710g" alt="" width="1536" height="1024" loading="eager" decoding="async">
+    <img src="assets/generated/apartment-angular-dusk.jpg?v=20260710h" alt="" width="1024" height="682" loading="eager" decoding="async">
   </div>
   <div class="hero-copy">
     <div class="hero-copy-inner t-stagger" id="heroStagger">
@@ -1308,35 +1332,63 @@
 <div class="credibility reveal">
   <div class="cred-grid">
     <div class="cred-cell">
-      <div class="cred-num">20+</div>
       <div class="cred-label">Years experience</div>
+      <div class="cred-num">20+</div>
     </div>
     <div class="cred-cell">
-      <div class="cred-num">US</div>
       <div class="cred-label">National footprint</div>
+      <div class="cred-num">US</div>
     </div>
     <div class="cred-cell">
-      <div class="cred-num">5</div>
       <div class="cred-label">Core service lines</div>
+      <div class="cred-num">5</div>
     </div>
     <div class="cred-cell">
-      <div class="cred-num">2</div>
       <div class="cred-label">Founder-led partners</div>
+      <div class="cred-num">2</div>
     </div>
   </div>
 </div>
 
-
-
-<section class="asset-strip" aria-label="Multifamily assets">
-  <figure>
-    <img src="assets/generated/apartment-courtyard.jpg?v=20260710g" alt="Multifamily courtyard circulation" width="1024" height="682" loading="lazy" decoding="async">
-    <figcaption>Courtyard</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/generated/apartment-angular-dusk.jpg?v=20260710g" alt="Multifamily building at dusk" width="1024" height="682" loading="lazy" decoding="async">
-    <figcaption>Multifamily</figcaption>
-  </figure>
+<section class="dimensions reveal" id="dimensions">
+  <div class="container">
+    <div class="dims-layout">
+      <div class="dims-specs">
+        <p class="section-label">Firm Profile</p>
+        <h2 class="section-title">By the numbers.</h2>
+        <div class="divider"></div>
+        <dl class="spec-grid">
+          <div class="spec-row">
+            <dt class="spec-label">Founded</dt>
+            <dd class="spec-value">2023</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="spec-label">Experience</dt>
+            <dd class="spec-value">20+ Years</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="spec-label">Sectors</dt>
+            <dd class="spec-value">Multifamily, Senior, Storage</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="spec-label">Footprint</dt>
+            <dd class="spec-value">National (US)</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="spec-label">Structure</dt>
+            <dd class="spec-value">Founder-Led LLC</dd>
+          </div>
+          <div class="spec-row">
+            <dt class="spec-label">Service Lines</dt>
+            <dd class="spec-value">5 Disciplines</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="dims-image reveal">
+        <img src="assets/generated/apartment-courtyard.jpg?v=20260710h" alt="Multifamily courtyard" width="1024" height="682" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="about">
