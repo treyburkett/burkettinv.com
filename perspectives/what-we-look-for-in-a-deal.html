@@ -1,641 +1,493 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>What We Look For in a Deal — Burkett Investments</title>
-<meta name="description" content="Every acquisition has to answer the same questions. Here&#x27;s the framework we bring to each one — and why we pass on far more than we pursue.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What We Look For in a Deal | Burkett Investments</title>
+<meta name="description" content="Every acquisition has to answer the same questions. Here's the framework we bring to each one, and why we pass on far more than we pursue.">
 <link rel="canonical" href="https://burkettinv.com/perspectives/what-we-look-for-in-a-deal.html">
-<meta property="og:title" content="What We Look For in a Deal — Burkett Investments">
-<meta property="og:description" content="Every acquisition has to answer the same questions. Here&#x27;s the framework we bring to each one — and why we pass on far more than we pursue.">
+<meta property="og:title" content="What We Look For in a Deal | Burkett Investments">
+<meta property="og:description" content="Every acquisition has to answer the same questions. Here's the framework we bring to each one, and why we pass on far more than we pursue.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://burkettinv.com/favicon-512.png">
-<meta name="theme-color" content="#0c1320">
+<meta name="theme-color" content="#000000">
 <link rel="icon" href="/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/burkett-tokens.css?v=20260710g">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --navy: #0c1320;
-    --navy-mid: #2b313b;
-    --gold: #c9a23c;
-    --gold-light: #d9be6a;
-    --cream: #f4f1ea;
-    --cream-dark: #e6e2d8;
-    --text-dark: #1a1a1a;
-    --text-mid: #4a4a4a;
-    --text-light: #888;
-  }
 
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Jost', sans-serif;
-    background: var(--cream);
-    color: var(--text-dark);
-    font-weight: 300;
-    line-height: 1.7;
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* NAV */
-  nav {
+  /* Nav */
+  .site-header {
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 100;
+    z-index: 200;
+    background: var(--chrome);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  nav.site-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.2rem 4rem;
-    background: rgba(13, 27, 42, 0.96);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(201, 162, 60, 0.25);
+    gap: 1.5rem;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 3.5rem;
+    position: relative;
   }
 
-  .logo-mark { width:1.3em; height:1.3em; flex:0 0 auto; }
-  .nav-logo {
-    display:inline-flex; align-items:center; gap:0.45rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
-    font-weight: 500;
-    color: var(--gold-light);
-    letter-spacing: 0.12em;
+  .nav-wordmark {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
     text-decoration: none;
+    line-height: 0;
+    opacity: 1;
+    transition: opacity var(--duration-quick) var(--ease-smooth-out);
+  }
+
+  .nav-wordmark img {
+    height: 28px;
+    width: auto;
+    display: block;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .nav-wordmark:hover { opacity: 0.85; }
   }
 
   .nav-links {
     display: flex;
-    gap: 2.5rem;
+    align-items: center;
+    gap: 1.25rem;
     list-style: none;
   }
 
-  .nav-links a {
+  .nav-links a:not(.bk-btn) {
+    font-family: var(--font-ui);
     text-decoration: none;
-    font-size: 0.8rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(248,245,240,0.7);
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--gold-light); }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    background: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    padding: 0 2rem;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 50% 60%, rgba(201, 162, 60,0.06) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 40% at 20% 20%, rgba(201, 162, 60,0.04) 0%, transparent 60%);
-  }
-
-  .hero-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 720px;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.2s forwards;
-  }
-
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 300;
-    color: var(--cream);
-    line-height: 1.1;
-    letter-spacing: 0.04em;
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.4s forwards;
-  }
-
-  .hero h1 em {
-    font-style: normal;
-    color: var(--gold-light);
-  }
-
-  .hero-sub {
-    font-size: 1rem;
-    color: rgba(248,245,240,0.55);
-    letter-spacing: 0.06em;
-    max-width: 480px;
-    margin: 0 auto 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.6s forwards;
-  }
-
-  .hero-cta {
-    display: inline-block;
-    padding: 0.85rem 2.5rem;
-    border: 1px solid var(--gold);
-    color: var(--gold-light);
-    text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    transition: background 0.25s, color 0.25s;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.8s forwards;
-  }
-
-  .hero-cta:hover {
-    background: var(--gold);
-    color: var(--navy);
-  }
-
-  .hero-line {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(201, 162, 60,0.5);
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    opacity: 0;
-    animation: fadeUp 0.9s 1.2s forwards;
-  }
-
-  .hero-line::after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 48px;
-    background: linear-gradient(to bottom, rgba(201, 162, 60,0.5), transparent);
-    margin-top: 0.5rem;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* SECTIONS */
-  section { padding: 6rem 4rem; }
-
-  .section-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.75rem;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 400;
-    color: var(--navy);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-
-  .section-title.light { color: var(--cream); }
-
-  .divider {
-    width: 48px;
-    height: 1px;
-    background: var(--gold);
-    margin-bottom: 2rem;
-  }
-
-  /* ABOUT */
-  #about {
-    background: var(--cream);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .about-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    margin-top: 3rem;
-  }
-
-  .about-text p {
-    color: var(--text-mid);
-    margin-bottom: 1.2rem;
-    font-size: 1.05rem;
-  }
-
-  .about-stat {
-    border-top: 1px solid var(--cream-dark);
-    padding-top: 1.5rem;
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    font-weight: 300;
-    color: var(--navy);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--text-light);
-    margin-top: 0.35rem;
+    color: rgba(255, 255, 255, 0.62);
+    transition: color var(--duration-quick) var(--ease-smooth-out);
+    white-space: nowrap;
   }
 
-  .services-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem 2rem;
+  @media (hover: hover) and (pointer: fine) {
+    .nav-links a:not(.bk-btn):hover { color: var(--gold); }
   }
 
-  .services-list li {
-    font-size: 0.9rem;
-    color: var(--text-mid);
-    display: flex;
+  .site-nav .bk-btn {
+    min-height: 36px;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+  }
+
+  .nav-toggle {
+    display: none;
     align-items: center;
-    gap: 0.6rem;
-  }
-
-  .services-list li::before {
-    content: '';
-    display: inline-block;
-    width: 18px;
-    height: 1px;
-    background: var(--gold);
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--bone);
+    cursor: pointer;
+    padding: 0;
     flex-shrink: 0;
+    transition:
+      background var(--duration-quick) var(--ease-smooth-out),
+      border-color var(--duration-quick) var(--ease-smooth-out),
+      color var(--duration-quick) var(--ease-smooth-out);
   }
 
-  /* TEAM */
-  #team {
-    background: var(--navy);
-    padding: 6rem 4rem;
+  .nav-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .nav-toggle[aria-expanded="true"] { border-color: var(--gold); color: var(--gold); }
+  .nav-toggle svg { width: 18px; height: 18px; display: block; }
+  .nav-toggle .icon-close { display: none; }
+  .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
+  .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+  /* Article header */
+  .art-head {
+    background: var(--steel);
+    border-bottom: 1px solid var(--line);
+    padding: 7.5rem 1.5rem 4rem;
   }
 
-  .team-inner {
-    max-width: 1200px;
+  .art-head-inner {
+    max-width: 820px;
     margin: 0 auto;
   }
 
-  .team-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-top: 3rem;
-  }
-
-  .team-card {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    padding: 2.5rem;
-    border: 1px solid rgba(201, 162, 60,0.2);
-    background: rgba(255,255,255,0.03);
-  }
-
-  .team-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top center;
-    flex-shrink: 0;
-    border: 2px solid rgba(201, 162, 60,0.35);
-  }
-
-  .team-info { flex: 1; }
-
-  .team-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--cream);
-    margin-bottom: 0.2rem;
-  }
-
-  .team-title {
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    letter-spacing: 0.28em;
     text-transform: uppercase;
+    font-weight: 500;
     color: var(--gold);
     margin-bottom: 1rem;
   }
 
-  .team-bio {
-    font-size: 0.88rem;
-    color: rgba(248,245,240,0.6);
-    line-height: 1.75;
+  .art-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: var(--bone);
+    line-height: 1.08;
+    margin: 0.75rem 0 1.25rem;
   }
 
-  /* CONTACT */
-  #contact {
-    background: var(--cream-dark);
-    padding: 6rem 4rem;
+  .art-dek {
+    font-family: var(--font-sans);
+    font-size: var(--text-lg);
+    color: var(--grey-light);
+    font-weight: 400;
+    max-width: 640px;
+    line-height: 1.55;
   }
 
-  .contact-inner {
-    max-width: 1200px;
+  .art-meta {
+    margin-top: 1.75rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+
+  .art-meta strong {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .art-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    border: none;
+    margin: 1.5rem 0 0;
+  }
+
+  /* Back link */
+  .art-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--mute);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: color var(--duration-quick) var(--ease-smooth-out);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .art-back:hover { color: var(--gold); }
+  }
+
+  /* Article body */
+  .art-body {
+    background: var(--bg);
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .art-body-inner {
+    max-width: 760px;
     margin: 0 auto;
   }
 
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    margin-top: 3rem;
-  }
-
-  .contact-desc {
-    font-size: 1.05rem;
-    color: var(--text-mid);
+  .art-lead {
+    font-family: var(--font-sans);
+    font-size: var(--text-lg);
+    line-height: 1.65;
+    color: var(--bone);
+    font-weight: 400;
     margin-bottom: 2.5rem;
   }
 
-  .contact-people {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  .art-body h2 {
+    font-family: var(--font-sans);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--bone);
+    margin: 3rem 0 0.9rem;
+    line-height: 1.2;
   }
 
-  .contact-person {
-    padding: 1.5rem;
-    background: white;
-    border-left: 3px solid var(--gold);
+  .art-body p {
+    font-family: var(--font-sans);
+    font-size: var(--text-md);
+    color: var(--grey-light);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+    font-weight: 400;
   }
 
-  .contact-person-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--navy);
-    margin-bottom: 0.15rem;
+  .art-body ul {
+    margin: 0 0 1.5rem 1.25rem;
   }
 
-  .contact-person-role {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
+  .art-body li {
+    font-family: var(--font-sans);
+    font-size: var(--text-md);
+    color: var(--grey-light);
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+  }
+
+  .art-pull {
+    border-left: 2px solid var(--gold);
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin: 2.5rem 0;
+    font-family: var(--font-sans);
+    font-size: var(--text-xl);
+    line-height: 1.35;
+    color: var(--bone);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  /* CTA section */
+  .art-cta {
+    background: var(--steel);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .art-cta-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .art-cta .eyebrow {
     margin-bottom: 0.75rem;
   }
 
-  .contact-detail {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.9rem;
-    color: var(--text-mid);
-    text-decoration: none;
-    margin-bottom: 0.3rem;
-    transition: color 0.2s;
+  .art-cta h3 {
+    font-family: var(--font-sans);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--bone);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
   }
 
-  .contact-detail:hover { color: var(--navy); }
-
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  /* Footer */
+  .site-footer {
+    background: var(--chrome);
+    border-top: 1px solid var(--hairline);
+    padding: 2rem 1.5rem;
   }
 
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .form-group label {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-light);
-  }
-
-  .form-group input,
-  .form-group textarea {
-    padding: 0.75rem 1rem;
-    background: white;
-    border: 1px solid var(--cream-dark);
-    font-family: 'Jost', sans-serif;
-    font-size: 0.9rem;
-    color: var(--text-dark);
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .form-group input:focus,
-  .form-group textarea:focus {
-    border-color: var(--gold);
-  }
-
-  .form-group textarea { resize: vertical; min-height: 120px; }
-
-  .btn {
-    display: inline-block;
-    padding: 0.9rem 2.5rem;
-    background: var(--navy);
-    color: var(--gold-light);
-    border: none;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.25s;
-    align-self: flex-start;
-  }
-
-  .btn:hover { background: var(--navy-mid); }
-
-  /* FOOTER */
-  footer {
-    background: var(--navy);
-    padding: 2.5rem 4rem;
+  .site-footer-inner {
+    max-width: 1120px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid rgba(201, 162, 60,0.15);
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
 
-  .footer-logo {
-    display:inline-flex; align-items:center; gap:0.4rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    color: var(--gold-light);
-    letter-spacing: 0.1em;
+  .footer-wordmark {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    text-decoration: none;
+  }
+
+  .footer-wordmark img {
+    height: 22px;
+    width: auto;
+    opacity: 0.65;
   }
 
   .footer-copy {
-    font-size: 0.75rem;
-    color: rgba(248,245,240,0.35);
-    letter-spacing: 0.05em;
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    letter-spacing: 0.04em;
+    color: var(--mute);
   }
 
-  /* RESPONSIVE */
+  .footer-copy a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .footer-copy a:hover { color: var(--gold-soft); }
+  }
+
+  /* Mobile */
   @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
-    #team { padding: 4rem 1.5rem; }
-    #contact { padding: 4rem 1.5rem; }
-    .about-grid, .team-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .team-card { flex-direction: column; gap: 1.5rem; }
-    .form-row { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
-    .about-stat { grid-template-columns: 1fr 1fr; }
-    .services-list { grid-template-columns: 1fr; }
+    .nav-toggle { display: inline-flex; }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      top: 3.5rem;
+      right: 0;
+      left: 0;
+      background: var(--chrome);
+      border-bottom: 1px solid var(--line);
+      padding: 1rem 1.5rem 1.5rem;
+      gap: 0.5rem;
+    }
+
+    .nav-links.is-open { display: flex; }
+    .nav-links li { width: 100%; }
+
+    .nav-links a:not(.bk-btn) {
+      display: block;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.75rem;
+    }
+
+    .nav-links .bk-btn {
+      width: 100%;
+      text-align: center;
+      margin-top: 0.5rem;
+      justify-content: center;
+    }
+
+    .art-head { padding: 6.5rem 1.25rem 3rem; }
+    .art-title { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+    .art-body { padding: 3rem 1.25rem 4rem; }
+    .art-pull { font-size: var(--text-lg); }
+    .art-cta { padding: 2.5rem 1.25rem; }
+    .site-footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
   }
-  .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 0.45rem 1.1rem; font-weight: 500; }
-  .nav-cta:hover { background: var(--gold-light); }
-  #services { background: var(--navy); }
-  .proof-band { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(217,190,106,0.22); border: 1px solid rgba(217,190,106,0.22); max-width: 1200px; margin: 2.5rem 0 3rem; }
-  .proof-cell { background: var(--navy); padding: 1.4rem 1.3rem; }
-  .proof-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); }
-  .proof-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: #9aa0a8; margin-top: 0.3rem; }
-  .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(217,190,106,0.2); border: 1px solid rgba(217,190,106,0.2); max-width: 1200px; }
-  .svc-card { background: var(--navy); padding: 1.7rem; }
-  .svc-card h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; color: var(--gold); font-size: 1.25rem; margin-bottom: 0.5rem; }
-  .svc-card p { color: #c4c8d0; font-size: 0.92rem; line-height: 1.6; font-weight: 300; }
-  .svc-card.cta { display: flex; align-items: center; }
-  .svc-card.cta a { color: var(--gold); font-weight: 500; text-decoration: none; letter-spacing: 0.02em; }
-  #approach { background: var(--cream); }
-  .approach-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.75rem; max-width: 1200px; margin-top: 2.5rem; }
-  .step { border-top: 1px solid var(--gold); padding-top: 1rem; }
-  .step-n { font-family: 'Cormorant Garamond', serif; color: var(--gold); font-size: 1.6rem; }
-  .step h3 { font-family: 'Jost', sans-serif; font-weight: 500; color: var(--navy); font-size: 1.05rem; margin: 0.4rem 0; letter-spacing: 0.02em; }
-  .step p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.6; font-weight: 300; }
-  #perspectives { background: var(--cream); }
-  .persp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.25rem; max-width: 1200px; margin-top: 2.5rem; }
-  .persp-card { border-top: 1px solid var(--gold); padding-top: 1.1rem; }
-  .persp-date { font-size: 0.7rem; letter-spacing: 0.14em; color: var(--text-light); }
-  .persp-card h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; color: var(--navy); font-size: 1.35rem; margin: 0.5rem 0; line-height: 1.25; }
-  .persp-card p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.6; font-weight: 300; margin-bottom: 0.6rem; }
-  .persp-card a { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.06em; text-decoration: none; text-transform: uppercase; }
-  footer.footer-rich { display: block; background: var(--navy); padding: 4rem 4rem 2rem; }
-  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid var(--navy-mid); padding-bottom: 2rem; }
-  .footer-col h4 { color: var(--gold); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 500; }
-  .footer-col a { display: block; color: #c4c8d0; text-decoration: none; font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 300; }
-  .footer-col a:hover { color: var(--gold-light); }
-  .footer-tag { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--gold-light); font-size: 1.3rem; margin-top: 0.6rem; }
-  .footer-bottom { max-width: 1200px; margin: 1.5rem auto 0; font-size: 0.72rem; letter-spacing: 0.04em; color: #7e8590; text-align: center; }
-  @media (max-width: 768px) { .proof-band, .svc-grid, .approach-grid, .persp-grid, .footer-top { grid-template-columns: 1fr; } footer.footer-rich { padding: 3rem 1.5rem 1.5rem; } }
+</style>
+</head>
+<body>
 
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="/" class="nav-wordmark" aria-label="Burkett Investments">
+      <img src="../assets/logo-reverse.png" alt="Burkett Investments, LLC" width="220" height="66">
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links" id="navToggle">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#approach">Approach</a></li>
+      <li><a href="/#team">Team</a></li>
+      <li><a href="/perspectives/">Perspectives</a></li>
+      <li><a href="/#contact" class="bk-btn bk-btn-primary">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-/* --- Perspectives article styles (additive; header/base come from the homepage CSS above) --- */
-.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
-.eyebrow{color:var(--gold);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
-.art-head{background:var(--navy);color:var(--cream);padding:9rem 1.5rem 3.5rem}
-.art-head .wrap{max-width:820px}
-.art-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:3.1rem;line-height:1.08;margin:1.1rem 0 1.3rem;color:var(--cream)}
-.dek{font-size:1.25rem;color:#cfd3d9;font-weight:300;max-width:640px;line-height:1.5}
-.meta{margin-top:1.8rem;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:#9aa0a8}
-.meta b{color:var(--gold-light);font-weight:500}
-.rule{width:54px;height:3px;background:var(--gold);margin:1.6rem 0 0}
-.art-body{background:var(--cream);padding:3.5rem 1.5rem 4rem}
-.art-body .lead{font-size:1.3rem;line-height:1.6;color:#3a414c;font-weight:400;margin-bottom:2rem}
-.art-body h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.9rem;color:var(--navy);margin:2.4rem 0 .8rem}
-.art-body p{font-size:1.06rem;color:#3d444f;margin-bottom:1.2rem;font-weight:300}
-.art-body ul{margin:0 0 1.4rem 1.2rem}
-.art-body li{font-size:1.06rem;color:#3d444f;margin-bottom:.5rem;font-weight:300}
-.pull{border-left:3px solid var(--gold);padding:.4rem 0 .4rem 1.4rem;margin:2rem 0;font-family:'Cormorant Garamond',serif;font-size:1.7rem;line-height:1.3;color:var(--navy);font-weight:500}
-.art-cta{background:var(--cream-dark);padding:2.4rem 1.5rem;text-align:center}
-.art-cta a{display:inline-block;margin-top:1rem;border:1px solid var(--navy);color:var(--navy);padding:.8rem 2rem;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem}
-.art-cta a:hover{background:var(--navy);color:var(--cream)}
-.art-cta .k{color:var(--gold);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase}
-.art-cta h3{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--navy);font-weight:600;margin-top:.4rem}
-.idx-head{background:var(--navy);color:var(--cream);padding:9rem 1.5rem 3rem;text-align:center}
-.idx-head h1{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:600;margin:.8rem 0;color:var(--cream)}
-.idx-head p{color:#cfd3d9;font-weight:300;max-width:560px;margin:0 auto}
-.idx-list{background:var(--cream);padding:3.5rem 1.5rem}
-.p-card{display:block;border-top:1px solid var(--cream-dark);padding:2rem 0}
-.p-card:hover .ct{color:var(--gold)}
-.p-card .ce{color:var(--gold);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase}
-.ct{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--navy);font-weight:600;margin:.3rem 0}
-.p-card .cd{color:#5b626c;font-size:1.02rem;max-width:620px;font-weight:300}
-.p-card .cm{color:#9aa0a8;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin-top:.6rem}
-.p-foot{background:var(--navy);color:#9aa0a8;padding:3rem 2.5rem;text-align:center;font-size:.82rem;font-weight:300}
-.p-foot .fl{color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:1.1rem}
-.p-foot a{color:var(--gold-light);text-decoration:none}
-@media(max-width:680px){.art-title{font-size:2.2rem}.idx-head h1{font-size:2.3rem}}
-</style></head><body>
-<nav>
-  <a href="/#" class="nav-logo"><svg class="logo-mark" viewBox="0 0 120 120" aria-hidden="true"><rect x="20" y="20" width="80" height="80" fill="none" stroke="currentColor" stroke-width="4.5"/><text x="38.3" y="84.8" font-family="'Playfair Display',serif" font-weight="700" font-size="70" fill="currentColor">B</text></svg>Burkett Investments</a>
-  <ul class="nav-links">
-    <li><a href="/#about">About</a></li>
-    <li><a href="/#services">Services</a></li>
-    <li><a href="/#approach">Approach</a></li>
-    <li><a href="/#team">Team</a></li>
-    <li><a href="/#perspectives">Perspectives</a></li>
-    <li><a href="/#contact" class="nav-cta">Contact</a></li>
-  </ul>
-</nav>
-<header class="art-head"><div class="wrap">
-  <div class="eyebrow">Underwriting</div>
-  <h1 class="art-title">What We Look For in a Deal</h1>
-  <p class="dek">Every acquisition has to answer the same questions. Here&#x27;s the framework we bring to each one — and why we pass on far more than we pursue.</p>
-  <div class="meta"><b>Burkett Investments</b> &nbsp;·&nbsp; June 16, 2026 &nbsp;·&nbsp; 5 min read</div>
-  <div class="rule"></div>
-</div></header>
-<article class="art-body"><div class="wrap">
-<p class="lead">Good real estate outcomes aren&#x27;t lucky — they&#x27;re disciplined. The deals that work tend to share a handful of traits, and the ones that don&#x27;t usually failed a test we could have run before we ever wrote an offer. Here is the framework we apply to every opportunity that crosses our desk.</p>
-<h2>It starts with the business plan, not the price</h2>
-<p>A price only means something next to a plan. Before we talk numbers, we get specific about what the asset is supposed to become: who lives or works there, what we&#x27;d change, what we wouldn&#x27;t, and what the property looks like the day we sell it. If we can&#x27;t articulate the plan in a few sentences, we&#x27;re not ready to underwrite it — and we&#x27;re certainly not ready to bid.</p>
-<h2>Durable demand</h2>
-<p>We want assets in places where demand shows up whether or not the cycle cooperates. That means looking past the headline market to the submarket and the block: the trajectory of jobs and population, the supply pipeline that competes with us, and the everyday reasons a resident or tenant chooses this location over the next one.</p>
-<blockquote class="pull">We underwrite the downside first. If the plan only works in the best case, it isn&#x27;t a plan — it&#x27;s a hope.</blockquote>
-<h2>Basis and downside</h2>
-<p>Buying right is most of the job. We anchor on basis — what we&#x27;re paying per unit or per foot relative to replacement cost and to recent, comparable trades — and we stress-test from there. Rates move, exits compress, lease-up takes longer than the broker&#x27;s model says. We want a margin of safety that survives those assumptions being wrong, not just a return that looks good when everything goes right.</p>
-<h2>Operational upside we can actually execute</h2>
-<p>Value-add is only real if someone can run it. We favor NOI levers we know how to pull — operational discipline, smart capital projects, and a resident or tenant experience that supports rent and retention — over financial engineering. The question isn&#x27;t whether upside exists on paper; it&#x27;s whether our team can deliver it on the ground.</p>
-<h2>Capital that matches the plan</h2>
-<p>The right capital structure follows the hold, not the other way around. We size debt and structure equity to the business plan&#x27;s timeline and risk — so that a longer lease-up or a softer exit window is an inconvenience, not an existential threat. Leverage should amplify a sound plan, never prop up a shaky one.</p>
-<h2>Alignment</h2>
-<p>Finally, we look in the mirror. We bring an institutional process and a client-first philosophy to every engagement, and we&#x27;re at the table on the decisions that matter. If our interests and our partners&#x27; interests aren&#x27;t pointed the same direction, no spreadsheet fixes that.</p>
-<h2>The throughline</h2>
-<p>Understand, underwrite, execute, steward — it&#x27;s the same discipline at every stage, and it&#x27;s why we say no a lot more than we say yes. If you&#x27;re weighing an acquisition or thinking through a hold, we&#x27;d welcome the conversation.</p>
-</div></article>
+<header class="art-head">
+  <div class="art-head-inner">
+    <a href="/perspectives/" class="art-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Perspectives
+    </a>
+    <div class="eyebrow">Underwriting</div>
+    <h1 class="art-title">What We Look For in a Deal</h1>
+    <p class="art-dek">Every acquisition has to answer the same questions. Here&#x27;s the framework we bring to each one, and why we pass on far more than we pursue.</p>
+    <div class="art-meta"><strong>Burkett Investments</strong> &nbsp;&middot;&nbsp; June 16, 2026 &nbsp;&middot;&nbsp; 5 min read</div>
+    <hr class="art-rule">
+  </div>
+</header>
+
+<article class="art-body">
+  <div class="art-body-inner">
+    <p class="art-lead">Good real estate outcomes aren&#x27;t lucky, they&#x27;re disciplined. The deals that work tend to share a handful of traits, and the ones that don&#x27;t usually failed a test we could have run before we ever wrote an offer. Here is the framework we apply to every opportunity that crosses our desk.</p>
+
+    <h2>It starts with the business plan, not the price</h2>
+    <p>A price only means something next to a plan. Before we talk numbers, we get specific about what the asset is supposed to become: who lives or works there, what we&#x27;d change, what we wouldn&#x27;t, and what the property looks like the day we sell it. If we can&#x27;t articulate the plan in a few sentences, we&#x27;re not ready to underwrite it, and we&#x27;re certainly not ready to bid.</p>
+
+    <h2>Durable demand</h2>
+    <p>We want assets in places where demand shows up whether or not the cycle cooperates. That means looking past the headline market to the submarket and the block: the trajectory of jobs and population, the supply pipeline that competes with us, and the everyday reasons a resident or tenant chooses this location over the next one.</p>
+
+    <blockquote class="art-pull">We underwrite the downside first. If the plan only works in the best case, it isn&#x27;t a plan, it&#x27;s a hope.</blockquote>
+
+    <h2>Basis and downside</h2>
+    <p>Buying right is most of the job. We anchor on basis, what we&#x27;re paying per unit or per foot relative to replacement cost and to recent, comparable trades, and we stress-test from there. Rates move, exits compress, lease-up takes longer than the broker&#x27;s model says. We want a margin of safety that survives those assumptions being wrong, not just a return that looks good when everything goes right.</p>
+
+    <h2>Operational upside we can actually execute</h2>
+    <p>Value-add is only real if someone can run it. We favor NOI levers we know how to pull: operational discipline, smart capital projects, and a resident or tenant experience that supports rent and retention. The question isn&#x27;t whether upside exists on paper; it&#x27;s whether our team can deliver it on the ground.</p>
+
+    <h2>Capital that matches the plan</h2>
+    <p>The right capital structure follows the hold, not the other way around. We size debt and structure equity to the business plan&#x27;s timeline and risk, so that a longer lease-up or a softer exit window is an inconvenience, not an existential threat. Leverage should amplify a sound plan, never prop up a shaky one.</p>
+
+    <h2>Alignment</h2>
+    <p>Finally, we look in the mirror. We bring an institutional process and a client-first philosophy to every engagement, and we&#x27;re at the table on the decisions that matter. If our interests and our partners&#x27; interests aren&#x27;t pointed the same direction, no spreadsheet fixes that.</p>
+
+    <h2>The throughline</h2>
+    <p>Understand, underwrite, execute, steward. It&#x27;s the same discipline at every stage, and it&#x27;s why we say no a lot more than we say yes. If you&#x27;re weighing an acquisition or thinking through a hold, we&#x27;d welcome the conversation.</p>
+  </div>
+</article>
+
 <section class="art-cta">
-  <div class="k">Work With Us</div>
-  <h3>Have a deal you're weighing?</h3>
-  <a href="/#contact">Start a conversation</a>
+  <div class="art-cta-inner">
+    <div class="eyebrow">Work With Us</div>
+    <h3>Have a deal you&#x27;re weighing?</h3>
+    <a href="/#contact" class="bk-btn bk-btn-ghost">Start a conversation</a>
+  </div>
 </section>
-<footer class="p-foot">
-  <div class="fl">Burkett Investments, LLC</div>
-  <p style="margin:.5rem 0">Real estate, reimagined. &middot; Nashville, Tennessee</p>
-  <p><a href="/">burkettinv.com</a> &middot; <a href="mailto:contact@burkettinv.com">contact@burkettinv.com</a></p>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <a href="/" class="footer-wordmark" aria-label="Burkett Investments">
+      <img src="../assets/logo-reverse.png" alt="Burkett Investments, LLC" width="220" height="66">
+    </a>
+    <div class="footer-copy">
+      &copy; 2026 Burkett Investments, LLC &nbsp;&middot;&nbsp;
+      <a href="mailto:contact@burkettinv.com">contact@burkettinv.com</a> &nbsp;&middot;&nbsp;
+      <a href="/">burkettinv.com</a>
+    </div>
+  </div>
 </footer>
-</body></html>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      links.classList.toggle('is-open', !open);
+    });
+    document.addEventListener('click', (e) => {
+      if (!toggle.contains(e.target) && !links.contains(e.target)) {
+        toggle.setAttribute('aria-expanded', 'false');
+        links.classList.remove('is-open');
+      }
+    });
+  }
+</script>
+</body>
+</html>
