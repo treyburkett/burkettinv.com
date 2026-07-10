@@ -53,7 +53,7 @@
   }
 })();
 </script>
-<link rel="stylesheet" href="assets/burkett-tokens.css?v=20260710h">
+<link rel="stylesheet" href="assets/burkett-tokens.css?v=20260710z">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0; }
 
@@ -73,7 +73,7 @@
     overflow-x: hidden;
   }
 
-  /* Metal grain - subtle, not warm paper */
+  /* Metal grain texture */
   body::before {
     content: '';
     position: fixed;
@@ -127,8 +127,7 @@
   .reveal-stagger > .reveal:nth-child(5) { transition-delay: calc(var(--duration-stagger) * 4); }
   .reveal-stagger > .reveal:nth-child(6) { transition-delay: calc(var(--duration-stagger) * 5); }
 
-
-  /* Theme control - Tesla utility text, not a boxed icon */
+  /* Cyber switch - wordless SVG track + square knob */
   .theme-toggle {
     display: inline-flex;
     align-items: center;
@@ -163,11 +162,9 @@
     fill: currentColor;
     transition: transform var(--duration-quick) var(--ease-smooth-out);
   }
-  /* dark mode: knob left (moon side) */
   html:not([data-theme="light"]) .theme-toggle .cyber-switch .knob {
     transform: translateX(0);
   }
-  /* light mode: knob right */
   html[data-theme="light"] .theme-toggle .cyber-switch .knob {
     transform: translateX(14px);
   }
@@ -175,8 +172,7 @@
     color: rgba(255, 255, 255, 0.85);
   }
 
-
-  /* Light mode: page canvas only (nav stays black) */
+  /* Light mode - page canvas only; nav always black */
   html[data-theme="light"] body { background: #fff; color: #000; }
   html[data-theme="light"] .section-title { color: #000; }
   html[data-theme="light"] #about,
@@ -184,35 +180,39 @@
   html[data-theme="light"] #contact { background: #fff; }
   html[data-theme="light"] .differentiator,
   html[data-theme="light"] #services,
-  html[data-theme="light"] #team,
-  html[data-theme="light"] .credibility { background: #f4f4f4; }
+  html[data-theme="light"] #team { background: #f4f4f4; }
+  html[data-theme="light"] .dimensions { background: #f4f4f4; }
   html[data-theme="light"] .about-aside,
-  html[data-theme="light"] .bento-card,
   html[data-theme="light"] .team-card,
   html[data-theme="light"] .contact-person {
     background: #fff;
     border-color: #e5e5e5;
   }
-  html[data-theme="light"] .bento { background: #e5e5e5; border-color: #e5e5e5; }
   html[data-theme="light"] .team-grid { background: #e5e5e5; border-color: #e5e5e5; }
   html[data-theme="light"] .contact-people { background: #e5e5e5; border-color: #e5e5e5; }
   html[data-theme="light"] .team-name,
   html[data-theme="light"] .diff-content h2,
   html[data-theme="light"] .timeline-step h3,
-  html[data-theme="light"] .bento-card h3,
   html[data-theme="light"] .contact-person-name,
   html[data-theme="light"] .about-aside h3 { color: #000; }
   html[data-theme="light"] .about-text p,
   html[data-theme="light"] .diff-content p,
   html[data-theme="light"] .timeline-step p,
-  html[data-theme="light"] .bento-card p,
   html[data-theme="light"] .team-bio-preview,
   html[data-theme="light"] .t-acc-panel-inner .team-bio,
   html[data-theme="light"] .contact-desc,
   html[data-theme="light"] .contact-detail,
   html[data-theme="light"] .about-aside p { color: #5c5c5c; }
   html[data-theme="light"] .cred-label { color: #5c5c5c; }
-  html[data-theme="light"] .cred-num { color: #000; }
+  html[data-theme="light"] .cred-num { color: var(--gold-deep); }
+  html[data-theme="light"] .spec-row { border-color: #e5e5e5; }
+  html[data-theme="light"] .spec-grid { border-color: #e5e5e5; }
+  html[data-theme="light"] .spec-value { color: #000; }
+  html[data-theme="light"] .dims-image img { border-color: #e5e5e5; }
+  html[data-theme="light"] .svc-list,
+  html[data-theme="light"] .svc-row { border-color: #e5e5e5; }
+  html[data-theme="light"] .svc-cta-row { border-color: var(--gold-deep); }
+  html[data-theme="light"] .svc-title { color: #000; }
   html[data-theme="light"] .form-group input,
   html[data-theme="light"] .form-group textarea {
     background: #fff;
@@ -220,13 +220,8 @@
     border-color: #e5e5e5;
   }
   html[data-theme="light"] footer { background: #000; }
-  html[data-theme="light"] .bento-cta { background: var(--gold); }
-  html[data-theme="light"] .bento-cta h3,
-  html[data-theme="light"] .bento-cta a { color: #000; }
-  html[data-theme="light"] .bento-cta p { color: rgba(0,0,0,0.72); }
 
-  /* NAV - always dark chrome like Tesla */
-
+  /* NAV - always black */
   .site-header {
     position: fixed;
     top: 0;
@@ -332,7 +327,6 @@
   .nav-toggle[aria-expanded="true"] .icon-open { display: none; }
   .nav-toggle[aria-expanded="true"] .icon-close { display: block; }
 
-  /* Mobile nav dropdown motion scoped below 768px only */
   @media (max-width: 768px) {
     .nav-links.t-dropdown {
       transform-origin: top right;
@@ -366,7 +360,7 @@
     }
   }
 
-  /* HERO - Tesla full-bleed */
+  /* HERO - full-bleed, copy bottom-left */
   .hero {
     position: relative;
     min-height: 100dvh;
@@ -466,8 +460,7 @@
     border-color: #fff;
   }
 
-
-  /* Texts reveal (transitions.dev) */
+  /* Stagger reveal */
   .t-stagger-line {
     display: block;
     opacity: 0;
@@ -500,7 +493,7 @@
     transition-delay: 0s;
   }
 
-  /* CREDIBILITY */
+  /* PERFORMANCE ROW - label above value */
   .credibility {
     background: var(--bg);
     border-bottom: 1px solid var(--line);
@@ -521,15 +514,6 @@
 
   .cred-cell:last-child { border-right: none; }
 
-  .cred-num {
-    font-family: var(--font-ui);
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--bone);
-    line-height: 1;
-  }
-
   .cred-label {
     font-size: 0.6875rem;
     font-weight: 600;
@@ -539,7 +523,64 @@
     margin-bottom: 0.4rem;
   }
 
-  /* DIMENSIONS */
+  .cred-num {
+    font-family: var(--font-ui);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--bone);
+    line-height: 1;
+  }
+
+  /* ABOUT */
+  #about {
+    padding: 6rem 0;
+    background: var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+    gap: clamp(1.75rem, 3.5vw, 2.75rem);
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--fg-muted);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    max-width: 58ch;
+  }
+
+  .about-text p:last-child { margin-bottom: 0; }
+
+  .about-aside {
+    background: var(--steel);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--gold);
+    padding: 1.75rem 1.5rem;
+  }
+
+  .about-aside h3 {
+    font-family: var(--font-ui);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--bone);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .about-aside p {
+    color: var(--mute);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-aside p:last-child { margin-bottom: 0; }
+
+  /* DIMENSIONS - specs left, courtyard right */
   .dimensions {
     padding: 6rem 0;
     background: var(--steel);
@@ -600,61 +641,7 @@
     .dims-image { position: static; }
   }
 
-  html[data-theme="light"] .dimensions { background: #f4f4f4; }
-  html[data-theme="light"] .spec-row { border-color: #e5e5e5; }
-  html[data-theme="light"] .spec-grid { border-color: #e5e5e5; }
-  html[data-theme="light"] .spec-value { color: #000; }
-  html[data-theme="light"] .dims-image img { border-color: #e5e5e5; }
-
-  /* ABOUT */
-  #about {
-    padding: 6rem 0;
-    background: var(--ink);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .about-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
-    gap: clamp(1.75rem, 3.5vw, 2.75rem);
-    align-items: start;
-  }
-
-  .about-text p {
-    color: var(--fg-muted);
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    max-width: 58ch;
-  }
-
-  .about-text p:last-child { margin-bottom: 0; }
-
-  .about-aside {
-    background: var(--steel);
-    border: 1px solid var(--line);
-    border-left: 2px solid var(--gold);
-    padding: 1.75rem 1.5rem;
-  }
-
-  .about-aside h3 {
-    font-family: var(--font-ui);
-    font-size: 1.15rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--bone);
-    margin-bottom: 1rem;
-    line-height: 1.3;
-  }
-
-  .about-aside p {
-    color: var(--mute);
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .about-aside p:last-child { margin-bottom: 0; }
-
-  /* DIFFERENTIATOR */
+  /* DIFFERENTIATOR - headline + 2 paras, hairline top/bottom */
   .differentiator {
     padding: 5rem 0;
     background: var(--steel);
@@ -690,92 +677,69 @@
 
   .diff-content p:last-child { margin-bottom: 0; }
 
-  /* SERVICES */
+  /* SERVICES - hairline numbered rows */
   #services {
     padding: 6rem 0;
     background: var(--ink);
     border-bottom: 1px solid var(--line);
   }
 
-  .bento {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: minmax(140px, auto);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
+  .svc-list {
     margin-top: 2rem;
+    border-top: 1px solid var(--line);
   }
 
-  .bento-card {
-    background: var(--steel);
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
+  .svc-row {
+    display: grid;
+    grid-template-columns: 3rem 1fr 2.2fr;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
   }
 
-  .bento-card.span-7 { grid-column: span 7; }
-  .bento-card.span-5 { grid-column: span 5; }
-  .bento-card.span-4 { grid-column: span 4; }
-  .bento-card.span-8 { grid-column: span 8; }
-  .bento-card.span-6 { grid-column: span 6; }
-  .bento-card.tall { min-height: 160px; }
-
-  .bento-num {
+  .svc-num {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     letter-spacing: 0.08em;
     color: var(--mute);
-    margin-bottom: 0.65rem;
+    align-self: start;
+    padding-top: 0.15em;
   }
 
-  .bento-card h3 {
-    font-family: var(--font-ui);
-    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  .svc-title {
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: -0.01em;
     color: var(--bone);
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
+    line-height: 1.3;
   }
 
-  .bento-card p {
-    color: var(--mute);
+  .svc-desc {
     font-size: 0.9rem;
+    color: var(--mute);
     line-height: 1.55;
-    max-width: 42ch;
   }
 
-  .bento-cta {
-    background: var(--gold);
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  .bento-cta h3 { color: #000000; }
-  .bento-cta p { color: rgba(0, 0, 0, 0.72); }
-  .bento-cta .bento-num { color: rgba(0, 0, 0, 0.45); }
-
-  .bento-cta a {
-    display: inline-flex;
+  .svc-cta-row {
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--gold);
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    color: #000000;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .svc-cta-label {
     font-size: 0.6875rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    text-decoration: none;
+    color: var(--mute);
+    flex: 1;
   }
 
-  @media (hover: hover) and (pointer: fine) {
-    .bento-cta a:hover { opacity: 0.75; }
-  }
-
-  /* APPROACH */
+  /* APPROACH - numbered 01-04 hairline list */
   #approach {
     padding: 6rem 0;
     background: var(--steel);
@@ -841,7 +805,7 @@
     max-width: 52ch;
   }
 
-  /* TEAM */
+  /* TEAM - 2 cols, square photos radius 0 */
   #team {
     padding: 6rem 0;
     background: var(--ink);
@@ -1120,16 +1084,9 @@
     margin-top: 0.25rem;
   }
 
-  .contact-locale {
-    margin-top: 1.75rem;
-    color: var(--mute);
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-  }
-
   /* FOOTER */
   footer {
-    background: var(--ink);
+    background: #000000;
     padding: 3.5rem 0 2rem;
   }
 
@@ -1179,13 +1136,6 @@
     .footer-col a:hover { color: var(--gold); }
   }
 
-  .footer-meta {
-    display: block;
-    color: rgba(138, 138, 138, 0.75);
-    font-size: 0.8rem;
-    margin-top: 0.35rem;
-  }
-
   .footer-bottom {
     margin-top: 1.5rem;
     font-size: 0.7rem;
@@ -1196,18 +1146,9 @@
 
   /* RESPONSIVE */
   @media (max-width: 1024px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-copy {
-      padding: 2.5rem 1.5rem 3rem;
-      max-width: none;
-    }
-    .hero h1 { max-width: none; }
     .about-layout { grid-template-columns: 1fr; gap: 2rem; }
-    .bento-card.span-7,
-    .bento-card.span-5,
-    .bento-card.span-4,
-    .bento-card.span-8,
-    .bento-card.span-6 { grid-column: span 12; }
+    .svc-row { grid-template-columns: 2.5rem 1fr; }
+    .svc-desc { grid-column: 2; }
   }
 
   @media (max-width: 768px) {
@@ -1229,11 +1170,10 @@
     }
     .nav-links li { width: 100%; }
     .nav-links a:not(.bk-btn) {
-      display: block;
+      display: flex;
       padding: 0.85rem 0.5rem;
       font-size: 0.75rem;
       min-height: 44px;
-      display: flex;
       align-items: center;
     }
     .nav-links .bk-btn {
@@ -1259,7 +1199,13 @@
     .form-row { grid-template-columns: 1fr; }
     .container { padding: 0 1rem; }
     #about, #services, #approach, #team, #contact { padding: 4rem 0; }
+    .dimensions { padding: 4rem 0; }
     .hero-copy { padding-left: 1rem; padding-right: 1rem; padding-bottom: 3rem; }
+    .svc-row {
+      grid-template-columns: 2rem 1fr;
+      gap: 1rem;
+    }
+    .svc-desc { grid-column: 2; }
   }
 
   @media (min-width: 1400px) {
@@ -1288,7 +1234,7 @@
 <header class="site-header">
   <nav class="site-nav" aria-label="Main navigation">
     <a href="#home" class="nav-wordmark" aria-label="Burkett Investments">
-      <img src="assets/logo-reverse.png?v=20260710h" alt="Burkett Investments, LLC" width="220" height="66">
+      <img src="assets/logo-reverse.png?v=20260710z" alt="Burkett Investments, LLC" width="220" height="66">
     </a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
       <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -1299,7 +1245,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#approach">Approach</a></li>
       <li><a href="#team">Team</a></li>
-      <li><a href="https://themultifamilypanel.com" target="_blank" rel="noopener">The Panel</a></li>
+      <li><a href="https://themultifamilypanel.com" target="_blank" rel="noopener">Panel</a></li>
       <li><a href="#contact" class="bk-btn bk-btn-primary">Contact</a></li>
       <li><a href="https://app.burkettinv.com" class="bk-btn bk-btn-ghost">Login</a></li>
       <li><button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Theme">
@@ -1314,7 +1260,7 @@
 
 <section class="hero" id="home">
   <div class="hero-media" aria-hidden="true">
-    <img src="assets/generated/apartment-angular-dusk.jpg?v=20260710h" alt="" width="1024" height="682" loading="eager" decoding="async">
+    <img src="assets/generated/apartment-angular-dusk.jpg?v=20260710z" alt="" width="1536" height="1024" loading="eager" decoding="async">
   </div>
   <div class="hero-copy">
     <div class="hero-copy-inner t-stagger" id="heroStagger">
@@ -1329,67 +1275,27 @@
   </div>
 </section>
 
+<!-- Performance row: label above value -->
 <div class="credibility reveal">
   <div class="cred-grid">
     <div class="cred-cell">
-      <div class="cred-label">Years experience</div>
+      <div class="cred-label">Years</div>
       <div class="cred-num">20+</div>
     </div>
     <div class="cred-cell">
-      <div class="cred-label">National footprint</div>
+      <div class="cred-label">Footprint</div>
       <div class="cred-num">US</div>
     </div>
     <div class="cred-cell">
-      <div class="cred-label">Core service lines</div>
+      <div class="cred-label">Services</div>
       <div class="cred-num">5</div>
     </div>
     <div class="cred-cell">
-      <div class="cred-label">Founder-led partners</div>
+      <div class="cred-label">Partners</div>
       <div class="cred-num">2</div>
     </div>
   </div>
 </div>
-
-<section class="dimensions reveal" id="dimensions">
-  <div class="container">
-    <div class="dims-layout">
-      <div class="dims-specs">
-        <p class="section-label">Firm Profile</p>
-        <h2 class="section-title">By the numbers.</h2>
-        <div class="divider"></div>
-        <dl class="spec-grid">
-          <div class="spec-row">
-            <dt class="spec-label">Founded</dt>
-            <dd class="spec-value">2023</dd>
-          </div>
-          <div class="spec-row">
-            <dt class="spec-label">Experience</dt>
-            <dd class="spec-value">20+ Years</dd>
-          </div>
-          <div class="spec-row">
-            <dt class="spec-label">Sectors</dt>
-            <dd class="spec-value">Multifamily, Senior, Storage</dd>
-          </div>
-          <div class="spec-row">
-            <dt class="spec-label">Footprint</dt>
-            <dd class="spec-value">National (US)</dd>
-          </div>
-          <div class="spec-row">
-            <dt class="spec-label">Structure</dt>
-            <dd class="spec-value">Founder-Led LLC</dd>
-          </div>
-          <div class="spec-row">
-            <dt class="spec-label">Service Lines</dt>
-            <dd class="spec-value">5 Disciplines</dd>
-          </div>
-        </dl>
-      </div>
-      <div class="dims-image reveal">
-        <img src="assets/generated/apartment-courtyard.jpg?v=20260710h" alt="Multifamily courtyard" width="1024" height="682" loading="lazy" decoding="async">
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="about">
   <div class="container">
@@ -1414,6 +1320,48 @@
   </div>
 </section>
 
+<!-- Dimensions: firm specs left, courtyard image right (hairline frame, no caption) -->
+<section class="dimensions" id="dimensions">
+  <div class="container">
+    <div class="dims-layout">
+      <div class="dims-specs reveal">
+        <p class="section-label">Firm Profile</p>
+        <h2 class="section-title">Built for the full lifecycle.</h2>
+        <div class="divider"></div>
+        <div class="spec-grid">
+          <div class="spec-row">
+            <span class="spec-label">Founded</span>
+            <span class="spec-value">Founder-led LLC</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Service lines</span>
+            <span class="spec-value">5 core disciplines</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Geography</span>
+            <span class="spec-value">National</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Engagement style</span>
+            <span class="spec-value">Principal-direct</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Asset types</span>
+            <span class="spec-value">Multifamily, commercial, mixed-use</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Clients</span>
+            <span class="spec-value">Owners, operators, investors</span>
+          </div>
+        </div>
+      </div>
+      <div class="dims-image reveal">
+        <img src="assets/generated/apartment-courtyard.jpg?v=20260710z" alt="Multifamily courtyard" width="1024" height="682" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="differentiator">
   <div class="container">
     <div class="diff-panel reveal">
@@ -1434,38 +1382,36 @@
       <h2 class="section-title">Five disciplines,<br>one standard.</h2>
       <div class="divider"></div>
     </div>
-    <div class="bento reveal-stagger">
-      <article class="bento-card span-7 tall reveal">
-        <span class="bento-num">01</span>
-        <h3>Investment Management</h3>
-        <p>Strategy, underwriting, and portfolio oversight grounded in disciplined analysis and clear accountability to your capital.</p>
-      </article>
-      <article class="bento-card span-5 reveal">
-        <span class="bento-num">02</span>
-        <h3>Acquisition Advisory</h3>
-        <p>Sourcing, diligence, and deal structuring from first look through close.</p>
-      </article>
-      <article class="bento-card span-4 reveal">
-        <span class="bento-num">03</span>
-        <h3>Asset Management</h3>
-        <p>Business plans that protect and grow NOI over the hold period.</p>
-      </article>
-      <article class="bento-card span-4 reveal">
-        <span class="bento-num">04</span>
-        <h3>Property Management</h3>
-        <p>Hands-on operations and resident experience that supports asset performance.</p>
-      </article>
-      <article class="bento-card span-4 reveal">
-        <span class="bento-num">05</span>
-        <h3>Market Analysis</h3>
-        <p>Data-driven views on markets, submarkets, and timing for capital deployment.</p>
-      </article>
-      <article class="bento-card span-4 bento-cta reveal">
-        <span class="bento-num">06</span>
-        <h3>Ready to talk?</h3>
-        <p>Tell us about your goals and constraints. We will respond with clarity, not a pitch deck.</p>
-        <a href="#contact">See how we work <span aria-hidden="true">&rarr;</span></a>
-      </article>
+    <div class="svc-list reveal-stagger">
+      <div class="svc-row reveal">
+        <span class="svc-num">01</span>
+        <span class="svc-title">Investment Management</span>
+        <span class="svc-desc">Strategy, underwriting, and portfolio oversight grounded in disciplined analysis and clear accountability to your capital.</span>
+      </div>
+      <div class="svc-row reveal">
+        <span class="svc-num">02</span>
+        <span class="svc-title">Acquisition Advisory</span>
+        <span class="svc-desc">Sourcing, diligence, and deal structuring from first look through close.</span>
+      </div>
+      <div class="svc-row reveal">
+        <span class="svc-num">03</span>
+        <span class="svc-title">Asset Management</span>
+        <span class="svc-desc">Business plans that protect and grow NOI over the hold period.</span>
+      </div>
+      <div class="svc-row reveal">
+        <span class="svc-num">04</span>
+        <span class="svc-title">Property Management</span>
+        <span class="svc-desc">Hands-on operations and resident experience that supports asset performance.</span>
+      </div>
+      <div class="svc-row reveal">
+        <span class="svc-num">05</span>
+        <span class="svc-title">Market Analysis</span>
+        <span class="svc-desc">Data-driven views on markets, submarkets, and timing for capital deployment.</span>
+      </div>
+    </div>
+    <div class="svc-cta-row reveal">
+      <span class="svc-cta-label">Ready to talk?</span>
+      <a href="#contact" class="bk-btn bk-btn-primary">Start a Conversation</a>
     </div>
   </div>
 </section>
@@ -1588,7 +1534,6 @@
             </a>
           </div>
         </div>
-        <p class="contact-locale">United States. National footprint.</p>
       </div>
       <form class="contact-form reveal" id="contact-form">
         <input type="hidden" name="access_key" value="fe49751a-5683-46b5-b485-ea80860c029d">
@@ -1648,7 +1593,6 @@
         <h4>Get In Touch</h4>
         <a href="mailto:contact@burkettinv.com">contact@burkettinv.com</a>
         <a href="#contact">Start a conversation</a>
-        <span class="footer-meta">United States. National footprint.</span>
       </div>
     </div>
     <p class="footer-bottom">&copy; 2026 Burkett Investments, LLC. All rights reserved.</p>
@@ -1672,7 +1616,7 @@
     reveals.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  /* Hero texts-reveal */
+  /* Hero stagger */
   var hero = document.getElementById('heroStagger');
   if (hero) {
     requestAnimationFrame(function () {
@@ -1741,7 +1685,6 @@
     });
   }
 
-
   /* Theme toggle */
   (function () {
     var root = document.documentElement;
@@ -1760,6 +1703,7 @@
     }
   })();
 
+  /* Contact form */
   document.getElementById('contact-form').addEventListener('submit', async function (e) {
     e.preventDefault();
     var form = e.target;
