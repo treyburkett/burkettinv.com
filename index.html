@@ -53,7 +53,7 @@
   }
 })();
 </script>
-<link rel="stylesheet" href="assets/burkett-tokens.css?v=20260710e">
+<link rel="stylesheet" href="assets/burkett-tokens.css?v=20260710f">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0; }
 
@@ -445,6 +445,50 @@
     background: #fff;
     color: #000;
     border-color: #fff;
+  }
+
+
+  /* Sparse asset strip - two plates only */
+  .asset-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .asset-strip figure {
+    margin: 0;
+    position: relative;
+    min-height: clamp(220px, 32vw, 420px);
+    background: #000;
+    overflow: hidden;
+  }
+  .asset-strip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .asset-strip figcaption {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 1;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .asset-strip figure::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.55) 100%);
+    pointer-events: none;
+  }
+  @media (max-width: 768px) {
+    .asset-strip { grid-template-columns: 1fr; }
   }
 
   /* Texts reveal (transitions.dev) */
@@ -1222,7 +1266,7 @@
 
 <section class="hero" id="home">
   <div class="hero-media" aria-hidden="true">
-    <img src="assets/generated/apartment-hero.jpg?v=20260710e" alt="" width="1536" height="1024" loading="eager" decoding="async">
+    <img src="assets/generated/apartment-hero.jpg?v=20260710f" alt="" width="1536" height="1024" loading="eager" decoding="async">
   </div>
   <div class="hero-copy">
     <div class="hero-copy-inner t-stagger" id="heroStagger">
@@ -1258,6 +1302,18 @@
   </div>
 </div>
 
+
+
+<section class="asset-strip" aria-label="Multifamily assets">
+  <figure>
+    <img src="assets/generated/apartment-courtyard.jpg?v=20260710f" alt="Multifamily courtyard circulation" width="1024" height="682" loading="lazy" decoding="async">
+    <figcaption>Courtyard</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/generated/apartment-angular-dusk.jpg?v=20260710f" alt="Multifamily building at dusk" width="1024" height="682" loading="lazy" decoding="async">
+    <figcaption>Multifamily</figcaption>
+  </figure>
+</section>
 
 <section id="about">
   <div class="container">
