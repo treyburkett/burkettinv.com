@@ -9,7 +9,7 @@
 
 :root {
   /* Surfaces - Cybertruck black / steel */
-  --ink: #0a0a0a;
+  --ink: #000000;
   --steel: #141414;
   --steel-2: #1c1c1c;
   --line: #2a2a2a;
@@ -29,11 +29,11 @@
   --ink-600: #8a8a8a;
 
   /* Secondary brand - gold (~15-25% chromatic chrome) */
-  --gold: #c9a23c;
-  --gold-deep: #8f7329;
-  --gold-soft: #f0e6c8;
-  --gold-wash: rgba(201, 162, 60, 0.14);
-  --gold-light: #d9be6a;
+  --gold: #ead4a2;
+  --gold-deep: #b6a57e;
+  --gold-soft: #eddcb0;
+  --gold-wash: rgba(234, 212, 162, 0.14);
+  --gold-light: #eddcb0;
 
   /* Status (data only) */
   --ok: #2f6b4f;
@@ -157,7 +157,7 @@
   --chrome: var(--ink);
   --chrome-fg: var(--bone);
   --chrome-muted: var(--mute);
-  --hairline: rgba(201, 162, 60, 0.28);
+  --hairline: rgba(234, 212, 162, 0.35);
   --nav-hover: rgba(255, 255, 255, 0.06);
   --nav-active: var(--gold);
   --accent-bar: var(--gold);
@@ -167,49 +167,69 @@
 
 html[data-theme="light"] {
   color-scheme: light;
-  --bg: #f3f3f3;
-  --bg-elevated: #ffffff;
-  --fg: #0a0a0a;
+  --bg: #ffffff;
+  --bg-elevated: #f4f4f4;
+  --fg: #000000;
   --fg-muted: #5c5c5c;
-  --chrome: #0a0a0a;
-  --chrome-fg: #f5f5f5;
+  --chrome: #000000;
+  --chrome-fg: #ffffff;
   --chrome-muted: #8a8a8a;
-  --hairline: rgba(201, 162, 60, 0.28);
-  --nav-hover: rgba(255, 255, 255, 0.06);
+  --hairline: rgba(234, 212, 162, 0.45);
+  --nav-hover: rgba(0, 0, 0, 0.06);
   --nav-active: var(--gold);
   --accent-bar: var(--gold);
   --input-bg: #ffffff;
-  --code-bg: #f3f3f3;
-  --text-dark: #0a0a0a;
+  --code-bg: #f4f4f4;
+  --text-dark: #000000;
   --text-mid: #5c5c5c;
   --text-light: #8a8a8a;
-  --surface-elevated: #ffffff;
+  --surface-elevated: #f4f4f4;
   --border: #e5e5e5;
-  --paper: #f3f3f3;
-  --bone: #0a0a0a;
+  --paper: #ffffff;
+  --bone: #000000;
+  --ink: #000000;
+  --steel: #f4f4f4;
+  --steel-2: #ebebeb;
+  --line: #e5e5e5;
+  --mute: #5c5c5c;
+  --grey: #5c5c5c;
+  --grey-light: #3a3a3a;
+  --line-light: #e5e5e5;
+  --ink-600: #5c5c5c;
+  --cream: #000000;
+  --cream-dark: #ebebeb;
 }
 
 html[data-theme="dark"],
 :root:not([data-theme="light"]) {
   color-scheme: dark;
-  --bg: var(--ink);
-  --bg-elevated: var(--steel);
-  --fg: var(--bone);
-  --fg-muted: var(--mute);
-  --chrome: var(--ink);
-  --chrome-fg: var(--bone);
-  --chrome-muted: var(--mute);
-  --hairline: rgba(201, 162, 60, 0.28);
+  --bg: #000000;
+  --bg-elevated: #141414;
+  --fg: #ffffff;
+  --fg-muted: #8a8a8a;
+  --chrome: #000000;
+  --chrome-fg: #ffffff;
+  --chrome-muted: #8a8a8a;
+  --hairline: rgba(234, 212, 162, 0.35);
   --nav-hover: rgba(255, 255, 255, 0.06);
   --nav-active: var(--gold);
   --accent-bar: var(--gold);
-  --input-bg: var(--steel);
-  --code-bg: var(--steel-2);
-  --text-dark: var(--bone);
-  --text-mid: var(--grey-light);
-  --text-light: var(--mute);
-  --surface-elevated: var(--steel);
-  --border: var(--line);
+  --input-bg: #141414;
+  --code-bg: #1c1c1c;
+  --text-dark: #ffffff;
+  --text-mid: #b3b3b3;
+  --text-light: #8a8a8a;
+  --surface-elevated: #141414;
+  --border: #2a2a2a;
+  --paper: #000000;
+  --bone: #ffffff;
+  --ink: #000000;
+  --steel: #141414;
+  --steel-2: #1c1c1c;
+  --line: #2a2a2a;
+  --mute: #8a8a8a;
+  --grey: #8a8a8a;
+  --grey-light: #b3b3b3;
 }
 
 /* -- Utilities -- */
@@ -288,7 +308,7 @@ html[data-theme="dark"],
 
 .bk-btn-primary {
   background: var(--gold);
-  color: var(--ink);
+  color: #000000;
   border-color: var(--gold);
 }
 

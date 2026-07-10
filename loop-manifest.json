@@ -1,0 +1,84 @@
+{
+  "name": "cybertruck-review-loop-main-site",
+  "pattern": "build-audit-fix",
+  "max_cycles_per_stage": 3,
+  "models": [
+    "grok",
+    "composer"
+  ],
+  "scope": "burkettinv.com homepage + tokens only",
+  "gold_lock": {
+    "source": "Cybertruck screenshot banner metal pixels",
+    "gold": "#ead4a2",
+    "gold_deep": "#b6a57e",
+    "gold_light": "#eddcb0",
+    "gold_soft": "#eddcb0",
+    "gold_wash": "rgba(234, 212, 162, 0.14)",
+    "dropped": "#c9a23c",
+    "applied": true
+  },
+  "stages": {
+    "0": {
+      "status": "done",
+      "notes": "gold sampled; word pass next"
+    },
+    "1": {
+      "status": "passed",
+      "cycles": [
+        {
+          "cycle": 1,
+          "result": "pass",
+          "checks": {
+            "no_old_gold": true,
+            "theme_toggle": true,
+            "no_nashville_based": true,
+            "no_hero_nashville": true,
+            "gulch_kept": true,
+            "tesla_gold": true
+          }
+        }
+      ]
+    },
+    "2": {
+      "status": "passed",
+      "cycles": [
+        {
+          "cycle": 1,
+          "result": "fail",
+          "note": "visual band HTML missing"
+        },
+        {
+          "cycle": 2,
+          "result": "pass",
+          "checks": {
+            "images_6plus": true,
+            "hero_wired": true,
+            "proptech_present": true,
+            "no_unsplash": true,
+            "scrim_tokenized": true,
+            "has_media_cards": true,
+            "acquisition": true
+          }
+        }
+      ]
+    }
+  },
+  "gates": {
+    "stage1": [
+      "no #c9a23c",
+      "data-theme light+dark",
+      "theme toggle persists",
+      "radius 0",
+      "no Nashville marketing",
+      "logo hashes unchanged"
+    ],
+    "stage2": [
+      "6+ generated images",
+      "hero full-bleed multifamily",
+      "prop-tech visual present",
+      "scrims tokenized",
+      "no unsplash",
+      "no overclaim"
+    ]
+  }
+}
