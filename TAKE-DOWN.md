@@ -4,7 +4,7 @@ Reversible. Nothing deleted.
 
 ## What changed
 
-1. Marketing (burkettinv.com): Login and Owner Login removed from the public site (Next rebuild cutover). Do not re-add until product copy matches private / building truth.
+1. Marketing (burkettinv.com): Nav Login and footer Owner Login commented out in `index.html` (`TAKE-DOWN 2026-07-10` markers).
 2. Cloudflare Access: Policy `TAKE-DOWN deny all` (deny everyone, precedence 1) on:
    - app.burkettinv.com
    - ops.burkettinv.com
@@ -15,12 +15,12 @@ Reversible. Nothing deleted.
    - *.burkett-portal.pages.dev
    Existing allow policies kept at precedence 10+.
 
+## Identity guidelines
+
+Brand guidelines are at `/identity/` (removed from public nav). Protect with Cloudflare Access path `/identity*` so public `/brand/*.svg` lockups stay open. Steps: `IDENTITY-ACCESS.md`.
+
 ## Restore
 
-1. Re-add Login / Owner Login in the Next source (`burkettinv-next` nav/footer), rebuild `out/`, deploy, commit, push.
+1. Uncomment Login / Owner Login in `index.html`, commit, push.
 2. Cloudflare Zero Trust -> Access -> each app -> delete policy named TAKE-DOWN deny all (or set allow policies back to precedence 1).
 3. Optional API: DELETE `/accounts/{id}/access/apps/{app_id}/policies/{policy_id}` for each deny policy named `TAKE-DOWN deny all`.
-
-## Source of truth
-
-Live static site is built from `~/Developer/burkett/burkettinv-next` (`npx next build --webpack` → `out/`). Voice: `VOICE.md`. Design: `DESIGN-LOCK.md`.

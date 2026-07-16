@@ -3,4 +3,4 @@
 :HL["/_next/static/css/1136d2f6a31d21c4.css","style"]
 :HL["/brand/burkett-wordmark-themeable.svg","image"]
 :HL["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1900&q=80","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"Wxssm9_KihA76cfpnf4QD"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"nCm_XYI62eeLoL9x8z36G"}

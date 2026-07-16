@@ -2,4 +2,4 @@
 :HL["/_next/static/media/723e11e5093b8e80.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/1136d2f6a31d21c4.css","style"]
 :HL["/brand/burkett-wordmark-themeable.svg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"perspectives","param":null,"prefetchHints":0,"slots":{"children":{"name":"what-we-look-for-in-a-deal","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"Wxssm9_KihA76cfpnf4QD"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"perspectives","param":null,"prefetchHints":0,"slots":{"children":{"name":"what-we-look-for-in-a-deal","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"nCm_XYI62eeLoL9x8z36G"}
