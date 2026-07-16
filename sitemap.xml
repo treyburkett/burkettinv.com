@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://burkettinv.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://burkettinv.com/platform/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://burkettinv.com/expertise/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://burkettinv.com/perspectives/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://burkettinv.com/perspectives/what-we-look-for-in-a-deal/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://burkettinv.com/about/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://burkettinv.com/contact/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://themultifamilypanel.com/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
