@@ -18,10 +18,12 @@ Approved reference DNA: Tesla Cybertruck Specs page + Cursor dark UI + the wordl
 | Line | `#2a2a2a` / `rgba(255,255,255,0.12)` | Hairlines |
 | White | `#ffffff` | Primary values / headings on dark |
 | Mute | `#8a8a8a` | Labels ABOVE values |
-| Gold | `#ead4a2` | Sole accent / CTA / active / switch hover |
-| Gold deep | `#b6a57e` | Hover fill |
+| Gold | `#ead4a2` | Brand ignition / CTA / active / switch hover |
+| Gold deep | `#b6a57e` | Hover fill, light-mode logo accent |
+| Tesla red | `#e82127` | Semantic only: risk, alert, negative, destroy |
+| Tesla blue | `#3e6ae1` | Semantic only: info, link, focus, data highlight |
 
-Drop Burkett `#c9a23c`. Logo PNG/SVG files stay byte-identical.
+Gold remains the only marketing ignition. Red and blue never replace gold on CTAs or nav chrome. Drop legacy Burkett `#c9a23c`. Logo PNG/SVG files stay byte-identical.
 
 ## Type
 - `system-ui` only (no Cormorant, Jost, Playfair)
