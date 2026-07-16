@@ -20,8 +20,8 @@ Approved reference DNA: Tesla Cybertruck Specs page + Cursor dark UI + the wordl
 | Mute | `#8a8a8a` | Labels ABOVE values |
 | Gold | `#ead4a2` | Brand ignition / CTA / active / switch hover |
 | Gold deep | `#b6a57e` | Hover fill, light-mode logo accent |
-| Tesla red | `#e82127` | Semantic only: risk, alert, negative, destroy |
-| Tesla blue | `#3e6ae1` | Semantic only: info, link, focus, data highlight |
+| Burkett red | `#e31937` | Semantic only: risk, alert, negative, destroy |
+| Burkett blue | `#3e6ae1` | Semantic only: info, link, focus, data highlight |
 
 Gold remains the only marketing ignition. Red and blue never replace gold on CTAs or nav chrome. Drop legacy Burkett `#c9a23c`. Logo PNG/SVG files stay byte-identical.
 
