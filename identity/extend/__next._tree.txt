@@ -1,6 +1,6 @@
-:HL["/_next/static/chunks/44y70is2e8bws.css","style"]
+:HL["/_next/static/chunks/2l6jq8yq54vgm.css","style"]
 :HL["/_next/static/media/GeistMono_Variable.p.3ms9vq719j3f8.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/Geist_Variable-s.p.0mrjj4bg00-he.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1900&q=80","image"]
 :HL["/brand/burkett-wordmark-dark.svg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"identity","param":null,"prefetchHints":0,"slots":{"children":{"name":"extend","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"aUVBJqVXR0PYch7d9HDB0"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"identity","param":null,"prefetchHints":0,"slots":{"children":{"name":"extend","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"1_fEI4ae0tBFMEck2xrTG"}
