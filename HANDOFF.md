@@ -15,7 +15,7 @@ not a claim of owned holdings. See `VOICE.md` and `DESIGN-LOCK.md`.
 - `/` home, `/platform`, `/expertise` (legacy `/portfolio` redirects),
   `/perspectives` (+ one article), `/about` (Firm), `/contact`.
 - `/identity/` brand guidelines (internal; not in public nav). Protect with Cloudflare Access (`IDENTITY-ACCESS.md`). Public lockups stay under `/brand/*.svg`.
-- Login / Owner Login removed while products are take-down.
+- Login / Owner Login restored in nav + footer → `SITE.loginUrl` (app.burkettinv.com).
 
 ## Run it
 ```

@@ -18,7 +18,7 @@
 ## IA
 
 - Nav **Expertise** (not Portfolio). Route: `/expertise/`. Legacy `/portfolio/` redirects.
-- Login / Owner Login stay hidden while products are Access-denied (see TAKE-DOWN.md on the live deploy repo).
+- Login / Owner Login point at app.burkettinv.com. Clear Access TAKE-DOWN deny if login still blocks (see TAKE-DOWN.md).
 
 ## Content SSOT
 
