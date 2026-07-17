@@ -38,6 +38,7 @@ Gold is the only marketing ignition. Red and blue never replace gold on CTAs or 
 - Focus ring: **Burkett blue** (`--bk-blue`), 2px solid, offset 2px
 - Gold is ignition (CTA / active), not the focus outline
 - `:focus-visible` only (never steal mouse click outlines)
+- Published contrast ratios live on `/identity/controls/`
 
 ## Type
 - Next marketing / Identity: Geist + Geist Mono (self-hosted)
@@ -49,17 +50,18 @@ Gold is the only marketing ignition. Red and blue never replace gold on CTAs or 
 ## Motion
 | Token | Value | Use |
 |-------|-------|-----|
-| Ease | `cubic-bezier(0.16, 1, 0.3, 1)` | Only material ease |
-| Micro | 120 to 160ms | Focus tint, hairline |
-| Control | 200ms | Button, switch, link |
-| Panel | 250 to 300ms | Drawer, tab panel |
-| Reveal | 500ms | Scroll enter |
+| Ease | `--ease-out-expo` (`cubic-bezier(0.16, 1, 0.3, 1)`) | Only material ease |
+| Micro | `--duration-micro` (140ms) | Focus tint, hairline |
+| Control | `--duration-control` (200ms) | Button, switch, link |
+| Panel | `--duration-panel` (280ms) | Drawer, tab panel |
+| Reveal | `--duration-reveal` (500ms) | Scroll enter |
 | Line draw | 550ms | Gold accent line |
 
 Enter: opacity + `translateY(12px)` + `scale(0.985)`. Press: `scale(0.98)`. Stagger: 30 to 80ms, max ~5 siblings.
 `prefers-reduced-motion: reduce` snaps to end state; kill marquee / reveal / film loops.
 
 **Ban:** springs, bounce, overshoot, scale-from-zero, glow pulse, soft Ken Burns, trend audio, emoji stickers, confetti, scroll-jacking, soft glass bloom.
+Ban patterns (CI): `scripts/identity-motion-bans.rg.txt` via `npm run check:identity-motion`.
 
 Silent cutdown (~6s): one idea, architecture/material/UI only. Not "Vine." Optional 12 to 20s web hero loop is separate.
 
