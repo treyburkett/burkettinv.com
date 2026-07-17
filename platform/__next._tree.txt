@@ -1,5 +1,4 @@
 :HL["/_next/static/media/0b78ff376f6b9734-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/723e11e5093b8e80.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/1136d2f6a31d21c4.css","style"]
-:HL["/brand/burkett-wordmark-themeable.svg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"platform","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"nCm_XYI62eeLoL9x8z36G"}
+:HL["/_next/static/css/f0bbbff298e13c41.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"platform","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"H3LHd12m0Ya5b1hf0lEQ7"}
