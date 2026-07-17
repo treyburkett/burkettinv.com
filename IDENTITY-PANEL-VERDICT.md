@@ -51,3 +51,8 @@ Ship status: keep live. Do not market it as "complete DS." Plan a targeted fix w
 ## What would change the verdict to "good enough as DS"
 
 Token to code bridge + focus law + a11y ratios + Extend layer model + at least forms/tables for product density.
+
+
+## Fix wave status
+
+Shipped 2026-07-17 (`63bed09`). Checker gates 1-10 PASS. Focus = Burkett blue. Vine removed from Identity UI copy.

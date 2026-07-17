@@ -1,6 +1,10 @@
 # Public voice (SSOT)
 
-**One-line frame:** Founder-led real estate consulting and investment management. Institutional expertise across multifamily and adjacent classes, sold as the consulting bench of a multi-avenue firm building toward ownership, not as a portfolio we already hold.
+**One-line frame:** Founder-led real estate consulting and investment management. Institutional expertise across multifamily and adjacent classes, sold as the consulting bench of a multi-avenue firm. Client work is not firm holdings.
+
+## Client work vs firm capital
+
+We advise and underwrite **for clients**. Do not present client assets, deals, or classes as Burkett-owned holdings. "Building toward ownership" is internal aspiration only until true on public/partner surfaces.
 
 ## Say
 
@@ -8,11 +12,13 @@
 - "Expertise spanning…" / "experience across…" for senior housing, storage, retail, STR
 - Platform = capability lines we sell (Invest / Develop / Operate / Steward as **services**)
 - Qualitative proof only (20+ years, 2 principals, US footprint). No AUM. No "assets owned."
+- Proof cells mean bench capacity, not a portfolio dashboard
 
 ## Never say until true
 
 - "We own," "our portfolio," "what we build and own," "owner portal, live," "earns our capital," "vertically integrated owner-operator"
 - Asset classes as firm holdings
+- Trophy / exclusive / lifestyle gallery-as-AUM / captioned asset strips as holdings theater
 - Nashville HQ marketing on public hero (see DESIGN-LOCK). Gulch credential stays in bio.
 
 ## IA
