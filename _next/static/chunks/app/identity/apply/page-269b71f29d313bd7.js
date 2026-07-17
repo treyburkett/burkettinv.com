@@ -1,0 +1,20 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[766],{1103:(e,t,r)=>{Promise.resolve().then(r.bind(r,7227)),Promise.resolve().then(r.bind(r,2708)),Promise.resolve().then(r.t.bind(r,8500,23))},2708:(e,t,r)=>{"use strict";r.d(t,{EmailSignatureCard:()=>n});var i=r(5155),a=r(2115);function n({person:e}){let t,[r,o]=(0,a.useState)(!1),s=(t="https://burkettinv.com",`<table cellpadding="0" cellspacing="0" border="0" style="font-family:Geist,system-ui,-apple-system,Segoe UI,sans-serif;font-size:13px;line-height:1.45;color:#08080a;">
+  <tr>
+    <td style="padding:0 18px 0 0;border-right:1px solid #ead4a2;vertical-align:middle;">
+      <img src="${t}/brand/burkett-wordmark-stacked-light.svg" width="132" height="49" alt="Burkett Investments" style="display:block;border:0;width:132px;height:auto;"/>
+    </td>
+    <td style="padding:0 0 0 18px;vertical-align:middle;">
+      <div style="font-size:15px;font-weight:600;letter-spacing:-0.01em;color:#08080a;">${e.name}</div>
+      <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#b6a57e;margin-top:3px;">${e.role}</div>
+      <div style="margin-top:12px;">
+        <a href="mailto:${e.email}" style="color:#08080a;text-decoration:none;">${e.email}</a>
+      </div>
+      <div style="margin-top:3px;">
+        <a href="${t}" style="color:#55555d;text-decoration:none;">burkettinv.com</a>
+      </div>
+    </td>
+  </tr>
+</table>`);async function l(){try{let t=new Blob([s],{type:"text/html"}),r=new Blob([`${e.name}
+${e.role}
+${e.email}
+https://burkettinv.com`],{type:"text/plain"});await navigator.clipboard.write([new ClipboardItem({"text/html":t,"text/plain":r})]),o(!0),window.setTimeout(()=>o(!1),1600)}catch{try{await navigator.clipboard.writeText(s),o(!0),window.setTimeout(()=>o(!1),1600)}catch{}}}return(0,i.jsxs)("article",{className:"border border-line bg-panel",children:[(0,i.jsxs)("div",{className:"flex items-center justify-between gap-4 border-b border-line px-5 py-4",children:[(0,i.jsxs)("div",{children:[(0,i.jsx)("div",{className:"text-[0.95rem] font-semibold tracking-[-0.01em] text-fg",children:e.name}),(0,i.jsx)("div",{className:"mt-1 font-mono text-[0.66rem] uppercase tracking-[0.18em] text-dim",children:"Stacked wordmark signature"})]}),(0,i.jsx)("button",{type:"button",onClick:l,className:"inline-flex min-h-9 items-center border border-gold px-4 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-gold transition-[background-color,color,transform] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-gold hover:text-[#08080a] active:scale-[0.98]",children:r?"Copied":"Copy HTML"})]}),(0,i.jsx)("div",{className:"bg-[#f7f5f0] p-6 md:p-8",children:(0,i.jsx)("div",{className:"pointer-events-none select-none",dangerouslySetInnerHTML:{__html:s}})}),(0,i.jsx)("p",{className:"border-t border-line px-5 py-3 text-[0.8rem] leading-relaxed text-muted",children:"Paste into Gmail / Outlook signature settings. Uses the stacked lockup (Investments under Burkett). Wordmark loads from the live site."})]})}},7227:(e,t,r)=>{"use strict";r.d(t,{CopyChip:()=>n});var i=r(5155),a=r(2115);function n({value:e,label:t,className:r=""}){let[o,s]=(0,a.useState)(!1);async function l(){try{await navigator.clipboard.writeText(e),s(!0),window.setTimeout(()=>s(!1),1400)}catch{}}return(0,i.jsxs)("button",{type:"button",onClick:l,className:`inline-flex items-center gap-2 border border-line bg-panel px-3 py-2 font-mono text-[0.72rem] uppercase tracking-[0.14em] text-muted transition-[border-color,color,transform] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-gold hover:text-gold active:scale-[0.98] ${r}`,"aria-label":`Copy ${t??e}`,children:[(0,i.jsx)("span",{children:t??e}),(0,i.jsx)("span",{className:"text-dim",children:o?"Copied":"Copy"})]})}}},e=>{e.O(0,[500,441,794,358],()=>e(e.s=1103)),_N_E=e.O()}]);
