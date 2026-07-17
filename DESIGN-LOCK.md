@@ -81,7 +81,8 @@ Silent cutdown (~6s): one idea, architecture/material/UI only. Not "Vine." Optio
 ## Product chrome (OS / Work / Deals)
 - Same tokens; true black runner; gold hairline; radius 0
 - Controls inherit cyber sharpness (no rounded pills)
-- Dense form/table recipes live with the OS repo; Identity Surfaces notes are density guidance, not a second OS SSOT
+- Identity Surfaces documents OsShell SSOT; owner-portal `assets/os-shell.css` implements
+- Focus is Burkett blue (`--bk-blue`) everywhere (marketing + product)
 
 ## Copy
 - No Nashville HQ marketing on public surfaces
