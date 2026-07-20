@@ -1,7 +1,7 @@
 :HL["/_next/static/media/0b78ff376f6b9734-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/723e11e5093b8e80.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/css/0b9f4cc3440cf52b.css","style"]
-:HL["/brand/burkett-wordmark-stacked-dark.svg?v=20260720b","image"]
-:HL["/brand/burkett-wordmark-dark.svg?v=20260720b","image"]
-:HL["/brand/mark.svg?v=20260720b","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"identity","param":null,"prefetchHints":0,"slots":{"children":{"name":"apply","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"rNSCPE30Fdz3b3td7Ltpf"}
+:HL["/brand/burkett-wordmark-stacked-dark.20260720b.svg","image"]
+:HL["/brand/burkett-wordmark-dark.20260720b.svg","image"]
+:HL["/brand/mark.20260720b.svg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"identity","param":null,"prefetchHints":0,"slots":{"children":{"name":"apply","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"V_d98IQ10AFunwgp4KlB5"}
