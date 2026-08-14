@@ -2,5 +2,9 @@ User-agent: *
 Allow: /
 Disallow: /identity/
 Disallow: /identity
+Disallow: /qb-callback
+Disallow: /qb-callback/
+Disallow: /brand/partner-one-pager.html
+Disallow: /brand/deck-skeleton.html
 
 Sitemap: https://burkettinv.com/sitemap.xml
