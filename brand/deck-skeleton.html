@@ -1,391 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Burkett Investments | Deck skeleton</title>
-    <style>
-      :root {
-        --bg: #08080a;
-        --bg-2: #0d0d10;
-        --line: rgba(255, 255, 255, 0.1);
-        --fg: #f4f4f5;
-        --muted: #9b9ba4;
-        --dim: #6a6a73;
-        --gold: #ead4a2;
-      }
-
-      * {
-        box-sizing: border-box;
-        border-radius: 0;
-      }
-
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        background: #050506;
-        color: var(--fg);
-        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      }
-
-      .deck {
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-        padding: 1.25rem;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-
-      .slide {
-        background: var(--bg);
-        border: 1px solid var(--line);
-        aspect-ratio: 16 / 9;
-        min-height: 360px;
-        padding: 1.75rem 2rem 1.35rem;
-        display: flex;
-        flex-direction: column;
-        page-break-after: always;
-        break-after: page;
-      }
-
-      .ignition {
-        width: 2.5rem;
-        height: 1px;
-        background: var(--gold);
-      }
-
-      .eyebrow {
-        margin: 1rem 0 0;
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: 0.62rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--gold);
-      }
-
-      .wordmark {
-        margin-top: 1.5rem;
-        height: 2.4rem;
-        width: auto;
-        display: block;
-      }
-
-      h1,
-      h2 {
-        margin: 1.25rem 0 0;
-        font-weight: 600;
-        letter-spacing: -0.03em;
-        line-height: 1;
-      }
-
-      h1 {
-        max-width: 14ch;
-        font-size: clamp(1.8rem, 4vw, 2.6rem);
-      }
-
-      h2 {
-        font-size: clamp(1.35rem, 2.8vw, 1.85rem);
-      }
-
-      .support {
-        margin-top: 0.75rem;
-        max-width: 42ch;
-        color: var(--muted);
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
-
-      .body {
-        margin-top: 1.5rem;
-        flex: 1;
-      }
-
-      .specs {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1px;
-        background: var(--line);
-        border: 1px solid var(--line);
-      }
-
-      .specs.cols-4 {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .cell {
-        background: var(--bg-2);
-        padding: 1rem 1.05rem;
-      }
-
-      .label {
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: 0.6rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--dim);
-      }
-
-      .value {
-        margin-top: 0.4rem;
-        font-size: 1.05rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-      }
-
-      .note {
-        margin-top: 0.35rem;
-        color: var(--muted);
-        font-size: 0.82rem;
-        line-height: 1.4;
-      }
-
-      .say-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1px;
-        background: var(--line);
-        border: 1px solid var(--line);
-      }
-
-      .say-grid ul {
-        margin: 0.55rem 0 0;
-        padding-left: 1.05rem;
-        color: var(--muted);
-        font-size: 0.86rem;
-        line-height: 1.45;
-      }
-
-      .say-grid li + li {
-        margin-top: 0.28rem;
-      }
-
-      .footer {
-        margin-top: auto;
-        padding-top: 0.85rem;
-        border-top: 1px solid var(--line);
-        font-size: 0.68rem;
-        line-height: 1.4;
-        color: var(--dim);
-      }
-
-      @media print {
-        body {
-          background: var(--bg);
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-        }
-
-        .deck {
-          padding: 0;
-          max-width: none;
-          gap: 0;
-        }
-
-        .slide {
-          border: none;
-          width: 100vw;
-          height: 100vh;
-          aspect-ratio: auto;
-          min-height: 0;
-        }
-      }
-
-      @media (max-width: 720px) {
-        .specs,
-        .specs.cols-4,
-        .say-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .slide {
-          aspect-ratio: auto;
-          min-height: 0;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="deck">
-      <!-- Cover -->
-      <section class="slide" aria-label="Cover">
-        <div class="ignition" aria-hidden="true"></div>
-        <p class="eyebrow">Deck skeleton</p>
-        <img
-          class="wordmark"
-          src="/brand/burkett-wordmark-stacked-dark.20260720c.svg"
-          alt="Burkett Investments"
-        />
-        <h1>Deck title</h1>
-        <p class="support">One supporting line. Specs first. No slogan stack.</p>
-        <footer class="footer">
-          These materials are confidential and intended for advisory or
-          investment-management engagement use only. They are not an AUM or
-          holdings claim; client work is not firm capital.
-        </footer>
-      </section>
-
-      <!-- Slide 1 -->
-      <section class="slide" aria-label="Engagement frame">
-        <div class="ignition" aria-hidden="true"></div>
-        <p class="eyebrow">01 / Frame</p>
-        <h2>Engagement taxonomy</h2>
-        <p class="support">
-          Label the lane. Advisory, IM, or future capital path. Do not collapse
-          them into ownership theater.
-        </p>
-        <div class="body">
-          <div class="specs">
-            <div class="cell">
-              <div class="label">Advisory</div>
-              <div class="value">For clients</div>
-              <p class="note">Underwrite, acquire strategy, steward.</p>
-            </div>
-            <div class="cell">
-              <div class="label">IM</div>
-              <div class="value">Client capital</div>
-              <p class="note">Mandates and management for others.</p>
-            </div>
-            <div class="cell">
-              <div class="label">Future capital</div>
-              <div class="value">Aspiration only</div>
-              <p class="note">Building toward firm capital until true.</p>
-            </div>
-            <div class="cell">
-              <div class="label">Never</div>
-              <div class="value">Firm AUM claim</div>
-              <p class="note">No holdings count. No "our portfolio."</p>
-            </div>
-          </div>
-        </div>
-        <footer class="footer">
-          These materials are confidential and intended for advisory or
-          investment-management engagement use only. They are not an AUM or
-          holdings claim; client work is not firm capital.
-        </footer>
-      </section>
-
-      <!-- Slide 2 -->
-      <section class="slide" aria-label="Proof lexicon">
-        <div class="ignition" aria-hidden="true"></div>
-        <p class="eyebrow">02 / Proof</p>
-        <h2>Qualitative proof only</h2>
-        <p class="support">
-          Bench capacity, not a portfolio dashboard. No AUM. No assets owned.
-        </p>
-        <div class="body">
-          <div class="specs cols-4">
-            <div class="cell">
-              <div class="label">Years</div>
-              <div class="value">20+</div>
-            </div>
-            <div class="cell">
-              <div class="label">Principals</div>
-              <div class="value">2</div>
-            </div>
-            <div class="cell">
-              <div class="label">Classes</div>
-              <div class="value">MF + adjacent</div>
-            </div>
-            <div class="cell">
-              <div class="label">Footprint</div>
-              <div class="value">US</div>
-            </div>
-          </div>
-        </div>
-        <footer class="footer">
-          These materials are confidential and intended for advisory or
-          investment-management engagement use only. They are not an AUM or
-          holdings claim; client work is not firm capital.
-        </footer>
-      </section>
-
-      <!-- Slide 3 -->
-      <section class="slide" aria-label="Partner language">
-        <div class="ignition" aria-hidden="true"></div>
-        <p class="eyebrow">03 / Language</p>
-        <h2>Partner one-liners</h2>
-        <div class="body">
-          <div class="say-grid">
-            <div class="cell">
-              <div class="label">Approved</div>
-              <ul>
-                <li>
-                  Founder-led real estate consulting and investment management
-                  for clients.
-                </li>
-                <li>
-                  Institutional expertise across multifamily and adjacent
-                  classes, sold as the consulting bench of a multi-avenue firm.
-                </li>
-                <li>
-                  We advise and underwrite for clients. Client work is not firm
-                  holdings.
-                </li>
-              </ul>
-            </div>
-            <div class="cell">
-              <div class="label">Banned</div>
-              <ul>
-                <li>
-                  We own and operate a portfolio across five asset classes.
-                </li>
-                <li>Managing $X AUM across our holdings.</li>
-                <li>
-                  Vertically integrated owner-operator with a live owner portal.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <footer class="footer">
-          These materials are confidential and intended for advisory or
-          investment-management engagement use only. They are not an AUM or
-          holdings claim; client work is not firm capital.
-        </footer>
-      </section>
-
-      <!-- Slide 4 -->
-      <section class="slide" aria-label="Co-brand rules">
-        <div class="ignition" aria-hidden="true"></div>
-        <p class="eyebrow">04 / Co-brand</p>
-        <h2>Wordmark only. Specs rhythm.</h2>
-        <p class="support">
-          Partners may not invent holdings claims. Gold ignition only. Radius
-          zero. No soft glass.
-        </p>
-        <div class="body">
-          <div class="specs">
-            <div class="cell">
-              <div class="label">Lockup</div>
-              <div class="value">Wordmark</div>
-              <p class="note">Stacked or horizontal. No framed B monument.</p>
-            </div>
-            <div class="cell">
-              <div class="label">Geometry</div>
-              <div class="value">Radius 0</div>
-              <p class="note">Hairlines. Label above value. No card stacks.</p>
-            </div>
-            <div class="cell">
-              <div class="label">Ignition</div>
-              <div class="value">Gold only</div>
-              <p class="note">Section marks and CTAs. Not focus outlines.</p>
-            </div>
-            <div class="cell">
-              <div class="label">Export</div>
-              <div class="value">PDF / print</div>
-              <p class="note">Keep disclaimer on every slide footer.</p>
-            </div>
-          </div>
-        </div>
-        <footer class="footer">
-          These materials are confidential and intended for advisory or
-          investment-management engagement use only. They are not an AUM or
-          holdings claim; client work is not firm capital.
-        </footer>
-      </section>
-    </div>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Burkett Investments — Offline</title>
+  <style>
+    :root {
+      --bg: #0f1210;
+      --fg: #e8e4dc;
+      --muted: #9a958c;
+      --gold: #c4a574;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, #1a2218 0%, transparent 55%),
+        linear-gradient(165deg, #0f1210 0%, #151a16 50%, #0c0e0c 100%);
+      color: var(--fg);
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    }
+    main {
+      max-width: 28rem;
+      text-align: center;
+    }
+    .brand {
+      font-size: clamp(1.75rem, 5vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    p {
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">Burkett Investments</div>
+    <p>This site is temporarily offline.</p>
+  </main>
+</body>
 </html>

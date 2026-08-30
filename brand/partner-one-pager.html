@@ -1,238 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Burkett Investments | Partner one-pager</title>
-    <style>
-      :root {
-        --bg: #08080a;
-        --bg-2: #0d0d10;
-        --line: rgba(255, 255, 255, 0.1);
-        --fg: #f4f4f5;
-        --muted: #9b9ba4;
-        --dim: #6a6a73;
-        --gold: #ead4a2;
-      }
-
-      * {
-        box-sizing: border-box;
-        border-radius: 0;
-      }
-
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        background: var(--bg);
-        color: var(--fg);
-        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-      }
-
-      body {
-        min-height: 100vh;
-      }
-
-      .sheet {
-        max-width: 8.5in;
-        min-height: 11in;
-        margin: 0 auto;
-        padding: 0.7in 0.75in 0.85in;
-        background: var(--bg);
-        display: flex;
-        flex-direction: column;
-        border: 1px solid var(--line);
-      }
-
-      .ignition {
-        width: 2.5rem;
-        height: 1px;
-        background: var(--gold);
-      }
-
-      .eyebrow {
-        margin: 1.25rem 0 0;
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: 0.62rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--gold);
-      }
-
-      .wordmark {
-        margin-top: 1.75rem;
-        height: 2.75rem;
-        width: auto;
-        display: block;
-      }
-
-      h1 {
-        margin: 1.75rem 0 0;
-        max-width: 16ch;
-        font-size: 2rem;
-        font-weight: 600;
-        letter-spacing: -0.03em;
-        line-height: 0.98;
-      }
-
-      .lede {
-        margin: 1rem 0 0;
-        max-width: 46ch;
-        color: var(--muted);
-        font-size: 0.98rem;
-        line-height: 1.55;
-      }
-
-      .grid {
-        margin-top: 2rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1px;
-        background: var(--line);
-        border: 1px solid var(--line);
-        flex: 1;
-      }
-
-      .cell {
-        background: var(--bg-2);
-        padding: 1.15rem 1.1rem;
-      }
-
-      .cell.wide {
-        grid-column: 1 / -1;
-      }
-
-      .label {
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: 0.62rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--dim);
-      }
-
-      .value {
-        margin-top: 0.45rem;
-        font-size: 1.05rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-      }
-
-      .note {
-        margin-top: 0.4rem;
-        color: var(--muted);
-        font-size: 0.88rem;
-        line-height: 1.45;
-      }
-
-      ul {
-        margin: 0.55rem 0 0;
-        padding-left: 1.1rem;
-        color: var(--muted);
-        font-size: 0.88rem;
-        line-height: 1.5;
-      }
-
-      li + li {
-        margin-top: 0.3rem;
-      }
-
-      .footer {
-        margin-top: 1.5rem;
-        padding-top: 0.85rem;
-        border-top: 1px solid var(--line);
-        font-size: 0.72rem;
-        line-height: 1.45;
-        color: var(--dim);
-      }
-
-      @media print {
-        body {
-          background: var(--bg);
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-        }
-
-        .sheet {
-          border: none;
-          max-width: none;
-          min-height: auto;
-          padding: 0.55in 0.6in;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <article class="sheet">
-      <div class="ignition" aria-hidden="true"></div>
-      <p class="eyebrow">Partner brief</p>
-      <img
-        class="wordmark"
-        src="/brand/burkett-wordmark-stacked-dark.20260720c.svg"
-        alt="Burkett Investments"
-      />
-      <h1>Consulting and investment management for clients.</h1>
-      <p class="lede">
-        Founder-led real estate expertise across multifamily and adjacent
-        classes. Sold as the consulting bench of a multi-avenue firm. Client
-        work is not firm holdings.
-      </p>
-
-      <div class="grid">
-        <div class="cell">
-          <div class="label">Engagement</div>
-          <div class="value">Advisory / IM</div>
-          <p class="note">
-            Underwriting, acquisition strategy, stewardship, and investment
-            management for client capital and mandates.
-          </p>
-        </div>
-        <div class="cell">
-          <div class="label">Not this</div>
-          <div class="value">Firm AUM theater</div>
-          <p class="note">
-            No holdings claim. No portfolio count. No owner-portal marketing
-            until true.
-          </p>
-        </div>
-        <div class="cell">
-          <div class="label">Years</div>
-          <div class="value">20+</div>
-          <p class="note">Principal experience in the field. Qualitative only.</p>
-        </div>
-        <div class="cell">
-          <div class="label">Principals</div>
-          <div class="value">2</div>
-          <p class="note">Direct access. Founder-led bench.</p>
-        </div>
-        <div class="cell">
-          <div class="label">Classes</div>
-          <div class="value">MF + adjacent</div>
-          <p class="note">
-            Expertise spanning senior housing, storage, retail, STR. Not assets
-            owned.
-          </p>
-        </div>
-        <div class="cell">
-          <div class="label">Footprint</div>
-          <div class="value">US</div>
-          <p class="note">Work and relationships. Not a geographic ownership map.</p>
-        </div>
-        <div class="cell wide">
-          <div class="label">Proof lexicon</div>
-          <ul>
-            <li>May imply: 20+ years, five-class expertise, US relationships.</li>
-            <li>May not imply: firm-owned portfolio size, AUM, holdings count.</li>
-            <li>Future capital path stays aspirational until true on partner surfaces.</li>
-          </ul>
-        </div>
-      </div>
-
-      <footer class="footer">
-        These materials are confidential and intended for advisory or
-        investment-management engagement use only. They are not an AUM or
-        holdings claim; client work is not firm capital.
-      </footer>
-    </article>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Burkett Investments — Offline</title>
+  <style>
+    :root {
+      --bg: #0f1210;
+      --fg: #e8e4dc;
+      --muted: #9a958c;
+      --gold: #c4a574;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, #1a2218 0%, transparent 55%),
+        linear-gradient(165deg, #0f1210 0%, #151a16 50%, #0c0e0c 100%);
+      color: var(--fg);
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    }
+    main {
+      max-width: 28rem;
+      text-align: center;
+    }
+    .brand {
+      font-size: clamp(1.75rem, 5vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    p {
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">Burkett Investments</div>
+    <p>This site is temporarily offline.</p>
+  </main>
+</body>
 </html>
